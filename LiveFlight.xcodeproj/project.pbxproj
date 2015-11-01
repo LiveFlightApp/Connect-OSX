@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; settings = {ASSET_TAGS = (); }; };
-		7E35EF791BD935E3008499C8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35EF771BD935E3008499C8 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
-		7E35EF7A1BD935E4008499C8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35EF781BD935E3008499C8 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
 		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; settings = {ASSET_TAGS = (); }; };
 		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; settings = {ASSET_TAGS = (); }; };
 		7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5585DD1BD3FB390028D9FD /* JSM.png */; settings = {ASSET_TAGS = (); }; };
@@ -23,7 +21,6 @@
 		7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */; };
 		7E7BA5F71B89DA5200C73DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */; };
 		7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */; };
-		7E7BA5FC1B89DA5200C73DA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5FA1B89DA5200C73DA0 /* Main.storyboard */; };
 		7E7BA6081B89DA5200C73DA0 /* LiveFlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */; };
 		7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6141B8A60FC00C73DA0 /* Joystick.m */; };
 		7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */; };
@@ -33,6 +30,7 @@
 		7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
 		7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */; settings = {ASSET_TAGS = (); }; };
 		7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7E898E131B936AFD00208F54 /* RoundedIcon.icns */; };
+		7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +59,6 @@
 /* Begin PBXFileReference section */
 		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		7E35EF771BD935E3008499C8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
-		7E35EF781BD935E3008499C8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPadViewController.h; sourceTree = "<group>"; };
 		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPadViewController.m; sourceTree = "<group>"; };
 		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPad.h; sourceTree = "<group>"; };
@@ -81,7 +77,6 @@
 		7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7E7BA5FB1B89DA5200C73DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveFlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BA6061B89DA5200C73DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFlightTests.swift; sourceTree = "<group>"; };
@@ -102,6 +97,7 @@
 		7E80A4091BC6C19E00CF70FA /* UDPReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPReceiver.h; sourceTree = "<group>"; };
 		7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPReceiver.m; sourceTree = "<group>"; };
 		7E898E131B936AFD00208F54 /* RoundedIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RoundedIcon.icns; sourceTree = "<group>"; };
+		7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E35EF7A1BD935E4008499C8 /* Crashlytics.framework in Frameworks */,
-				7E35EF791BD935E3008499C8 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +192,7 @@
 				7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */,
 				7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */,
 				7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */,
-				7E7BA5FA1B89DA5200C73DA0 /* Main.storyboard */,
+				7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */,
 				7E7BA6131B8A60FC00C73DA0 /* Joystick.h */,
 				7E7BA6141B8A60FC00C73DA0 /* Joystick.m */,
 				7E7BA6151B8A60FC00C73DA0 /* JoystickHatswitch.h */,
@@ -217,8 +211,6 @@
 		7E7BA5F21B89DA5200C73DA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7E35EF771BD935E3008499C8 /* Fabric.framework */,
-				7E35EF781BD935E3008499C8 /* Crashlytics.framework */,
 				7E5585DD1BD3FB390028D9FD /* JSM.png */,
 				7E2045941BCAF95A00A03F11 /* Credits.rtf */,
 				7E7451741BC9D20600FB1069 /* SwiftHTTP */,
@@ -256,7 +248,6 @@
 				7E7BA5EC1B89DA5200C73DA0 /* Frameworks */,
 				7E7BA5ED1B89DA5200C73DA0 /* Resources */,
 				7E0FCBEE1B957B3800403E57 /* Embed Frameworks */,
-				7E35EF761BD935C7008499C8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -331,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */,
-				7E7BA5FC1B89DA5200C73DA0 /* Main.storyboard in Resources */,
+				7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */,
 				7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */,
 				7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */,
 				7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */,
@@ -346,22 +337,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7E35EF761BD935C7008499C8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run d0c3a8527715510b9c67b420c9fa48fdce71fe7c 3f8bacad9986f302c774e77b5a2044cfddcc90e58037652bc41d66ec682fe181";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E7BA5EB1B89DA5200C73DA0 /* Sources */ = {
@@ -406,17 +381,6 @@
 			targetProxy = 7E7BA6021B89DA5200C73DA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		7E7BA5FA1B89DA5200C73DA0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E7BA5FB1B89DA5200C73DA0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7E7BA6091B89DA5200C73DA0 /* Debug */ = {

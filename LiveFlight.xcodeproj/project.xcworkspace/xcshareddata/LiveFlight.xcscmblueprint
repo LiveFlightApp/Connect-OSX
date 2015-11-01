@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BC2670E18992FD8F65B0857F9F403780F58342B7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BC2670E18992FD8F65B0857F9F403780F58342B7" : 0,
+    "E927118175B406BA97482F6E559E9F24FC1101D6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "20201EAB-DCDD-4212-B3A9-A220C1FE8F2A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BC2670E18992FD8F65B0857F9F403780F58342B7" : "src\/",
+    "E927118175B406BA97482F6E559E9F24FC1101D6" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LiveFlight",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LiveFlight.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LiveFlightApp\/Connect-OSX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BC2670E18992FD8F65B0857F9F403780F58342B7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/carmichaelalonso\/LiveFlight.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E927118175B406BA97482F6E559E9F24FC1101D6"
+    }
+  ]
+}
