@@ -7,8 +7,6 @@
 //
 
 import Cocoa
-import Fabric
-import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate {
@@ -123,7 +121,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         receiver = UDPReceiver()
         receiver.startUDPListener()
 
-        Fabric.with([Crashlytics.self()])
         
     }
 
