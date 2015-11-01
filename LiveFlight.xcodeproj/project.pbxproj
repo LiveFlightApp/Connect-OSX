@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; settings = {ASSET_TAGS = (); }; };
+		7E35EF791BD935E3008499C8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35EF771BD935E3008499C8 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		7E35EF7A1BD935E4008499C8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35EF781BD935E3008499C8 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
+		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; settings = {ASSET_TAGS = (); }; };
+		7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5585DD1BD3FB390028D9FD /* JSM.png */; settings = {ASSET_TAGS = (); }; };
+		7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */; };
+		7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */; settings = {ASSET_TAGS = (); }; };
+		7E7451701BC9D20000FB1069 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516A1BC9D20000FB1069 /* Operation.swift */; settings = {ASSET_TAGS = (); }; };
+		7E7451711BC9D20000FB1069 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516B1BC9D20000FB1069 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
+		7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516C1BC9D20000FB1069 /* StatusCode.swift */; settings = {ASSET_TAGS = (); }; };
+		7E7451731BC9D20000FB1069 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516E1BC9D20000FB1069 /* Upload.swift */; settings = {ASSET_TAGS = (); }; };
+		7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */; };
+		7E7BA5F71B89DA5200C73DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */; };
+		7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */; };
+		7E7BA5FC1B89DA5200C73DA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5FA1B89DA5200C73DA0 /* Main.storyboard */; };
+		7E7BA6081B89DA5200C73DA0 /* LiveFlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */; };
+		7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6141B8A60FC00C73DA0 /* Joystick.m */; };
+		7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */; };
+		7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */; };
+		7E80A4021BC6B8F900CF70FA /* APICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4011BC6B8F900CF70FA /* APICall.m */; settings = {ASSET_TAGS = (); }; };
+		7E80A4051BC6B94100CF70FA /* CallParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4041BC6B94100CF70FA /* CallParameter.m */; settings = {ASSET_TAGS = (); }; };
+		7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
+		7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */; settings = {ASSET_TAGS = (); }; };
+		7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7E898E131B936AFD00208F54 /* RoundedIcon.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E7BA6021B89DA5200C73DA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7BA5E71B89DA5200C73DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E7BA5EE1B89DA5200C73DA0;
+			remoteInfo = LiveFlight;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E0FCBEE1B957B3800403E57 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
+		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		7E35EF771BD935E3008499C8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		7E35EF781BD935E3008499C8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPadViewController.h; sourceTree = "<group>"; };
+		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPadViewController.m; sourceTree = "<group>"; };
+		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPad.h; sourceTree = "<group>"; };
+		7E5585DA1BD2CDF20028D9FD /* ControlPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPad.m; sourceTree = "<group>"; };
+		7E5585DD1BD3FB390028D9FD /* JSM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JSM.png; sourceTree = "<group>"; };
+		7E62A56F1B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteFlightAPIConnector.h; sourceTree = "<group>"; };
+		7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteFlightAPIConnector.m; sourceTree = "<group>"; };
+		7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSecurity.swift; sourceTree = "<group>"; };
+		7E74516A1BC9D20000FB1069 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		7E74516B1BC9D20000FB1069 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7E74516C1BC9D20000FB1069 /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		7E74516D1BC9D20000FB1069 /* SwiftHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftHTTP.h; sourceTree = "<group>"; };
+		7E74516E1BC9D20000FB1069 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		7E7BA5EF1B89DA5200C73DA0 /* LiveFlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveFlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7BA5F31B89DA5200C73DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7E7BA5FB1B89DA5200C73DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveFlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7BA6061B89DA5200C73DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFlightTests.swift; sourceTree = "<group>"; };
+		7E7BA6111B8A60FA00C73DA0 /* LiveFlight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveFlight-Bridging-Header.h"; sourceTree = "<group>"; };
+		7E7BA6131B8A60FC00C73DA0 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
+		7E7BA6141B8A60FC00C73DA0 /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
+		7E7BA6151B8A60FC00C73DA0 /* JoystickHatswitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickHatswitch.h; sourceTree = "<group>"; };
+		7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickHatswitch.m; sourceTree = "<group>"; };
+		7E7BA6171B8A60FC00C73DA0 /* JoystickNotificationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickNotificationDelegate.h; sourceTree = "<group>"; };
+		7E7BA6181B8A60FC00C73DA0 /* JoystickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickManager.h; sourceTree = "<group>"; };
+		7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickManager.m; sourceTree = "<group>"; };
+		7E80A4001BC6B8F900CF70FA /* APICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APICall.h; sourceTree = "<group>"; };
+		7E80A4011BC6B8F900CF70FA /* APICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APICall.m; sourceTree = "<group>"; };
+		7E80A4031BC6B94100CF70FA /* CallParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallParameter.h; sourceTree = "<group>"; };
+		7E80A4041BC6B94100CF70FA /* CallParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallParameter.m; sourceTree = "<group>"; };
+		7E80A4061BC6BE5100CF70FA /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		7E80A4091BC6C19E00CF70FA /* UDPReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPReceiver.h; sourceTree = "<group>"; };
+		7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPReceiver.m; sourceTree = "<group>"; };
+		7E898E131B936AFD00208F54 /* RoundedIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RoundedIcon.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E7BA5EC1B89DA5200C73DA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E35EF7A1BD935E4008499C8 /* Crashlytics.framework in Frameworks */,
+				7E35EF791BD935E3008499C8 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E7BA5FE1B89DA5200C73DA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E5585D81BD2CD8F0028D9FD /* Infinite Flight Connect */ = {
+			isa = PBXGroup;
+			children = (
+				7E80A4001BC6B8F900CF70FA /* APICall.h */,
+				7E80A4011BC6B8F900CF70FA /* APICall.m */,
+				7E80A4031BC6B94100CF70FA /* CallParameter.h */,
+				7E80A4041BC6B94100CF70FA /* CallParameter.m */,
+				7E7451671BC9D1E400FB1069 /* GCDAsyncUDPSocket */,
+				7E62A56F1B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.h */,
+				7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */,
+				7E80A4091BC6C19E00CF70FA /* UDPReceiver.h */,
+				7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */,
+			);
+			name = "Infinite Flight Connect";
+			sourceTree = "<group>";
+		};
+		7E5585DC1BD2CDF50028D9FD /* ControlPad */ = {
+			isa = PBXGroup;
+			children = (
+				7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */,
+				7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */,
+				7E5585D91BD2CDF20028D9FD /* ControlPad.h */,
+				7E5585DA1BD2CDF20028D9FD /* ControlPad.m */,
+			);
+			name = ControlPad;
+			sourceTree = "<group>";
+		};
+		7E7451671BC9D1E400FB1069 /* GCDAsyncUDPSocket */ = {
+			isa = PBXGroup;
+			children = (
+				7E80A4061BC6BE5100CF70FA /* GCDAsyncUdpSocket.h */,
+				7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */,
+			);
+			name = GCDAsyncUDPSocket;
+			sourceTree = "<group>";
+		};
+		7E7451741BC9D20600FB1069 /* SwiftHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */,
+				7E74516A1BC9D20000FB1069 /* Operation.swift */,
+				7E74516B1BC9D20000FB1069 /* Request.swift */,
+				7E74516C1BC9D20000FB1069 /* StatusCode.swift */,
+				7E74516D1BC9D20000FB1069 /* SwiftHTTP.h */,
+				7E74516E1BC9D20000FB1069 /* Upload.swift */,
+			);
+			name = SwiftHTTP;
+			sourceTree = "<group>";
+		};
+		7E7BA5E61B89DA5200C73DA0 = {
+			isa = PBXGroup;
+			children = (
+				7E7BA5F11B89DA5200C73DA0 /* LiveFlight */,
+				7E7BA6041B89DA5200C73DA0 /* LiveFlightTests */,
+				7E7BA5F01B89DA5200C73DA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E7BA5F01B89DA5200C73DA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA5EF1B89DA5200C73DA0 /* LiveFlight.app */,
+				7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E7BA5F11B89DA5200C73DA0 /* LiveFlight */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */,
+				7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */,
+				7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */,
+				7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */,
+				7E7BA5FA1B89DA5200C73DA0 /* Main.storyboard */,
+				7E7BA6131B8A60FC00C73DA0 /* Joystick.h */,
+				7E7BA6141B8A60FC00C73DA0 /* Joystick.m */,
+				7E7BA6151B8A60FC00C73DA0 /* JoystickHatswitch.h */,
+				7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */,
+				7E7BA6171B8A60FC00C73DA0 /* JoystickNotificationDelegate.h */,
+				7E7BA6181B8A60FC00C73DA0 /* JoystickManager.h */,
+				7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */,
+				7E5585DC1BD2CDF50028D9FD /* ControlPad */,
+				7E5585D81BD2CD8F0028D9FD /* Infinite Flight Connect */,
+				7E7BA5F21B89DA5200C73DA0 /* Supporting Files */,
+				7E7BA6111B8A60FA00C73DA0 /* LiveFlight-Bridging-Header.h */,
+			);
+			path = LiveFlight;
+			sourceTree = "<group>";
+		};
+		7E7BA5F21B89DA5200C73DA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E35EF771BD935E3008499C8 /* Fabric.framework */,
+				7E35EF781BD935E3008499C8 /* Crashlytics.framework */,
+				7E5585DD1BD3FB390028D9FD /* JSM.png */,
+				7E2045941BCAF95A00A03F11 /* Credits.rtf */,
+				7E7451741BC9D20600FB1069 /* SwiftHTTP */,
+				7E898E131B936AFD00208F54 /* RoundedIcon.icns */,
+				7E7BA5F31B89DA5200C73DA0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E7BA6041B89DA5200C73DA0 /* LiveFlightTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */,
+				7E7BA6051B89DA5200C73DA0 /* Supporting Files */,
+			);
+			path = LiveFlightTests;
+			sourceTree = "<group>";
+		};
+		7E7BA6051B89DA5200C73DA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA6061B89DA5200C73DA0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E7BA5EE1B89DA5200C73DA0 /* LiveFlight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E7BA60B1B89DA5200C73DA0 /* Build configuration list for PBXNativeTarget "LiveFlight" */;
+			buildPhases = (
+				7E7BA5EB1B89DA5200C73DA0 /* Sources */,
+				7E7BA5EC1B89DA5200C73DA0 /* Frameworks */,
+				7E7BA5ED1B89DA5200C73DA0 /* Resources */,
+				7E0FCBEE1B957B3800403E57 /* Embed Frameworks */,
+				7E35EF761BD935C7008499C8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiveFlight;
+			productName = LiveFlight;
+			productReference = 7E7BA5EF1B89DA5200C73DA0 /* LiveFlight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E7BA6001B89DA5200C73DA0 /* LiveFlightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E7BA60E1B89DA5200C73DA0 /* Build configuration list for PBXNativeTarget "LiveFlightTests" */;
+			buildPhases = (
+				7E7BA5FD1B89DA5200C73DA0 /* Sources */,
+				7E7BA5FE1B89DA5200C73DA0 /* Frameworks */,
+				7E7BA5FF1B89DA5200C73DA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E7BA6031B89DA5200C73DA0 /* PBXTargetDependency */,
+			);
+			name = LiveFlightTests;
+			productName = LiveFlightTests;
+			productReference = 7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E7BA5E71B89DA5200C73DA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Cameron Carmichael Alonso";
+				TargetAttributes = {
+					7E7BA5EE1B89DA5200C73DA0 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = DR44D6XSFQ;
+					};
+					7E7BA6001B89DA5200C73DA0 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 7E7BA5EE1B89DA5200C73DA0;
+					};
+				};
+			};
+			buildConfigurationList = 7E7BA5EA1B89DA5200C73DA0 /* Build configuration list for PBXProject "LiveFlight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E7BA5E61B89DA5200C73DA0;
+			productRefGroup = 7E7BA5F01B89DA5200C73DA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E7BA5EE1B89DA5200C73DA0 /* LiveFlight */,
+				7E7BA6001B89DA5200C73DA0 /* LiveFlightTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E7BA5ED1B89DA5200C73DA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */,
+				7E7BA5FC1B89DA5200C73DA0 /* Main.storyboard in Resources */,
+				7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */,
+				7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */,
+				7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E7BA5FF1B89DA5200C73DA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E35EF761BD935C7008499C8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d0c3a8527715510b9c67b420c9fa48fdce71fe7c 3f8bacad9986f302c774e77b5a2044cfddcc90e58037652bc41d66ec682fe181";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E7BA5EB1B89DA5200C73DA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7BA5F71B89DA5200C73DA0 /* ViewController.swift in Sources */,
+				7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */,
+				7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */,
+				7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */,
+				7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */,
+				7E80A4021BC6B8F900CF70FA /* APICall.m in Sources */,
+				7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */,
+				7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */,
+				7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */,
+				7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */,
+				7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */,
+				7E7451701BC9D20000FB1069 /* Operation.swift in Sources */,
+				7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */,
+				7E7451731BC9D20000FB1069 /* Upload.swift in Sources */,
+				7E7451711BC9D20000FB1069 /* Request.swift in Sources */,
+				7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */,
+				7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */,
+				7E80A4051BC6B94100CF70FA /* CallParameter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E7BA5FD1B89DA5200C73DA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7BA6081B89DA5200C73DA0 /* LiveFlightTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E7BA6031B89DA5200C73DA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E7BA5EE1B89DA5200C73DA0 /* LiveFlight */;
+			targetProxy = 7E7BA6021B89DA5200C73DA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E7BA5FA1B89DA5200C73DA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E7BA5FB1B89DA5200C73DA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E7BA6091B89DA5200C73DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7E7BA60A1B89DA5200C73DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7E7BA60C1B89DA5200C73DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = LiveFlight/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liveflight.connect.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveFlight/LiveFlight-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7E7BA60D1B89DA5200C73DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = LiveFlight/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liveflight.connect.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveFlight/LiveFlight-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		7E7BA60F1B89DA5200C73DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LiveFlightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carmalonso.mac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiveFlight.app/Contents/MacOS/LiveFlight";
+			};
+			name = Debug;
+		};
+		7E7BA6101B89DA5200C73DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LiveFlightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carmalonso.mac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiveFlight.app/Contents/MacOS/LiveFlight";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E7BA5EA1B89DA5200C73DA0 /* Build configuration list for PBXProject "LiveFlight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E7BA6091B89DA5200C73DA0 /* Debug */,
+				7E7BA60A1B89DA5200C73DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E7BA60B1B89DA5200C73DA0 /* Build configuration list for PBXNativeTarget "LiveFlight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E7BA60C1B89DA5200C73DA0 /* Debug */,
+				7E7BA60D1B89DA5200C73DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E7BA60E1B89DA5200C73DA0 /* Build configuration list for PBXNativeTarget "LiveFlightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E7BA60F1B89DA5200C73DA0 /* Debug */,
+				7E7BA6101B89DA5200C73DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E7BA5E71B89DA5200C73DA0 /* Project object */;
+}
