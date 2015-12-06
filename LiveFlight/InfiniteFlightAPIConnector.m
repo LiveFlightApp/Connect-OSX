@@ -36,14 +36,8 @@ NSOutputStream *outputStream;
     
     lastSend = [NSDate date];
     
-    //setup status fetcher
-    while (true)
-    {
-        
-        [self sendWithString:@"Airplane.GetState" params:[NSArray array]];
-        sleep(2000);
-        
-    }
+    //send notification to hide loading view
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionStarted" object:nil];
     
     return;
     
@@ -156,8 +150,11 @@ NSOutputStream *outputStream;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //calculate time since last packet sent
         double timePassed = [lastSend timeIntervalSinceNow] * -1000.0;
+        double timeToPass = 0;
         
-        if (timePassed > 20) {
+        //TODO - only ignore joystick movements where they're similar; don't ignore other calls.
+        
+        if (timePassed > timeToPass) {
             
             //been longer than 20ms, send with less risk of overloading server
             
