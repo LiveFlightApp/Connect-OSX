@@ -26,6 +26,7 @@ Licenses
 This project uses:
  * https://github.com/robbiehanson/CocoaAsyncSocket
  * https://github.com/daltoniam/SwiftHTTP
+ * https://github.com/ashleymills/Reachability.swift
  
  
 LiveFlight Connect License
