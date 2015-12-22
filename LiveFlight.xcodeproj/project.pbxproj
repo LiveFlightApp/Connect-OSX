@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; settings = {ASSET_TAGS = (); }; };
-		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; settings = {ASSET_TAGS = (); }; };
-		7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5585DD1BD3FB390028D9FD /* JSM.png */; settings = {ASSET_TAGS = (); }; };
+		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; };
+		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; };
+		7E3F75111C2A075B00B4A8F3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F75101C2A075B00B4A8F3 /* Reachability.swift */; };
+		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; };
+		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; };
+		7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5585DD1BD3FB390028D9FD /* JSM.png */; };
 		7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */; };
-		7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */; settings = {ASSET_TAGS = (); }; };
-		7E7451701BC9D20000FB1069 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516A1BC9D20000FB1069 /* Operation.swift */; settings = {ASSET_TAGS = (); }; };
-		7E7451711BC9D20000FB1069 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516B1BC9D20000FB1069 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
-		7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516C1BC9D20000FB1069 /* StatusCode.swift */; settings = {ASSET_TAGS = (); }; };
-		7E7451731BC9D20000FB1069 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516E1BC9D20000FB1069 /* Upload.swift */; settings = {ASSET_TAGS = (); }; };
+		7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */; };
+		7E7451701BC9D20000FB1069 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516A1BC9D20000FB1069 /* Operation.swift */; };
+		7E7451711BC9D20000FB1069 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516B1BC9D20000FB1069 /* Request.swift */; };
+		7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516C1BC9D20000FB1069 /* StatusCode.swift */; };
+		7E7451731BC9D20000FB1069 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516E1BC9D20000FB1069 /* Upload.swift */; };
 		7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */; };
 		7E7BA5F71B89DA5200C73DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */; };
 		7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */; };
@@ -25,12 +26,12 @@
 		7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6141B8A60FC00C73DA0 /* Joystick.m */; };
 		7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */; };
 		7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */; };
-		7E80A4021BC6B8F900CF70FA /* APICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4011BC6B8F900CF70FA /* APICall.m */; settings = {ASSET_TAGS = (); }; };
-		7E80A4051BC6B94100CF70FA /* CallParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4041BC6B94100CF70FA /* CallParameter.m */; settings = {ASSET_TAGS = (); }; };
-		7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
-		7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */; settings = {ASSET_TAGS = (); }; };
+		7E80A4021BC6B8F900CF70FA /* APICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4011BC6B8F900CF70FA /* APICall.m */; };
+		7E80A4051BC6B94100CF70FA /* CallParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4041BC6B94100CF70FA /* CallParameter.m */; };
+		7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */; };
+		7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */; };
 		7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7E898E131B936AFD00208F54 /* RoundedIcon.icns */; };
-		7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		7E3F75101C2A075B00B4A8F3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Classes/Reachability.swift; sourceTree = "<group>"; };
 		7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPadViewController.h; sourceTree = "<group>"; };
 		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPadViewController.m; sourceTree = "<group>"; };
 		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPad.h; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				7E7451741BC9D20600FB1069 /* SwiftHTTP */,
 				7E898E131B936AFD00208F54 /* RoundedIcon.icns */,
 				7E7BA5F31B89DA5200C73DA0 /* Info.plist */,
+				7E3F75101C2A075B00B4A8F3 /* Reachability.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			files = (
 				7E7BA5F71B89DA5200C73DA0 /* ViewController.swift in Sources */,
 				7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */,
+				7E3F75111C2A075B00B4A8F3 /* Reachability.swift in Sources */,
 				7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */,
 				7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */,
 				7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */,

@@ -12,9 +12,10 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    var reachability: Reachability?
     var receiver = UDPReceiver()
     public var connector = InfiniteFlightAPIConnector()
-
+    
     //joystick values
     var rollValue = 0;
     var pitchValue = 0;
@@ -28,6 +29,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        //setup Reachability
+        do {
+            reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
+        } catch ReachabilityError.FailedToCreateWithAddress(let address) {
+            NSLog("Can't connect to LiveFlight")
+            return
+        } catch {}
         
 
         //output to file
@@ -59,56 +68,64 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
         
         
-        //fetch versioning json
-        let url = NSURL(string: "http://connect.liveflightapp.com/config/config.json")
-        let request = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 60)
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            
-            do {
-                if let response:NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
-                    
-                    let results: NSArray = response["mac"] as! NSArray
+        if reachability?.isReachable() == true {
 
-                    //sort so highest version is at top
-                    let descriptor: NSSortDescriptor = NSSortDescriptor(key: "version", ascending: false)
-                    let sortedResults: NSArray = results.sortedArrayUsingDescriptors([descriptor])
-                    
-                    if let log = sortedResults[0]["log"] {
-                        if let versionNumber = sortedResults[0]["version"] {
-                            
-                            
-                            NSLog("Current version: \(bundleVersion)")
-                            NSLog("Newest version: \(versionNumber!) - \(log!)")
-                            
-                            //compare this version number to bundle version
-                            
-                            NSUserDefaults.standardUserDefaults().setValue(log, forKey: "nextLog")
-                            NSUserDefaults.standardUserDefaults().setDouble(Double(versionNumber as! NSNumber), forKey: "nextVersion")
-                            
-                            if (Double(versionNumber as! NSNumber) > Double(bundleVersion)) {
-              
-                                
-                                //new version exists, present update dialog
-                                NSLog("New version available!\n\n")
-                                NSNotificationCenter.defaultCenter().postNotificationName("updateAvailable", object: sortedResults[0])
+            NSLog("Checking versions...")
+            
+            //fetch versioning json
+            let url = NSURL(string: "http://connect.liveflightapp.com/config/config.json")
+            let request = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 60)
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+                
+                do {
+                    if let response:NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
+                        
+                        let results: NSArray = response["mac"] as! NSArray
+
+                        //sort so highest version is at top
+                        let descriptor: NSSortDescriptor = NSSortDescriptor(key: "version", ascending: false)
+                        let sortedResults: NSArray = results.sortedArrayUsingDescriptors([descriptor])
+                        
+                        if let log = sortedResults[0]["log"] {
+                            if let versionNumber = sortedResults[0]["version"] {
                                 
                                 
-                            } else {
+                                NSLog("Current version: \(bundleVersion)")
+                                NSLog("Newest version: \(versionNumber!) - \(log!)")
                                 
-                                NSLog("Up to date\n\n")
+                                //compare this version number to bundle version
                                 
+                                NSUserDefaults.standardUserDefaults().setValue(log, forKey: "nextLog")
+                                NSUserDefaults.standardUserDefaults().setDouble(Double(versionNumber as! NSNumber), forKey: "nextVersion")
+                                
+                                if (Double(versionNumber as! NSNumber) > Double(bundleVersion)) {
+                  
+                                    
+                                    //new version exists, present update dialog
+                                    NSLog("New version available!\n\n")
+                                    NSNotificationCenter.defaultCenter().postNotificationName("updateAvailable", object: sortedResults[0])
+                                    
+                                    
+                                } else {
+                                    
+                                    NSLog("Up to date\n\n")
+                                    
+                                }
                             }
                         }
+                        
+                    } else {
+                        NSLog("Failed to parse JSON")
                     }
-                    
-                } else {
-                    NSLog("Failed to parse JSON")
+                } catch let serializationError as NSError {
+                    NSLog(String(serializationError))
                 }
-            } catch let serializationError as NSError {
-                NSLog(String(serializationError))
+                
             }
             
+        } else {
+            NSLog("Can't connect to the internet, sorry.")
         }
 
         NSLog("\n\n")
