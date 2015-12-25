@@ -12,7 +12,6 @@
 		7E3F75111C2A075B00B4A8F3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F75101C2A075B00B4A8F3 /* Reachability.swift */; };
 		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; };
 		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; };
-		7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5585DD1BD3FB390028D9FD /* JSM.png */; };
 		7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */; };
 		7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */; };
 		7E7451701BC9D20000FB1069 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516A1BC9D20000FB1069 /* Operation.swift */; };
@@ -65,7 +64,6 @@
 		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPadViewController.m; sourceTree = "<group>"; };
 		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPad.h; sourceTree = "<group>"; };
 		7E5585DA1BD2CDF20028D9FD /* ControlPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPad.m; sourceTree = "<group>"; };
-		7E5585DD1BD3FB390028D9FD /* JSM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JSM.png; sourceTree = "<group>"; };
 		7E62A56F1B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteFlightAPIConnector.h; sourceTree = "<group>"; };
 		7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteFlightAPIConnector.m; sourceTree = "<group>"; };
 		7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSecurity.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 		7E7BA5F21B89DA5200C73DA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7E5585DD1BD3FB390028D9FD /* JSM.png */,
 				7E2045941BCAF95A00A03F11 /* Credits.rtf */,
 				7E7451741BC9D20600FB1069 /* SwiftHTTP */,
 				7E898E131B936AFD00208F54 /* RoundedIcon.icns */,
@@ -326,7 +323,6 @@
 			files = (
 				7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */,
 				7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */,
-				7E5585DE1BD3FB390028D9FD /* JSM.png in Resources */,
 				7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */,
 				7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */,
 			);

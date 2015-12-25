@@ -115,7 +115,6 @@
                         <tabViewItem label="Main" identifier="" image="AppIcon" id="7Ua-0W-3Je"/>
                         <tabViewItem label="Joystick" identifier="" id="JBT-pP-HOq"/>
                         <tabViewItem label="Keyboard" identifier="" id="o6d-IZ-u7U"/>
-                        <tabViewItem label="Help" id="nzm-iy-VWj"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="9Zh-wd-ryL">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
@@ -127,31 +126,11 @@
                         <segue destination="JqP-a7-f56" kind="relationship" relationship="tabItems" id="goT-oR-auF"/>
                         <segue destination="yz8-8L-7HY" kind="relationship" relationship="tabItems" id="L7D-xX-0ia"/>
                         <segue destination="kIm-c6-ghD" kind="relationship" relationship="tabItems" id="vRz-Ij-gXl"/>
-                        <segue destination="mfn-Fc-6VJ" kind="relationship" relationship="tabItems" id="vcU-sm-LRK"/>
                     </connections>
                 </tabViewController>
                 <customObject id="4qE-8o-miT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="701"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5k7-X7-B3C">
-            <objects>
-                <viewController id="mfn-Fc-6VJ" sceneMemberID="viewController">
-                    <view key="view" id="t6z-ed-FKT">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kuv-J3-qjC">
-                                <rect key="frame" x="-412" y="-43" width="842" height="461"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="JSM" id="qdQ-RQ-Hsw"/>
-                            </imageView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="Uw0-Ir-Le9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="74" y="1254"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="I75-pD-g5N">
@@ -489,6 +468,5 @@
     </scenes>
     <resources>
         <image name="AppIcon" width="512" height="512"/>
-        <image name="JSM" width="1260" height="617"/>
     </resources>
 </document>
