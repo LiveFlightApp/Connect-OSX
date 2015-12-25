@@ -52,6 +52,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EA3C8271C2E0D9B00B6C5AC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -246,6 +255,7 @@
 				7E7BA5EC1B89DA5200C73DA0 /* Frameworks */,
 				7E7BA5ED1B89DA5200C73DA0 /* Resources */,
 				7E0FCBEE1B957B3800403E57 /* Embed Frameworks */,
+				7EA3C8271C2E0D9B00B6C5AC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -469,6 +479,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LiveFlight",
+					"$(PROJECT_DIR)/LiveFlight/DevMateKit.framework/Frameworks/**",
 				);
 				INFOPLIST_FILE = LiveFlight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -488,6 +500,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LiveFlight",
+					"$(PROJECT_DIR)/LiveFlight/DevMateKit.framework/Frameworks/**",
 				);
 				INFOPLIST_FILE = LiveFlight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

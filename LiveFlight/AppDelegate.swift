@@ -44,6 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
+        
         //setup Reachability
         do {
             reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
@@ -92,7 +93,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryThrottle:", name:"tryThrottle", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
         
-        
+
         if reachability?.isReachable() == true {
 
             NSLog("Checking versions...")
@@ -148,6 +149,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
                 }
                 
             }
+            
             
         } else {
             NSLog("Can't connect to the internet, sorry.")
