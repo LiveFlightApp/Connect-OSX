@@ -117,11 +117,12 @@ NSOutputStream *outputStream;
     NSLog(@"Reading: %@", s);
 }
 
--(void)sendWithString:(NSString *)string params:(NSArray *)params {
+-(void)sendWithString:(NSString *)string params:(NSArray *)params isJoystick:(BOOL)isJoystick {
     
     if (params == nil) {
         params = [NSArray array];
     }
+    
     NSData *arrayData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
     NSString *arrayString = [[NSString alloc] initWithData:arrayData encoding:NSUTF8StringEncoding];
     
@@ -150,29 +151,41 @@ NSOutputStream *outputStream;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //calculate time since last packet sent
         double timePassed = [lastSend timeIntervalSinceNow] * -1000.0;
-        double timeToPass = 0;
+        double timeToPass = 20;
         
-        //TODO - only ignore joystick movements where they're similar; don't ignore other calls.
-        
-        if (timePassed > timeToPass) {
+        //check if is joystick command
+        if (isJoystick == true) {
+            //joystick command - time check enabled
             
-            //been longer than 20ms, send with less risk of overloading server
-            
-            NSInteger sent = [outputStream write:result.bytes maxLength:result.length];
-            NSLog(@"Write result: %ld", (long)sent);
-            if (sent == -1) {
-                //error. probably disconnected
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"tcpError" object:nil];
+            if (timePassed > timeToPass) {
+                
+                //been longer than 20ms, send with less risk of overloading server
+                [self writeResult:result];
+                
+            } else {
+                NSLog(@"Ignoring packet, too soon since previous...");
             }
-            
+                
         } else {
-            //NSLog(@"Ignoring packet, too soon since previous...");
+            //standard button, time check disabled
+            [self writeResult:result];
         }
         
         lastSend = [NSDate date];
         
     });
 
+}
+
+-(void)writeResult:(NSMutableData *)result {
+    
+    NSInteger sent = [outputStream write:result.bytes maxLength:result.length];
+    NSLog(@"Write result: %ld", (long)sent);
+    if (sent == -1) {
+        //error. probably disconnected
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"tcpError" object:nil];
+    }
+    
 }
 
 
@@ -186,7 +199,7 @@ NSOutputStream *outputStream;
     
     NSArray *params = [NSArray arrayWithObjects:json, nil];
     
-    [self sendWithString:@"NetworkJoystick.SetAxisValue" params:params];
+    [self sendWithString:@"NetworkJoystick.SetAxisValue" params:params isJoystick:true];
     
 }
 
@@ -205,7 +218,7 @@ NSOutputStream *outputStream;
     
     NSArray *params = [NSArray arrayWithObjects:json, nil];
     
-    [self sendWithString:@"NetworkJoystick.SetButtonState" params:params];
+    [self sendWithString:@"NetworkJoystick.SetButtonState" params:params isJoystick:false];
     
     
 }
@@ -213,51 +226,51 @@ NSOutputStream *outputStream;
 #pragma mark commands
 
 -(void)previousCamera {
-    [self sendWithString:@"Commands.PrevCamera" params:nil];
+    [self sendWithString:@"Commands.PrevCamera" params:nil isJoystick:false];
 }
 
 -(void)nextCamera {
-    [self sendWithString:@"Commands.NextCamera" params:nil];
+    [self sendWithString:@"Commands.NextCamera" params:nil isJoystick:false];
 }
 
 -(void)cockpitCamera {
-    [self sendWithString:@"Commands.SetCockpitCamera" params:nil];
+    [self sendWithString:@"Commands.SetCockpitCamera" params:nil isJoystick:false];
 }
 
 -(void)vcCamera {
-    [self sendWithString:@"Commands.SetVirtualCockpitCameraCommand" params:nil];
+    [self sendWithString:@"Commands.SetVirtualCockpitCameraCommand" params:nil isJoystick:false];
 }
 
 -(void)followCamera{
-    [self sendWithString:@"Commands.SetFollowCameraCommand" params:nil];
+    [self sendWithString:@"Commands.SetFollowCameraCommand" params:nil isJoystick:false];
 }
 
 -(void)onboardCamera {
-    [self sendWithString:@"Commands.SetOnboardCameraCommand" params:nil];
+    [self sendWithString:@"Commands.SetOnboardCameraCommand" params:nil isJoystick:false];
 }
 
 -(void)towerCamera {
-    [self sendWithString:@"Commands.SetTowerCameraCommand" params:nil];
+    [self sendWithString:@"Commands.SetTowerCameraCommand" params:nil isJoystick:false];
 }
 
 -(void)flybyCamera {
-    [self sendWithString:@"Commands.SetFlybyCamera" params:nil];
+    [self sendWithString:@"Commands.SetFlybyCamera" params:nil isJoystick:false];
 }
 
 -(void)flapsDown {
-     [self sendWithString:@"Commands.FlapsDown" params:nil];
+     [self sendWithString:@"Commands.FlapsDown" params:nil isJoystick:false];
 }
 
 -(void)flapsUp {
-    [self sendWithString:@"Commands.FlapsUp" params:nil];
+    [self sendWithString:@"Commands.FlapsUp" params:nil isJoystick:false];
 }
 
 -(void)landingGear {
-    [self sendWithString:@"Commands.LandingGear" params:nil];
+    [self sendWithString:@"Commands.LandingGear" params:nil isJoystick:false];
 }
 
 -(void)spoilers {
-    [self sendWithString:@"Commands.Spoilers" params:nil];
+    [self sendWithString:@"Commands.Spoilers" params:nil isJoystick:false];
 }
 
 /*
@@ -310,112 +323,112 @@ NSOutputStream *outputStream;
 */
 
 -(void)reverseThrust {
-    [self sendWithString:@"Commands.ReverseThrust" params:nil];
+    [self sendWithString:@"Commands.ReverseThrust" params:nil isJoystick:false];
 }
 
 -(void)autopilot {
-    [self sendWithString:@"Commands.Autopilot.Toggle" params:nil];
+    [self sendWithString:@"Commands.Autopilot.Toggle" params:nil isJoystick:false];
 }
 
 -(void)hud {
-    [self sendWithString:@"Commands.ToggleHUD" params:nil];
+    [self sendWithString:@"Commands.ToggleHUD" params:nil isJoystick:false];
 }
 
 -(void)parkingBrakes {
-    [self sendWithString:@"Commands.ParkingBrakes" params:nil];
+    [self sendWithString:@"Commands.ParkingBrakes" params:nil isJoystick:false];
 }
 
 -(void)togglePause {
-    [self sendWithString:@"Commands.TogglePause" params:nil];
+    [self sendWithString:@"Commands.TogglePause" params:nil isJoystick:false];
 }
 
 -(void)pushback {
-    [self sendWithString:@"Commands.Pushback" params:nil];
+    [self sendWithString:@"Commands.Pushback" params:nil isJoystick:false];
 }
 
 -(void)trimUp {
-    [self sendWithString:@"Commands.ElevatorTrimUp" params:nil];
+    [self sendWithString:@"Commands.ElevatorTrimUp" params:nil isJoystick:false];
 }
 
 -(void)trimDown {
-    [self sendWithString:@"Commands.ElevatorTrimDown" params:nil];
+    [self sendWithString:@"Commands.ElevatorTrimDown" params:nil isJoystick:false];
 }
 
 -(void)atcMenu {
-    [self sendWithString:@"Commands.ShowATCWindowCommand" params:nil];
+    [self sendWithString:@"Commands.ShowATCWindowCommand" params:nil isJoystick:false];
 }
 
 -(void)landing {
-    [self sendWithString:@"Commands.LandingLights" params:nil];
+    [self sendWithString:@"Commands.LandingLights" params:nil isJoystick:false];
 }
 
 -(void)nav {
-    [self sendWithString:@"Commands.NavLights" params:nil];
+    [self sendWithString:@"Commands.NavLights" params:nil isJoystick:false];
 }
 
 -(void)strobe {
-    [self sendWithString:@"Commands.StrobeLights" params:nil];
+    [self sendWithString:@"Commands.StrobeLights" params:nil isJoystick:false];
 }
 
 -(void)beacon {
-    [self sendWithString:@"Commands.BeaconLights" params:nil];
+    [self sendWithString:@"Commands.BeaconLights" params:nil isJoystick:false];
 }
 
 -(void)atc1 {
-    [self sendWithString:@"Commands.ATCEntry1" params:nil];
+    [self sendWithString:@"Commands.ATCEntry1" params:nil isJoystick:false];
 }
 
 -(void)atc2 {
-    [self sendWithString:@"Commands.ATCEntry2" params:nil];
+    [self sendWithString:@"Commands.ATCEntry2" params:nil isJoystick:false];
 }
 
 
 -(void)atc3 {
-    [self sendWithString:@"Commands.ATCEntry3" params:nil];
+    [self sendWithString:@"Commands.ATCEntry3" params:nil isJoystick:false];
 }
 
 
 -(void)atc4 {
-    [self sendWithString:@"Commands.ATCEntry4" params:nil];
+    [self sendWithString:@"Commands.ATCEntry4" params:nil isJoystick:false];
 }
 
 
 -(void)atc5 {
-    [self sendWithString:@"Commands.ATCEntry5" params:nil];
+    [self sendWithString:@"Commands.ATCEntry5" params:nil isJoystick:false];
 }
 
 
 -(void)atc6 {
-    [self sendWithString:@"Commands.ATCEntry6" params:nil];
+    [self sendWithString:@"Commands.ATCEntry6" params:nil isJoystick:false];
 }
 
 
 -(void)atc7 {
-    [self sendWithString:@"Commands.ATCEntry7" params:nil];
+    [self sendWithString:@"Commands.ATCEntry7" params:nil isJoystick:false];
 }
 
 
 -(void)atc8 {
-    [self sendWithString:@"Commands.ATCEntry8" params:nil];
+    [self sendWithString:@"Commands.ATCEntry8" params:nil isJoystick:false];
 }
 
 
 -(void)atc9 {
-    [self sendWithString:@"Commands.ATCEntry9" params:nil];
+    [self sendWithString:@"Commands.ATCEntry9" params:nil isJoystick:false];
 }
 
 
 -(void)atc10 {
-    [self sendWithString:@"Commands.ATCEntry10" params:nil];
+    [self sendWithString:@"Commands.ATCEntry10" params:nil isJoystick:false];
 }
 
 
 -(void)zoomOut {
-    [self sendWithString:@"Commands.CameraZoomOut" params:nil];
+    [self sendWithString:@"Commands.CameraZoomOut" params:nil isJoystick:false];
 }
 
 -(void)zoomIn {
-    [self sendWithString:@"Commands.CameraZoomIn" params:nil];
+    [self sendWithString:@"Commands.CameraZoomIn" params:nil isJoystick:false];
 }
 
 

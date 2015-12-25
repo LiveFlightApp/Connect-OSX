@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -114,21 +114,18 @@
                     <tabViewItems>
                         <tabViewItem label="Main" identifier="" image="AppIcon" id="7Ua-0W-3Je"/>
                         <tabViewItem label="Joystick" identifier="" id="JBT-pP-HOq"/>
-                        <tabViewItem label="Mouse" id="A6E-St-NUZ"/>
                         <tabViewItem label="Keyboard" identifier="" id="o6d-IZ-u7U"/>
                         <tabViewItem label="Help" id="nzm-iy-VWj"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="9Zh-wd-ryL">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
                     </tabView>
                     <connections>
                         <segue destination="JqP-a7-f56" kind="relationship" relationship="tabItems" id="goT-oR-auF"/>
                         <segue destination="yz8-8L-7HY" kind="relationship" relationship="tabItems" id="L7D-xX-0ia"/>
-                        <segue destination="j2L-GD-kez" kind="relationship" relationship="tabItems" id="nBj-zo-OC9"/>
                         <segue destination="kIm-c6-ghD" kind="relationship" relationship="tabItems" id="vRz-Ij-gXl"/>
                         <segue destination="mfn-Fc-6VJ" kind="relationship" relationship="tabItems" id="vcU-sm-LRK"/>
                     </connections>
@@ -147,11 +144,9 @@
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kuv-J3-qjC">
                                 <rect key="frame" x="-412" y="-43" width="842" height="461"/>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="JSM" id="qdQ-RQ-Hsw"/>
                             </imageView>
                         </subviews>
-                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="Uw0-Ir-Le9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -168,7 +163,6 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLT-Tw-niI">
                                 <rect key="frame" x="24" y="54" width="83" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cameras" id="dFt-kd-H9s">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -177,7 +171,6 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RdB-E0-OEv">
                                 <rect key="frame" x="20" y="18" width="36" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tJP-7X-kEC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -188,7 +181,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aat-fw-PNU">
                                 <rect key="frame" x="395" y="18" width="36" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MRt-z7-peB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -199,7 +191,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CGJ-iq-ae4">
                                 <rect key="frame" x="134" y="18" width="87" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="VC" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bAX-X3-p7s">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -210,7 +201,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djB-kU-BsJ">
                                 <rect key="frame" x="221" y="18" width="87" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Follow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B7C-hB-tyl">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -221,7 +211,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aq-Em-K32">
                                 <rect key="frame" x="308" y="18" width="87" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Onboard" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bd0-WC-VfK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -232,7 +221,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-PE-hqC">
                                 <rect key="frame" x="47" y="18" width="87" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Cockpit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sxp-nJ-YIC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -243,7 +231,6 @@
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-T9-5DU">
                                 <rect key="frame" x="126" y="176" width="198" height="25"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connected!" id="c8n-30-ssh">
                                     <font key="font" metaFont="system" size="21"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -255,7 +242,6 @@
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
                                         <rect key="frame" x="71" y="186" width="308" height="39"/>
-                                        <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to Infinite Flight..." id="Ywu-88-EQd">
                                             <font key="font" metaFont="system" size="19"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -264,7 +250,6 @@
                                     </textField>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
                                         <rect key="frame" x="55" y="82" width="341" height="45"/>
-                                        <animations/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Make sure Infinite Flight is running on the same network with &quot;Infinite Flight Connect&quot; enabled." id="MNO-yO-GKm">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -273,13 +258,10 @@
                                     </textField>
                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="45o-gj-XjN">
                                         <rect key="frame" x="209" y="161" width="32" height="32"/>
-                                        <animations/>
                                     </progressIndicator>
                                 </subviews>
-                                <animations/>
                             </customView>
                         </subviews>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="connectingView" destination="sQC-6H-fV5" id="N0i-kZ-tFu"/>
@@ -300,7 +282,6 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XnL-qE-9wC">
                                 <rect key="frame" x="18" y="263" width="77" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pitch" id="9Yt-fW-h7f">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -309,7 +290,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PH-5F-T3k">
                                 <rect key="frame" x="18" y="238" width="77" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Roll" id="xS5-4a-kn0">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -318,7 +298,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZqD-1q-ob6">
                                 <rect key="frame" x="18" y="213" width="77" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Throttle" id="eQ4-vb-H9p">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -327,7 +306,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-kf-SgZ">
                                 <rect key="frame" x="18" y="188" width="77" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Rudder" id="1MB-h2-FGS">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -336,7 +314,6 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNI-cx-CB5">
                                 <rect key="frame" x="95" y="254" width="81" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Assign" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Uph-Xj-3tk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -347,7 +324,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXm-3A-qaI">
                                 <rect key="frame" x="95" y="229" width="81" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Assign" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Dl-GQ-84n">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -358,7 +334,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1NE-hW-spB">
                                 <rect key="frame" x="95" y="204" width="81" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Assign" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OcQ-vg-W7F">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -369,7 +344,6 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNc-zc-FIs">
                                 <rect key="frame" x="95" y="179" width="81" height="32"/>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Assign" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TnY-uc-Oi0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -380,7 +354,6 @@
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHO-q1-OrY">
                                 <rect key="frame" x="18" y="20" width="414" height="139"/>
-                                <animations/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="zEZ-9K-6b6">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">Press Assign, then wiggle the axis around a bit.  In Infinite Flight, go to Settings - Controls, and assign each joystick control to each flight control.  Buttons can be assigned in the second tab, by tapping on the relevant box for a function, followed by tapping the button on the joystick.</string>
@@ -390,7 +363,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ch2-Cd-j3p">
                                 <rect key="frame" x="176" y="263" width="128" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="EcX-ng-hbJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -399,7 +371,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-iK-Cc6">
                                 <rect key="frame" x="176" y="238" width="128" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="ztz-cL-5o0">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -408,7 +379,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-nu-wDF">
                                 <rect key="frame" x="176" y="213" width="128" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="3wj-8o-UJa">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -417,7 +387,6 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-6E-MN4">
                                 <rect key="frame" x="176" y="188" width="128" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="ZmP-P8-dqK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -425,7 +394,6 @@
                                 </textFieldCell>
                             </textField>
                         </subviews>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="pitchLabel" destination="ch2-Cd-j3p" id="io3-ax-Hjs"/>
@@ -449,7 +417,6 @@
                     <tabView key="tabView" type="noTabsNoBorder" id="zD6-fy-KgD">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
                     </tabView>
@@ -472,10 +439,8 @@
                         <subviews>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8P-xX-oLv" customClass="ControlPad">
                                 <rect key="frame" x="97" y="35" width="256" height="256"/>
-                                <animations/>
                             </customView>
                         </subviews>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="controlPad" destination="u8P-xX-oLv" id="S0L-pd-qzh"/>
@@ -492,7 +457,6 @@
                     <view key="view" id="DFU-iE-Rdx">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="PL4-UJ-ybc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -509,7 +473,6 @@
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35W-io-DjI">
                                 <rect key="frame" x="13" y="20" width="424" height="260"/>
-                                <animations/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Keyboard commands:  A - Toggle ATC Window [1-0] - ATC Commands  G - Gear . - Parking Brakes / - Spoilers  More coming soon..." id="an2-cB-Lch">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -517,7 +480,6 @@
                                 </textFieldCell>
                             </textField>
                         </subviews>
-                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="SQM-gH-PCY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
