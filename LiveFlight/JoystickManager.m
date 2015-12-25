@@ -65,10 +65,8 @@ static JoystickManager *instance;
     NSLog(@"Gamepads registered: %lu", joysticks.count);
 
     //TODO - could do some naming here if needed, just give default name until later
-    
     [joystickAddedDelegate joystickAdded:joystick withName:@"Hotas"];
 }
-
 
 
 void gamepadWasRemoved(void* inContext, IOReturn inResult, void* inSender, IOHIDDeviceRef device) {
@@ -77,7 +75,6 @@ void gamepadWasRemoved(void* inContext, IOReturn inResult, void* inSender, IOHID
 
 void gamepadAction(void* inContext, IOReturn inResult, void* inSender, IOHIDValueRef value) {
     
-
     
     IOHIDElementRef element = IOHIDValueGetElement(value);
     IOHIDDeviceRef device = IOHIDElementGetDevice(element);
@@ -104,7 +101,7 @@ void gamepadWasAdded(void* inContext, IOReturn inResult, void* inSender, IOHIDDe
 }
 
 
--(void) setupGamepads {
+-(void)setupGamepads {
     hidManager = IOHIDManagerCreate( kCFAllocatorDefault, kIOHIDOptionsTypeNone);
     
     int usageKeys[] = { kHIDUsage_GD_GamePad,kHIDUsage_GD_Joystick,kHIDUsage_GD_MultiAxisController };
@@ -123,12 +120,11 @@ void gamepadWasAdded(void* inContext, IOReturn inResult, void* inSender, IOHIDDe
     }
     
 	IOHIDManagerSetDeviceMatchingMultiple(hidManager, (__bridge CFArrayRef)criterionSets);
-    //IOHIDManagerSetDeviceMatching(hidManager, (CFDictionaryRef)criterion);
     IOHIDManagerRegisterDeviceMatchingCallback(hidManager, gamepadWasAdded, (__bridge void*)self);
     IOHIDManagerRegisterDeviceRemovalCallback(hidManager, gamepadWasRemoved, (__bridge void*)self);
     IOHIDManagerScheduleWithRunLoop(hidManager, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     IOReturn tIOReturn = IOHIDManagerOpen(hidManager, kIOHIDOptionsTypeNone);
-    (void)tIOReturn; // to suppress warnings
+    (void)tIOReturn;
     
 }
 

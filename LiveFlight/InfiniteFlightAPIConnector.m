@@ -273,55 +273,6 @@ NSOutputStream *outputStream;
     [self sendWithString:@"Commands.Spoilers" params:nil isJoystick:false];
 }
 
-/*
--(void)movePOV(int value)
-{
-    //POV axis
-    var xValue = 0;
-    var yValue = 0;
-    
-    Console.WriteLine(value);
-    
-    if (value == viewUpId)
-    {
-        xValue = 0;
-        yValue = -1;
-    }
-    else if (value == viewDownId)
-    {
-        xValue = 0;
-        yValue = 1;
-    }
-    else if (value == viewLeftId)
-    {
-        xValue = -1;
-        yValue = 0;
-    }
-    else if (value == viewRightId)
-    {
-        xValue = 1;
-        yValue = 0;
-    }
-    
-    Console.WriteLine(xValue + "  " + yValue);
-    
-    client.ExecuteCommand("NetworkJoystick.SetPOVState", new CallParameter[]
-                          {
-                              new CallParameter
-                              {
-                                  Name = "X",
-                                  Value = xValue.ToString()
-                              },
-                              new CallParameter
-                              {
-                                  Name = "Y",
-                                  Value = yValue.ToString()
-                              }
-                          });
-    
-}
-*/
-
 -(void)reverseThrust {
     [self sendWithString:@"Commands.ReverseThrust" params:nil isJoystick:false];
 }

@@ -52,6 +52,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Settings" id="YUm-8X-QMq">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Settings" id="LNW-4f-dgV">
+                                    <items>
+                                        <menuItem title="Enable Logging (restart required)" id="QUf-lS-Umh">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleLogging:" target="Voe-Tx-rLC" id="B9F-IW-a5Z"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
@@ -83,7 +96,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LiveFlight" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect" customModuleProvider="target">
+                    <connections>
+                        <outlet property="logButton" destination="QUf-lS-Umh" id="Tmt-Mv-ekN"/>
+                    </connections>
+                </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74.5" y="-96"/>
@@ -91,8 +108,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="LiveFlight" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="LiveFlight" customModuleProvider="target">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="400" height="400"/>
@@ -135,83 +152,32 @@
         <!--View Controller-->
         <scene sceneID="I75-pD-g5N">
             <objects>
-                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="LiveFlight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="30H-kZ-p24">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLT-Tw-niI">
-                                <rect key="frame" x="24" y="54" width="83" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cameras" id="dFt-kd-H9s">
-                                    <font key="font" metaFont="system"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-T9-5DU">
+                                <rect key="frame" x="126" y="185" width="198" height="25"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connected!" id="c8n-30-ssh">
+                                    <font key="font" metaFont="system" size="21"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RdB-E0-OEv">
-                                <rect key="frame" x="20" y="18" width="36" height="32"/>
-                                <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tJP-7X-kEC">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOp-no-tYj">
+                                <rect key="frame" x="18" y="90" width="87" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Instructions:" id="hut-8y-4lL">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R35-84-L3t">
+                                <rect key="frame" x="18" y="10" width="421" height="75"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="64U-AY-iRI">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="previousCamera:" target="JqP-a7-f56" id="RC1-3e-63P"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aat-fw-PNU">
-                                <rect key="frame" x="395" y="18" width="36" height="32"/>
-                                <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MRt-z7-peB">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="nextCamera:" target="JqP-a7-f56" id="uqN-rf-hgC"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CGJ-iq-ae4">
-                                <rect key="frame" x="134" y="18" width="87" height="32"/>
-                                <buttonCell key="cell" type="push" title="VC" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bAX-X3-p7s">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="vcCamera:" target="JqP-a7-f56" id="2fg-yP-f7N"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djB-kU-BsJ">
-                                <rect key="frame" x="221" y="18" width="87" height="32"/>
-                                <buttonCell key="cell" type="push" title="Follow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B7C-hB-tyl">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="followCamera:" target="JqP-a7-f56" id="qWL-GJ-iDv"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aq-Em-K32">
-                                <rect key="frame" x="308" y="18" width="87" height="32"/>
-                                <buttonCell key="cell" type="push" title="Onboard" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bd0-WC-VfK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onboardCamera:" target="JqP-a7-f56" id="MAR-fQ-zaS"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-PE-hqC">
-                                <rect key="frame" x="47" y="18" width="87" height="32"/>
-                                <buttonCell key="cell" type="push" title="Cockpit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sxp-nJ-YIC">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="cockpitCamera:" target="JqP-a7-f56" id="bXx-cM-N0b"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-T9-5DU">
-                                <rect key="frame" x="126" y="176" width="198" height="25"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connected!" id="c8n-30-ssh">
-                                    <font key="font" metaFont="system" size="21"/>
+                                    <string key="title">1) Go to the Joystick tab (above) and assign each axis.  2) Open Settings (in Infinite Flight), go to the Controls tab, and finish setting up your joystick there.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -254,7 +220,7 @@
         <!--Joystick View Controller-->
         <scene sceneID="GEc-QC-TTA">
             <objects>
-                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="LiveFlight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sG0-Ns-ZYY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet var logButton: NSMenuItem!
     var reachability: Reachability?
     var receiver = UDPReceiver()
     public var connector = InfiniteFlightAPIConnector()
@@ -27,35 +28,59 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     var tryThrottle = false
     var tryRudder = false
     
+    @IBAction func toggleLogging(sender: AnyObject) {
+        //enable/disable logging
+        
+        if logButton.state == 0 {
+            //enable
+            logButton.state = 1
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
+        } else {
+            logButton.state = 0
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
+        }
+        
+    }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
         //setup Reachability
         do {
             reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
-        } catch ReachabilityError.FailedToCreateWithAddress(let address) {
+        } catch ReachabilityError.FailedToCreateWithAddress(let _) {
             NSLog("Can't connect to LiveFlight")
             return
         } catch {}
         
-
-        //output to file
-        let file = "liveflight_log.txt"
-        
-        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-            let path = dir.stringByAppendingPathComponent(file);
+        if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
             
-            //remove old file
-            do {
-                try NSFileManager.defaultManager().removeItemAtPath(path)
+            //output to file
+            let file = "liveflight_log.txt"
+            
+            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+                let path = dir.stringByAppendingPathComponent(file);
+                
+                //remove old file
+                do {
+                    try NSFileManager.defaultManager().removeItemAtPath(path)
+                }
+                catch let error as NSError {
+                    error.description
+                }
+                
+                freopen(path.cStringUsingEncoding(NSASCIIStringEncoding)!, "a+", stderr)
+                
             }
-            catch let error as NSError {
-                error.description
-            }
             
-            //freopen(path.cStringUsingEncoding(NSASCIIStringEncoding)!, "a+", stderr)
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
+            logButton.state = 1;
             
+        } else {
+            
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
+            logButton.state = 0;
         }
+        
         
         let nsObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
         let bundleVersion = nsObject as! String

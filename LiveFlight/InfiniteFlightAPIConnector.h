@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CallParameter.h"
 
 @interface InfiniteFlightAPIConnector:NSObject <NSStreamDelegate> {
 @public

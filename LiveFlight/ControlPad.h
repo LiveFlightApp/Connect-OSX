@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "LiveFlight-Swift.h"
+#import "Connect-Swift.h"
 #import "InfiniteFlightAPIConnector.h"
 
 
