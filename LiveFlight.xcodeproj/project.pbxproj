@@ -67,7 +67,7 @@
 /* Begin PBXFileReference section */
 		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		7E3F75101C2A075B00B4A8F3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Classes/Reachability.swift; sourceTree = "<group>"; };
+		7E3F75101C2A075B00B4A8F3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = libs/Reachability.swift; sourceTree = "<group>"; };
 		7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPadViewController.h; sourceTree = "<group>"; };
 		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPadViewController.m; sourceTree = "<group>"; };
 		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPad.h; sourceTree = "<group>"; };
@@ -152,6 +152,7 @@
 				7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */,
 			);
 			name = GCDAsyncUDPSocket;
+			path = libs;
 			sourceTree = "<group>";
 		};
 		7E7451741BC9D20600FB1069 /* SwiftHTTP */ = {
@@ -165,6 +166,7 @@
 				7E74516E1BC9D20000FB1069 /* Upload.swift */,
 			);
 			name = SwiftHTTP;
+			path = libs;
 			sourceTree = "<group>";
 		};
 		7E7BA5E61B89DA5200C73DA0 = {
