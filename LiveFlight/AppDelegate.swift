@@ -85,10 +85,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         let currentDelaySetup = NSUserDefaults.standardUserDefaults().boolForKey("packetDelaySetup")
         
         if currentDelaySetup == false {
-            //set to 20ms as default
-            NSUserDefaults.standardUserDefaults().setInteger(20, forKey: "packetDelay")
+            //set to 10ms as default
+            NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "packetDelaySetup")
-            packetSpacingButton.title = "Toggle delay between packets (20ms)"
+            packetSpacingButton.title = "Toggle delay between packets (10ms)"
             
         } else {
             packetSpacingButton.title = "Toggle delay between packets (\(currentDelay)ms)"
