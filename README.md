@@ -5,9 +5,10 @@ Uses Infinite Flight Connect, a TCP-based API introduced in version 15.10.0.
 
 Usage
 ------------
-  * Install the latest release version via the "Releases" tab.
-  * Enable Infinite Flight Connect within Infinite Flight, and make sure your device is on the same wifi network as your Mac
-  * Get your joystick setup, and go have fun :)
+  * Install the latest version at <a href="http://connect.liveflightapp.com">connect.liveflightapp.com</a>.
+  * Enable Infinite Flight Connect within Infinite Flight, and make sure your device is on the same wifi network as your Mac.
+  * Get your joystick set up as per in-app instructions.
+  * Go have fun :)
 
 
 Modifying Source
