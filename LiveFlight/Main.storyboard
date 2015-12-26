@@ -62,6 +62,12 @@
                                                 <action selector="toggleLogging:" target="Voe-Tx-rLC" id="B9F-IW-a5Z"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Toggle delay between packets (0ms)" id="MqX-ay-Tmd">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="togglePacketSpacing:" target="Voe-Tx-rLC" id="QUF-M5-zwc"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -90,6 +96,32 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Help" id="XDV-X1-jTQ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" id="sEy-cb-d7h">
+                                    <items>
+                                        <menuItem title="Joystick Setup Guide" id="2LG-lf-quS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openJoystickGuide:" target="Voe-Tx-rLC" id="VfW-6n-NEt"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="dbl-xV-raX"/>
+                                        <menuItem title="Infinite Flight Community" id="NfY-QP-cJy">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openForum:" target="Voe-Tx-rLC" id="Prg-x4-59a"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="LiveFlight" id="pgG-TR-T5L">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openLiveFlight:" target="Voe-Tx-rLC" id="Pav-2J-e5T"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -99,6 +131,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect" customModuleProvider="target">
                     <connections>
                         <outlet property="logButton" destination="QUf-lS-Umh" id="Tmt-Mv-ekN"/>
+                        <outlet property="packetSpacingButton" destination="MqX-ay-Tmd" id="XmD-Lt-uPD"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

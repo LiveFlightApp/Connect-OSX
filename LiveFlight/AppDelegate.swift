@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet var logButton: NSMenuItem!
+    @IBOutlet var packetSpacingButton: NSMenuItem!
     var reachability: Reachability?
     var receiver = UDPReceiver()
     public var connector = InfiniteFlightAPIConnector()
@@ -28,30 +29,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     var tryThrottle = false
     var tryRudder = false
     
-    @IBAction func toggleLogging(sender: AnyObject) {
-        //enable/disable logging
-        
-        if logButton.state == 0 {
-            //enable
-            logButton.state = 1
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
-        } else {
-            logButton.state = 0
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
-        }
-        
-    }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
         
-        //setup Reachability
+        /*
+            Check Networking Status
+            ========================
+        */
+        
         do {
             reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
-        } catch ReachabilityError.FailedToCreateWithAddress(let _) {
+        } catch ReachabilityError.FailedToCreateWithAddress(_) {
             NSLog("Can't connect to LiveFlight")
             return
         } catch {}
+        
+        /*
+            Load Settings
+            ========================
+        */
         
         if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
             
@@ -83,10 +80,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         }
         
         
-        let nsObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
-        let bundleVersion = nsObject as! String
+        //set delay button appropriately
+        let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
+        let currentDelaySetup = NSUserDefaults.standardUserDefaults().boolForKey("packetDelaySetup")
         
-        NSLog("LiveFlight Connect version \(bundleVersion)\n\n")
+        if currentDelaySetup == false {
+            //set to 20ms as default
+            NSUserDefaults.standardUserDefaults().setInteger(20, forKey: "packetDelay")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "packetDelaySetup")
+            packetSpacingButton.title = "Toggle delay between packets (20ms)"
+            
+        } else {
+            packetSpacingButton.title = "Toggle delay between packets (\(currentDelay)ms)"
+            
+        }
+        
+        /*
+            NotificationCenter setup
+            ========================
+        */
        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryPitch:", name:"tryPitch", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRoll:", name:"tryRoll", object: nil)
@@ -94,6 +106,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
         
 
+        /*
+            Versioning
+            ========================
+        */
+        
+        let nsObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
+        let bundleVersion = nsObject as! String
+        
+        NSLog("LiveFlight Connect version \(bundleVersion)\n\n")
+        
         if reachability?.isReachable() == true {
 
             NSLog("Checking versions...")
@@ -157,11 +179,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
 
         NSLog("\n\n")
         
-        //setup joystick stuff
+        /*
+            Init Joystick Manager
+            ========================
+        */
+        
         let joystick:JoystickManager = JoystickManager.sharedInstance()
         joystick.joystickAddedDelegate = self;
         
-        //start UDP listener
+        
+        /*
+            Init Networking
+            ========================
+        */
+        
         receiver = UDPReceiver()
         receiver.startUDPListener()
 
@@ -259,6 +290,76 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         
         NSLog("Button --> Pressed \(buttonIndex)")
         connector.didPressButton(buttonIndex, state: 0)
+    }
+    
+    /*
+        Menu Settings
+        ========================
+    */
+    
+    @IBAction func openJoystickGuide(sender: AnyObject) {
+        
+        let forumURL = "https://community.infinite-flight.com/t/joystick-support-in-infinite-flight/13715?u=carmalonso"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        
+    }
+    
+    @IBAction func openForum(sender: AnyObject) {
+        
+        let forumURL = "https://community.infinite-flight.com/?u=carmalonso"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        
+    }
+    
+    @IBAction func openLiveFlight(sender: AnyObject) {
+        
+        let liveFlightURL = "http://www.liveflightapp.com"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        
+    }
+    
+    @IBAction func toggleLogging(sender: AnyObject) {
+        //enable/disable logging
+        
+        if logButton.state == 0 {
+            //enable
+            logButton.state = 1
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
+        } else {
+            logButton.state = 0
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
+        }
+        
+    }
+    
+    @IBAction func togglePacketSpacing(sender: AnyObject) {
+        //change delay between sending packets
+        //0, 10, 20, 50ms.
+        
+        let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
+        
+        if currentDelay == 0 {
+            //set to 10
+            NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
+            packetSpacingButton.title = "Toggle delay between packets (10ms)"
+            
+        } else if currentDelay == 10 {
+            //set to 20
+            NSUserDefaults.standardUserDefaults().setInteger(20, forKey: "packetDelay")
+            packetSpacingButton.title = "Toggle delay between packets (20ms)"
+            
+        } else if currentDelay == 20 {
+            //set to 50
+            NSUserDefaults.standardUserDefaults().setInteger(50, forKey: "packetDelay")
+            packetSpacingButton.title = "Toggle delay between packets (50ms)"
+            
+        } else {
+            //set to 0
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "packetDelay")
+            packetSpacingButton.title = "Toggle delay between packets (0ms)"
+            
+        }
+        
     }
     
 }

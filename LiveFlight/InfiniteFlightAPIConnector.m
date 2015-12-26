@@ -151,7 +151,7 @@ NSOutputStream *outputStream;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //calculate time since last packet sent
         double timePassed = [lastSend timeIntervalSinceNow] * -1000.0;
-        double timeToPass = 20;
+        double timeToPass = [[NSUserDefaults standardUserDefaults] integerForKey:@"packetDelay"];
         
         //check if is joystick command
         if (isJoystick == true) {
