@@ -27,13 +27,33 @@ class JoystickViewController: NSViewController {
     
     func changeLabelValues(notification:NSNotification) {
         
-        pitchLabel.stringValue = "Axis " + String(NSUserDefaults.standardUserDefaults().integerForKey("pitch"))
-        rollLabel.stringValue = "Axis " + String(NSUserDefaults.standardUserDefaults().integerForKey("roll"))
-        rudderLabel.stringValue = "Axis " + String(NSUserDefaults.standardUserDefaults().integerForKey("rudder"))
-        throttleLabel.stringValue = "Axis " + String(NSUserDefaults.standardUserDefaults().integerForKey("throttle"))
+        let pitch = NSUserDefaults.standardUserDefaults().integerForKey("pitch")
+        let roll = NSUserDefaults.standardUserDefaults().integerForKey("roll")
+        let throttle = NSUserDefaults.standardUserDefaults().integerForKey("throttle")
+        let rudder = NSUserDefaults.standardUserDefaults().integerForKey("rudder")
+        
+        if pitch != -2 {
+            pitchLabel.stringValue = "Axis \(String(pitch))"
+        }
+        
+        if roll != -2 {
+            rollLabel.stringValue = "Axis \(String(roll))"
+        }
+        
+        if throttle != -2 {
+            throttleLabel.stringValue = "Axis \(String(throttle))"
+        }
+        
+        if rudder != -2 {
+            rudderLabel.stringValue = "Axis \(String(rudder))"
+        }
         
     }
     
+    /*
+        Actions for setting axes
+        ========================
+    */
     
     @IBAction func pitch(sender: AnyObject) {
         
@@ -60,6 +80,27 @@ class JoystickViewController: NSViewController {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryRudder", object: nil)
         rudderLabel.stringValue = "Move the axis around a bit..."
+        
+    }
+    
+    /*
+        Actions for clearing saved axes
+        ========================
+    */
+    
+    @IBAction func clear(sender: AnyObject) {
+        
+        // remove saved axes
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "pitch")
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "roll")
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "throttle")
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "rudder")
+        
+        // update labels
+        pitchLabel.stringValue = "No axis assigned"
+        rollLabel.stringValue = "No axis assigned"
+        throttleLabel.stringValue = "No axis assigned"
+        rudderLabel.stringValue = "No axis assigned"
         
     }
     
