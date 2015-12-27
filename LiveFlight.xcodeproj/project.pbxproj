@@ -81,7 +81,7 @@
 		7E74516C1BC9D20000FB1069 /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
 		7E74516D1BC9D20000FB1069 /* SwiftHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftHTTP.h; sourceTree = "<group>"; };
 		7E74516E1BC9D20000FB1069 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		7E7BA5EF1B89DA5200C73DA0 /* Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7BA5EF1B89DA5200C73DA0 /* Connect3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BA5F31B89DA5200C73DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		7E7BA5F01B89DA5200C73DA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BA5EF1B89DA5200C73DA0 /* Connect.app */,
+				7E7BA5EF1B89DA5200C73DA0 /* Connect3.app */,
 				7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */,
 			);
 			name = Products;
@@ -271,7 +271,7 @@
 			);
 			name = LiveFlight;
 			productName = LiveFlight;
-			productReference = 7E7BA5EF1B89DA5200C73DA0 /* Connect.app */;
+			productReference = 7E7BA5EF1B89DA5200C73DA0 /* Connect3.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7E7BA6001B89DA5200C73DA0 /* LiveFlightTests */ = {

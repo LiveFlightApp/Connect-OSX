@@ -106,6 +106,12 @@
                                                 <action selector="openJoystickGuide:" target="Voe-Tx-rLC" id="VfW-6n-NEt"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Source Code (GitHub)" id="AYF-cR-Cwj">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openGitHub:" target="Voe-Tx-rLC" id="VIK-30-GNT"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="dbl-xV-raX"/>
                                         <menuItem title="Infinite Flight Community" id="NfY-QP-cJy">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -128,7 +134,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect" customModuleProvider="target">
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect3" customModuleProvider="target">
                     <connections>
                         <outlet property="logButton" destination="QUf-lS-Umh" id="Tmt-Mv-ekN"/>
                         <outlet property="packetSpacingButton" destination="MqX-ay-Tmd" id="XmD-Lt-uPD"/>
@@ -141,8 +147,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect" customModuleProvider="target">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect3" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="400" height="400"/>
@@ -185,7 +191,7 @@
         <!--View Controller-->
         <scene sceneID="I75-pD-g5N">
             <objects>
-                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="30H-kZ-p24">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -253,7 +259,7 @@
         <!--Joystick View Controller-->
         <scene sceneID="GEc-QC-TTA">
             <objects>
-                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sG0-Ns-ZYY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -489,7 +495,7 @@
         <!--Keyboard Commands View-->
         <scene sceneID="KQm-qq-20X">
             <objects>
-                <viewController id="kIm-c6-ghD" customClass="KeyboardCommandsView" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kIm-c6-ghD" customClass="KeyboardCommandsView" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yyp-0j-R77">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

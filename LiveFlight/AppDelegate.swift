@@ -305,6 +305,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         
     }
     
+    @IBAction func openGitHub(sender: AnyObject) {
+        
+        let githubURL = "https://github.com/LiveFlightApp/Connect-OSX"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: githubURL)!)
+        
+    }
+    
     @IBAction func openForum(sender: AnyObject) {
         
         let forumURL = "https://community.infinite-flight.com/?u=carmalonso"
@@ -364,7 +371,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     }
     
 }
-
 
 
 class WindowController: NSWindowController {
