@@ -29,6 +29,7 @@
 		7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */; };
 		7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7E898E131B936AFD00208F54 /* RoundedIcon.icns */; };
 		7EBCFE251C2EA2B7002E4078 /* KeyboardListenerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCFE241C2EA2B7002E4078 /* KeyboardListenerWindow.swift */; };
+		7EBCFE271C2EA5E8002E4078 /* KeyboardCommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCFE261C2EA5E8002E4078 /* KeyboardCommandsView.swift */; };
 		7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPReceiver.m; sourceTree = "<group>"; };
 		7E898E131B936AFD00208F54 /* RoundedIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RoundedIcon.icns; sourceTree = "<group>"; };
 		7EBCFE241C2EA2B7002E4078 /* KeyboardListenerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardListenerWindow.swift; sourceTree = "<group>"; };
+		7EBCFE261C2EA5E8002E4078 /* KeyboardCommandsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardCommandsView.swift; sourceTree = "<group>"; };
 		7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 				7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */,
 				7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */,
 				7EBCFE241C2EA2B7002E4078 /* KeyboardListenerWindow.swift */,
+				7EBCFE261C2EA5E8002E4078 /* KeyboardCommandsView.swift */,
 				7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */,
 				7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */,
 				7EC762AA1C2DF315006FF9B8 /* Joystick */,
@@ -363,6 +366,7 @@
 				7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */,
 				7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */,
 				7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */,
+				7EBCFE271C2EA5E8002E4078 /* KeyboardCommandsView.swift in Sources */,
 				7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */,
 				7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */,
 				7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */,

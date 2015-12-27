@@ -8,12 +8,17 @@
 
 import Cocoa
 
+//
+// List of Apple keyboard keyCodes
+// http://macbiblioblog.blogspot.com.es/2014/12/key-codes-for-function-and-special-keys.html
+//
+
 class KeyboardListenerWindow: NSWindow {
     var connector = InfiniteFlightAPIConnector()
     var keydown = false
     
     //MARK - keyboard events
-    override func keyDown(event: NSEvent) // A key is pressed
+    override func keyDown(event: NSEvent)
     {
         NSLog("keyDown: \(event.keyCode)!")
         
@@ -83,7 +88,13 @@ class KeyboardListenerWindow: NSWindow {
                 connector.atc10()
             }
             keydown = true
-        } else if (event.keyCode == 2) {
+        } else if (event.keyCode == 12) {
+            //A key
+            if (keydown != true) {
+                connector.previousCamera()
+            }
+            keydown = true
+        } else if (event.keyCode == 14) {
             //D key
             if (keydown != true) {
                 connector.nextCamera()
@@ -107,13 +118,87 @@ class KeyboardListenerWindow: NSWindow {
                 connector.spoilers()
             }
             keydown = true
+        } else if (event.keyCode == 35) {
+            // P key
+            if (keydown != true) {
+                connector.pushback()
+            }
+            keydown = true
+        } else if (event.keyCode == 49) {
+            // space key
+            if (keydown != true) {
+                connector.togglePause()
+            }
+            keydown = true
+        } else if (event.keyCode == 6) {
+            // Z key
+            if (keydown != true) {
+                connector.autopilot()
+            }
+            keydown = true
+        } else if (event.keyCode == 24) {
+            // = key
+            if (keydown != true) {
+                connector.zoomIn()
+            }
+            keydown = true
+        } else if (event.keyCode == 27) {
+            // - key
+            if (keydown != true) {
+                connector.zoomOut()
+            }
+            keydown = true
+        } else if (event.keyCode == 30) {
+            // ] key
+            if (keydown != true) {
+                connector.flapsDown()
+            }
+            keydown = true
+        } else if (event.keyCode == 33) {
+            // [ key
+            if (keydown != true) {
+                connector.flapsUp()
+            }
+            keydown = true
+        } else if (event.keyCode == 37) {
+            // L key
+            if (keydown != true) {
+                connector.landing()
+            }
+            keydown = true
+        } else if (event.keyCode == 45) {
+            // N key
+            if (keydown != true) {
+                connector.nav()
+            }
+            keydown = true
+        } else if (event.keyCode == 11) {
+            // B key
+            if (keydown != true) {
+                connector.beacon()
+            }
+            keydown = true
+        } else if (event.keyCode == 1) {
+            // S key
+            if (keydown != true) {
+                connector.strobe()
+            }
+            keydown = true
         }
+        
+        
+        /*
+        // TODO - send keyboard commands as buttons. issue with alternate cmds.
+        connector.didPressButton(Int32(event.keyCode), state: 0)
+        keydown = true
+        */
         
     }
     
     override func keyUp(event: NSEvent)
     {
         NSLog("keyUp")
+        //connector.didPressButton(Int32(event.keyCode), state: 1)
         keydown = false
     }
     

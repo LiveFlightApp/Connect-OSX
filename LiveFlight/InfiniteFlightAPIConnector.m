@@ -106,7 +106,22 @@ NSOutputStream *outputStream;
                     [self readIn:s];
                     
                 }
-            } 
+            }
+            break;
+        }
+        case NSStreamEventErrorOccurred: {
+            NSLog(@"A stream error occurred");
+            break;
+        }
+        case NSStreamEventEndEncountered: {
+            NSLog(@"Stream end encountered");
+            break;
+        }
+        case NSStreamEventOpenCompleted: {
+            NSLog(@"Stream successfully opened");
+            break;
+        }
+        case NSStreamEventNone: {
             break;
         }
     }

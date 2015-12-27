@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     @IBOutlet var packetSpacingButton: NSMenuItem!
     var reachability: Reachability?
     var receiver = UDPReceiver()
-    public var connector = InfiniteFlightAPIConnector()
+    internal var connector = InfiniteFlightAPIConnector()
     
     //joystick values
     var rollValue = 0;
