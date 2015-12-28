@@ -58,28 +58,28 @@ class JoystickViewController: NSViewController {
     @IBAction func pitch(sender: AnyObject) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryPitch", object: nil)
-        pitchLabel.stringValue = "Move the axis around a bit..."
+        pitchLabel.stringValue = "Move the stick forwards and backwards"
         
     }
     
     @IBAction func roll(sender: AnyObject) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryRoll", object: nil)
-        rollLabel.stringValue = "Move the axis around a bit..."
+        rollLabel.stringValue = "Move the stick from side to side"
         
     }
     
     @IBAction func throttle(sender: AnyObject) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryThrottle", object: nil)
-        throttleLabel.stringValue = "Move the axis around a bit..."
+        throttleLabel.stringValue = "Move the lever forwards and backwards"
         
     }
     
     @IBAction func rudder(sender: AnyObject) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryRudder", object: nil)
-        rudderLabel.stringValue = "Move the axis around a bit..."
+        rudderLabel.stringValue = "Twist/move the rudder"
         
     }
     
