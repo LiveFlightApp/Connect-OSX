@@ -300,7 +300,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     
     @IBAction func openJoystickGuide(sender: AnyObject) {
         
-        let forumURL = "https://community.infinite-flight.com/t/joystick-support-in-infinite-flight/13715?u=carmalonso"
+        let forumURL = "https://community.infinite-flight.com/t/joysticks-on-ios-android-over-the-network-liveflight-connect/20017?u=carmalonso"
         NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
         
     }

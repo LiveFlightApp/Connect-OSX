@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E019E401C31F66700853B33 /* JoystickMapping in Resources */ = {isa = PBXBuildFile; fileRef = 7E019E3F1C31F66700853B33 /* JoystickMapping */; };
 		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; };
 		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; };
 		7E3F75111C2A075B00B4A8F3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F75101C2A075B00B4A8F3 /* Reachability.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E019E3F1C31F66700853B33 /* JoystickMapping */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JoystickMapping; path = libs/JoystickMapping; sourceTree = "<group>"; };
 		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		7E3F75101C2A075B00B4A8F3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = libs/Reachability.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				7E2045941BCAF95A00A03F11 /* Credits.rtf */,
+				7E019E3F1C31F66700853B33 /* JoystickMapping */,
 				7E7451671BC9D1E400FB1069 /* GCDAsyncUDPSocket */,
 				7E7451741BC9D20600FB1069 /* SwiftHTTP */,
 				7E3F75101C2A075B00B4A8F3 /* Reachability.swift */,
@@ -276,6 +279,7 @@
 			files = (
 				7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */,
 				7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */,
+				7E019E401C31F66700853B33 /* JoystickMapping in Resources */,
 				7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */,
 				7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */,
 			);
