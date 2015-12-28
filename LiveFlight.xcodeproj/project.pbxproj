@@ -21,7 +21,6 @@
 		7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */; };
 		7E7BA5F71B89DA5200C73DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */; };
 		7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */; };
-		7E7BA6081B89DA5200C73DA0 /* LiveFlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */; };
 		7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6141B8A60FC00C73DA0 /* Joystick.m */; };
 		7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */; };
 		7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */; };
@@ -87,8 +86,6 @@
 		7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveFlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E7BA6061B89DA5200C73DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFlightTests.swift; sourceTree = "<group>"; };
 		7E7BA6111B8A60FA00C73DA0 /* LiveFlight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveFlight-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E7BA6131B8A60FC00C73DA0 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		7E7BA6141B8A60FC00C73DA0 /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
@@ -175,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				7E7BA5F11B89DA5200C73DA0 /* LiveFlight */,
-				7E7BA6041B89DA5200C73DA0 /* LiveFlightTests */,
 				7E7BA5F01B89DA5200C73DA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -217,23 +213,6 @@
 				7E3F75101C2A075B00B4A8F3 /* Reachability.swift */,
 				7E898E131B936AFD00208F54 /* RoundedIcon.icns */,
 				7E7BA5F31B89DA5200C73DA0 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7E7BA6041B89DA5200C73DA0 /* LiveFlightTests */ = {
-			isa = PBXGroup;
-			children = (
-				7E7BA6071B89DA5200C73DA0 /* LiveFlightTests.swift */,
-				7E7BA6051B89DA5200C73DA0 /* Supporting Files */,
-			);
-			path = LiveFlightTests;
-			sourceTree = "<group>";
-		};
-		7E7BA6051B89DA5200C73DA0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7E7BA6061B89DA5200C73DA0 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -384,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E7BA6081B89DA5200C73DA0 /* LiveFlightTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
