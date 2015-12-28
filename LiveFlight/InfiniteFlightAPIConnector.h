@@ -34,6 +34,8 @@
 -(void)onboardCamera;
 -(void)towerCamera;
 -(void)flybyCamera;
+-(void)zoomOut;
+-(void)zoomIn;
 -(void)flapsDown;
 -(void)flapsUp;
 -(void)landingGear;
@@ -46,11 +48,11 @@
 -(void)pushback;
 -(void)trimUp;
 -(void)trimDown;
+-(void)rollLeft;
+-(void)rollRight;
+-(void)pitchUp;
+-(void)pitchDown;
 -(void)atcMenu;
--(void)landing;
--(void)nav;
--(void)strobe;
--(void)beacon;
 -(void)atc1;
 -(void)atc2;
 -(void)atc3;
@@ -61,7 +63,9 @@
 -(void)atc8;
 -(void)atc9;
 -(void)atc10;
--(void)zoomOut;
--(void)zoomIn;
+-(void)landing;
+-(void)nav;
+-(void)strobe;
+-(void)beacon;
 
 @end

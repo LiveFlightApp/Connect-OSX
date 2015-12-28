@@ -1,0 +1,3 @@
+[submodule "LiveFlight/libs/JoystickMapping"]
+	path = LiveFlight/libs/JoystickMapping
+	url = https://github.com/LiveFlightApp/JoystickMapping

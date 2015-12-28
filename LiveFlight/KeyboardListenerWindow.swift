@@ -184,6 +184,30 @@ class KeyboardListenerWindow: NSWindow {
                 connector.strobe()
             }
             keydown = true
+        } else if (event.keyCode == 123) {
+            // left arrow key
+            if (keydown != true) {
+                connector.rollLeft()
+            }
+            keydown = true
+        } else if (event.keyCode == 124) {
+            // right arrow key
+            if (keydown != true) {
+                connector.rollRight()
+            }
+            keydown = true
+        } else if (event.keyCode == 126) {
+            // up arrow key
+            if (keydown != true) {
+                connector.pitchUp()
+            }
+            keydown = true
+        } else if (event.keyCode == 125) {
+            // down arrow key
+            if (keydown != true) {
+                connector.pitchDown()
+            }
+            keydown = true
         }
         
         

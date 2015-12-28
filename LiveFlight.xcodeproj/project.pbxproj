@@ -32,16 +32,6 @@
 		7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7E7BA6021B89DA5200C73DA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E7BA5E71B89DA5200C73DA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E7BA5EE1B89DA5200C73DA0;
-			remoteInfo = LiveFlight;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		7E0FCBEE1B957B3800403E57 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -85,7 +75,6 @@
 		7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveFlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BA6111B8A60FA00C73DA0 /* LiveFlight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveFlight-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E7BA6131B8A60FC00C73DA0 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		7E7BA6141B8A60FC00C73DA0 /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
@@ -106,13 +95,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		7E7BA5EC1B89DA5200C73DA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E7BA5FE1B89DA5200C73DA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				7E7BA5EF1B89DA5200C73DA0 /* Connect.app */,
-				7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,24 +234,6 @@
 			productReference = 7E7BA5EF1B89DA5200C73DA0 /* Connect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7E7BA6001B89DA5200C73DA0 /* LiveFlightTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E7BA60E1B89DA5200C73DA0 /* Build configuration list for PBXNativeTarget "LiveFlightTests" */;
-			buildPhases = (
-				7E7BA5FD1B89DA5200C73DA0 /* Sources */,
-				7E7BA5FE1B89DA5200C73DA0 /* Frameworks */,
-				7E7BA5FF1B89DA5200C73DA0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E7BA6031B89DA5200C73DA0 /* PBXTargetDependency */,
-			);
-			name = LiveFlightTests;
-			productName = LiveFlightTests;
-			productReference = 7E7BA6011B89DA5200C73DA0 /* LiveFlightTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,10 +248,6 @@
 					7E7BA5EE1B89DA5200C73DA0 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = DR44D6XSFQ;
-					};
-					7E7BA6001B89DA5200C73DA0 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 7E7BA5EE1B89DA5200C73DA0;
 					};
 				};
 			};
@@ -306,7 +265,6 @@
 			projectRoot = "";
 			targets = (
 				7E7BA5EE1B89DA5200C73DA0 /* LiveFlight */,
-				7E7BA6001B89DA5200C73DA0 /* LiveFlightTests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,13 +278,6 @@
 				7ED9BE211BE6B3CB00C85BD0 /* Main.storyboard in Resources */,
 				7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */,
 				7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E7BA5FF1B89DA5200C73DA0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,22 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E7BA5FD1B89DA5200C73DA0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7E7BA6031B89DA5200C73DA0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E7BA5EE1B89DA5200C73DA0 /* LiveFlight */;
-			targetProxy = 7E7BA6021B89DA5200C73DA0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7E7BA6091B89DA5200C73DA0 /* Debug */ = {
@@ -499,44 +435,6 @@
 			};
 			name = Release;
 		};
-		7E7BA60F1B89DA5200C73DA0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LiveFlightTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carmalonso.mac.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiveFlight.app/Contents/MacOS/LiveFlight";
-			};
-			name = Debug;
-		};
-		7E7BA6101B89DA5200C73DA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LiveFlightTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carmalonso.mac.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiveFlight.app/Contents/MacOS/LiveFlight";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -554,15 +452,6 @@
 			buildConfigurations = (
 				7E7BA60C1B89DA5200C73DA0 /* Debug */,
 				7E7BA60D1B89DA5200C73DA0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E7BA60E1B89DA5200C73DA0 /* Build configuration list for PBXNativeTarget "LiveFlightTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E7BA60F1B89DA5200C73DA0 /* Debug */,
-				7E7BA6101B89DA5200C73DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -134,7 +134,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect3" customModuleProvider="target">
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect" customModuleProvider="target">
                     <connections>
                         <outlet property="logButton" destination="QUf-lS-Umh" id="Tmt-Mv-ekN"/>
                         <outlet property="packetSpacingButton" destination="MqX-ay-Tmd" id="XmD-Lt-uPD"/>
@@ -147,8 +147,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect3" customModuleProvider="target">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="400" height="400"/>
@@ -191,7 +191,7 @@
         <!--View Controller-->
         <scene sceneID="I75-pD-g5N">
             <objects>
-                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="30H-kZ-p24">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -259,7 +259,7 @@
         <!--Joystick View Controller-->
         <scene sceneID="GEc-QC-TTA">
             <objects>
-                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sG0-Ns-ZYY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -495,7 +495,7 @@
         <!--Keyboard Commands View-->
         <scene sceneID="KQm-qq-20X">
             <objects>
-                <viewController id="kIm-c6-ghD" customClass="KeyboardCommandsView" customModule="Connect3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kIm-c6-ghD" customClass="KeyboardCommandsView" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yyp-0j-R77">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -513,7 +513,7 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="Command" width="189.63671875" minWidth="40" maxWidth="1000" headerToolTip="Command" id="3ei-vb-uPD">
+                                                <tableColumn identifier="Command" editable="NO" width="189.63671875" minWidth="40" maxWidth="1000" headerToolTip="Command" id="3ei-vb-uPD">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Command">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -526,7 +526,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="Key" width="212" minWidth="40" maxWidth="1000" headerToolTip="Key" id="xo8-w2-OAN">
+                                                <tableColumn identifier="Key" editable="NO" width="212" minWidth="40" maxWidth="1000" headerToolTip="Key" id="xo8-w2-OAN">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Key">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -553,7 +553,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="dW9-cE-ctd">
-                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <rect key="frame" x="-15" y="23" width="16" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="7mO-DA-8xj">

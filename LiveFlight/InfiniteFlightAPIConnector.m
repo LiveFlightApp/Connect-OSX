@@ -240,6 +240,11 @@ NSOutputStream *outputStream;
 
 #pragma mark commands
 
+/*
+     Cameras
+     ========================
+*/
+
 -(void)previousCamera {
     [self sendWithString:@"Commands.PrevCamera" params:nil isJoystick:false];
 }
@@ -272,6 +277,19 @@ NSOutputStream *outputStream;
     [self sendWithString:@"Commands.SetFlybyCamera" params:nil isJoystick:false];
 }
 
+-(void)zoomOut {
+    [self sendWithString:@"Commands.CameraZoomOut" params:nil isJoystick:false];
+}
+
+-(void)zoomIn {
+    [self sendWithString:@"Commands.CameraZoomIn" params:nil isJoystick:false];
+}
+
+/*
+    Airplane State
+    ========================
+*/
+
 -(void)flapsDown {
      [self sendWithString:@"Commands.FlapsDown" params:nil isJoystick:false];
 }
@@ -292,25 +310,43 @@ NSOutputStream *outputStream;
     [self sendWithString:@"Commands.ReverseThrust" params:nil isJoystick:false];
 }
 
+-(void)parkingBrakes {
+    [self sendWithString:@"Commands.ParkingBrakes" params:nil isJoystick:false];
+}
+
+-(void)pushback {
+    [self sendWithString:@"Commands.Pushback" params:nil isJoystick:false];
+}
+
+
+/*
+     Autopilot
+     ========================
+*/
+
 -(void)autopilot {
     [self sendWithString:@"Commands.Autopilot.Toggle" params:nil isJoystick:false];
 }
 
+
+/*
+    General
+    ========================
+*/
+
 -(void)hud {
     [self sendWithString:@"Commands.ToggleHUD" params:nil isJoystick:false];
-}
-
--(void)parkingBrakes {
-    [self sendWithString:@"Commands.ParkingBrakes" params:nil isJoystick:false];
 }
 
 -(void)togglePause {
     [self sendWithString:@"Commands.TogglePause" params:nil isJoystick:false];
 }
 
--(void)pushback {
-    [self sendWithString:@"Commands.Pushback" params:nil isJoystick:false];
-}
+
+/*
+    Control Surfaces
+    ========================
+*/
 
 -(void)trimUp {
     [self sendWithString:@"Commands.ElevatorTrimUp" params:nil isJoystick:false];
@@ -320,24 +356,29 @@ NSOutputStream *outputStream;
     [self sendWithString:@"Commands.ElevatorTrimDown" params:nil isJoystick:false];
 }
 
+-(void)rollLeft {
+    [self sendWithString:@"Commands.RollLeft" params:nil isJoystick:false];
+}
+
+-(void)rollRight {
+    [self sendWithString:@"Commands.RollRight" params:nil isJoystick:false];
+}
+
+-(void)pitchUp {
+    [self sendWithString:@"Commands.PitchUp" params:nil isJoystick:false];
+}
+
+-(void)pitchDown {
+    [self sendWithString:@"Commands.PitchDown" params:nil isJoystick:false];
+}
+
+/*
+     Live
+     ========================
+*/
+
 -(void)atcMenu {
     [self sendWithString:@"Commands.ShowATCWindowCommand" params:nil isJoystick:false];
-}
-
--(void)landing {
-    [self sendWithString:@"Commands.LandingLights" params:nil isJoystick:false];
-}
-
--(void)nav {
-    [self sendWithString:@"Commands.NavLights" params:nil isJoystick:false];
-}
-
--(void)strobe {
-    [self sendWithString:@"Commands.StrobeLights" params:nil isJoystick:false];
-}
-
--(void)beacon {
-    [self sendWithString:@"Commands.BeaconLights" params:nil isJoystick:false];
 }
 
 -(void)atc1 {
@@ -388,13 +429,25 @@ NSOutputStream *outputStream;
     [self sendWithString:@"Commands.ATCEntry10" params:nil isJoystick:false];
 }
 
+/*
+     Lighting
+     ========================
+ */
 
--(void)zoomOut {
-    [self sendWithString:@"Commands.CameraZoomOut" params:nil isJoystick:false];
+-(void)landing {
+    [self sendWithString:@"Commands.LandingLights" params:nil isJoystick:false];
 }
 
--(void)zoomIn {
-    [self sendWithString:@"Commands.CameraZoomIn" params:nil isJoystick:false];
+-(void)nav {
+    [self sendWithString:@"Commands.NavLights" params:nil isJoystick:false];
+}
+
+-(void)strobe {
+    [self sendWithString:@"Commands.StrobeLights" params:nil isJoystick:false];
+}
+
+-(void)beacon {
+    [self sendWithString:@"Commands.BeaconLights" params:nil isJoystick:false];
 }
 
 
