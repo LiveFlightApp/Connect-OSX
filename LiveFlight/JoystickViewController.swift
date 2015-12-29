@@ -53,7 +53,24 @@ class JoystickViewController: NSViewController {
         
 
         if joystickConfig.joystickConnected == true {
-            joystickName.stringValue = joystickConfig.connectedJoystickName
+            
+            // remove duplicate words from name
+            // some manufacturers include name in product name too
+            var joystickNameArray = joystickConfig.connectedJoystickName.characters.split{$0 == " "}.map(String.init)
+            
+            var filter = Dictionary<String,Int>()
+            var len = joystickNameArray.count
+            for var index = 0; index < len  ;++index {
+                let value = joystickNameArray[index]
+                if (filter[value] != nil) {
+                    joystickNameArray.removeAtIndex(index--)
+                    len--
+                }else{
+                    filter[value] = 1
+                }
+            }
+            
+            joystickName.stringValue = joystickNameArray.joinWithSeparator(" ")
             
             let mapStatus = NSUserDefaults.standardUserDefaults().integerForKey("mapStatus")
             
