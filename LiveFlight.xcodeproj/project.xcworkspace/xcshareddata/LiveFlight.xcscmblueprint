@@ -7,6 +7,7 @@
     "E927118175B406BA97482F6E559E9F24FC1101D6" : 0,
     "C80AFB7225A37FEAFA1F491650DBF487A76F4002" : 0,
     "BC2670E18992FD8F65B0857F9F403780F58342B7" : 0,
+    "BE6F11D2B0F7EBDD3A2A4B2F7B7F7393B556F9B2" : 0,
     "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "20201EAB-DCDD-4212-B3A9-A220C1FE8F2A",
@@ -14,6 +15,7 @@
     "E927118175B406BA97482F6E559E9F24FC1101D6" : "..\/..",
     "C80AFB7225A37FEAFA1F491650DBF487A76F4002" : "src\/LiveFlight\/libs\/JoystickMapping\/",
     "BC2670E18992FD8F65B0857F9F403780F58342B7" : "src\/",
+    "BE6F11D2B0F7EBDD3A2A4B2F7B7F7393B556F9B2" : "src\/LiveFlight\/libs\/Reachability.swift\/",
     "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : "src\/LiveFlight\/countly-sdk-ios\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LiveFlight",
@@ -24,6 +26,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LiveFlightApp\/Connect-OSX.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BC2670E18992FD8F65B0857F9F403780F58342B7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ashleymills\/Reachability.swift",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BE6F11D2B0F7EBDD3A2A4B2F7B7F7393B556F9B2"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LiveFlightApp\/JoystickMapping",

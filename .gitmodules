@@ -7,3 +7,6 @@
 [submodule "LiveFlight/libs/SwiftHTTP"]
 	path = LiveFlight/libs/SwiftHTTP
 	url = https://github.com/daltoniam/SwiftHTTP
+[submodule "LiveFlight/libs/Reachability.swift"]
+	path = LiveFlight/libs/Reachability.swift
+	url = https://github.com/ashleymills/Reachability.swift
