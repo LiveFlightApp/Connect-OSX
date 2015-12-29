@@ -8,8 +8,16 @@
 
 import Cocoa
 
-internal var joystickConnected = false
-internal var connectedJoystickName = ""
+class JoystickConfig {
+    var joystickConnected:Bool = false
+    var connectedJoystickName:String = ""
+    init(connected:Bool, name:String) {
+        self.joystickConnected = connected
+        self.connectedJoystickName = name
+    }
+}
+
+var joystickConfig = JoystickConfig(connected: false, name: "")
 
 class JoystickHelper: NSObject, JoystickNotificationDelegate {
 
@@ -37,6 +45,19 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         let joystick:JoystickManager = JoystickManager.sharedInstance()
         joystick.joystickAddedDelegate = self;
         
+        
+        /*
+            NotificationCenter setup
+            ========================
+        */
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryPitch:", name:"tryPitch", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRoll:", name:"tryRoll", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryThrottle:", name:"tryThrottle", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
+        
+
+        
     }
     
     func tryPitch(notification: NSNotification) {
@@ -60,8 +81,8 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         joystick.registerForNotications(self)
         
         // set last joystick name and connected
-        connectedJoystickName = name
-        joystickConnected = true
+        joystickConfig = JoystickConfig(connected: true, name: name)
+        
         
         let axesSet = NSUserDefaults.standardUserDefaults().boolForKey("axesSet")
         
@@ -114,20 +135,18 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
                 NSLog(String(serializationError))
             }
             
-            // change labels and mark as axes set
-            NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet")
-            
         }
         
-
+        // change labels and mark as axes set
+        NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet")
+        
         
     }
     
     func joystickRemoved(joystick: Joystick!, withName name: String!, id: String!) {
         
-        joystickConnected = false
-        connectedJoystickName = ""
+        joystickConfig = JoystickConfig(connected: false, name: "")
         
         // change label values
         NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)

@@ -17,6 +17,7 @@ class JoystickViewController: NSViewController {
     @IBOutlet weak var joystickName: NSTextField!
     @IBOutlet weak var joystickRecognised: NSTextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +51,9 @@ class JoystickViewController: NSViewController {
             rudderLabel.stringValue = "Axis \(String(rudder))"
         }
         
-        NSLog("%@", connectedJoystickName)
-        
-        if joystickConnected == true {
-            joystickName.stringValue = connectedJoystickName
+
+        if joystickConfig.joystickConnected == true {
+            joystickName.stringValue = joystickConfig.connectedJoystickName
             
             let mapStatus = NSUserDefaults.standardUserDefaults().integerForKey("mapStatus")
             
@@ -74,6 +74,7 @@ class JoystickViewController: NSViewController {
             
         } else {
             joystickName.stringValue = "No joystick connected"
+            joystickRecognised.stringValue = ""
         }
     }
     

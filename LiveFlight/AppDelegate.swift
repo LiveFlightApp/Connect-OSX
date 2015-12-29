@@ -95,17 +95,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         /*
-            NotificationCenter setup
-            ========================
-        */
-       
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryPitch:", name:"tryPitch", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRoll:", name:"tryRoll", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryThrottle:", name:"tryThrottle", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
-        
-
-        /*
             Versioning
             ========================
         */
