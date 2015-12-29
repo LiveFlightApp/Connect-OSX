@@ -1,3 +1,9 @@
 [submodule "LiveFlight/libs/JoystickMapping"]
 	path = LiveFlight/libs/JoystickMapping
 	url = https://github.com/LiveFlightApp/JoystickMapping
+[submodule "LiveFlight/libs/CocoaAsyncSocket"]
+	path = LiveFlight/libs/CocoaAsyncSocket
+	url = https://github.com/robbiehanson/CocoaAsyncSocket
+[submodule "LiveFlight/libs/SwiftHTTP"]
+	path = LiveFlight/libs/SwiftHTTP
+	url = https://github.com/daltoniam/SwiftHTTP
