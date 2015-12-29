@@ -4,24 +4,38 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "E927118175B406BA97482F6E559E9F24FC1101D6" : 0,
-    "C80AFB7225A37FEAFA1F491650DBF487A76F4002" : 0,
-    "BC2670E18992FD8F65B0857F9F403780F58342B7" : 0,
     "BE6F11D2B0F7EBDD3A2A4B2F7B7F7393B556F9B2" : 0,
-    "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : 0
+    "BC2670E18992FD8F65B0857F9F403780F58342B7" : 0,
+    "1C75F1C5CFCB95B3702F6F632FA05ED5244B519E" : 0,
+    "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : 0,
+    "38D9009B322140394B9DA7467F68950B56B35FF5" : 0,
+    "C80AFB7225A37FEAFA1F491650DBF487A76F4002" : 0,
+    "E927118175B406BA97482F6E559E9F24FC1101D6" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "20201EAB-DCDD-4212-B3A9-A220C1FE8F2A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "E927118175B406BA97482F6E559E9F24FC1101D6" : "..\/..",
-    "C80AFB7225A37FEAFA1F491650DBF487A76F4002" : "src\/LiveFlight\/libs\/JoystickMapping\/",
-    "BC2670E18992FD8F65B0857F9F403780F58342B7" : "src\/",
     "BE6F11D2B0F7EBDD3A2A4B2F7B7F7393B556F9B2" : "src\/LiveFlight\/libs\/Reachability.swift\/",
-    "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : "src\/LiveFlight\/countly-sdk-ios\/"
+    "BC2670E18992FD8F65B0857F9F403780F58342B7" : "src\/",
+    "1C75F1C5CFCB95B3702F6F632FA05ED5244B519E" : "src\/LiveFlight\/libs\/CocoaAsyncSocket\/",
+    "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : "src\/LiveFlight\/countly-sdk-ios\/",
+    "38D9009B322140394B9DA7467F68950B56B35FF5" : "src\/LiveFlight\/libs\/SwiftHTTP\/",
+    "C80AFB7225A37FEAFA1F491650DBF487A76F4002" : "src\/LiveFlight\/libs\/JoystickMapping\/",
+    "E927118175B406BA97482F6E559E9F24FC1101D6" : "..\/.."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LiveFlight",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LiveFlight.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/robbiehanson\/CocoaAsyncSocket",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1C75F1C5CFCB95B3702F6F632FA05ED5244B519E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/daltoniam\/SwiftHTTP",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38D9009B322140394B9DA7467F68950B56B35FF5"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LiveFlightApp\/Connect-OSX.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
