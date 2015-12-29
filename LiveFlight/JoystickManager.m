@@ -60,11 +60,11 @@ static JoystickManager *instance;
     return [joysticks objectForKey:[NSNumber numberWithInt:joystickID]];
 }
 
-- (void)registerNewJoystick:(Joystick *)joystick {
+- (void)registerNewJoystick:(Joystick *)joystick name:(NSString *)name id:(NSString *)id {
     [joysticks setObject:joystick forKey:[NSNumber numberWithInt:joystickIDIndex++]];
     NSLog(@"Gamepads registered: %lu", joysticks.count);
 
-    [joystickAddedDelegate joystickAdded:joystick withName:@"Hotas"];
+    [joystickAddedDelegate joystickAdded:joystick withName:name id:id];
 }
 
 
@@ -92,12 +92,12 @@ void gamepadAction(void* inContext, IOReturn inResult, void* inSender, IOHIDValu
 
 void gamepadWasAdded(void* inContext, IOReturn inResult, void* inSender, IOHIDDeviceRef device) {
     IOHIDDeviceOpen(device, kIOHIDOptionsTypeNone);
-        NSString *deviceName = [NSString stringWithFormat:@"%@ %@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDManufacturerKey)), (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductKey))];
-        NSString *deviceID = [NSString stringWithFormat:@"%@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductIDKey))];
+    NSString *deviceName = [NSString stringWithFormat:@"%@ %@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDManufacturerKey)), (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductKey))];
+    NSString *deviceID = [NSString stringWithFormat:@"%@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductIDKey))];
 	IOHIDDeviceRegisterInputValueCallback(device, gamepadAction, inContext);
     
     Joystick *newJoystick = [[Joystick alloc] initWithDevice:device];
-    [[JoystickManager sharedInstance] registerNewJoystick:newJoystick];
+    [[JoystickManager sharedInstance] registerNewJoystick:newJoystick name:deviceName id:deviceID];
 
     NSLog(@"\nJoystick metadata:\n%@\n%@", deviceName, deviceID);
     

@@ -84,11 +84,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
         let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
         let currentDelaySetup = NSUserDefaults.standardUserDefaults().boolForKey("packetDelaySetup")
         
+
         if currentDelaySetup == false {
             //set to 10ms as default
             NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "packetDelaySetup")
             packetSpacingButton.title = "Toggle delay between packets (10ms)"
+            
+            //set all axes to -2
+            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "pitch")
+            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "roll")
+            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "throttle")
+            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "rudder")
+            
             
         } else {
             packetSpacingButton.title = "Toggle delay between packets (\(currentDelay)ms)"
@@ -221,11 +229,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, JoystickNotificationDelegate
     }
     
     //joystick work
-    func joystickAdded(joystick: Joystick!, withName name: String!) {
+    func joystickAdded(joystick: Joystick!, withName name: String!, id: String!) {
         joystick.registerForNotications(self)
-        //device: IOHIDDeviceRef = joystick.device
         
-        //joystickName.stringValue = name
+        let pitch = NSUserDefaults.standardUserDefaults().integerForKey("pitch")
+        let roll = NSUserDefaults.standardUserDefaults().integerForKey("roll")
+        let throttle = NSUserDefaults.standardUserDefaults().integerForKey("throttle")
+        let rudder = NSUserDefaults.standardUserDefaults().integerForKey("rudder")
+        
+        if pitch != -2 {
+          
+        }
+        
+        if roll != -2 {
+            
+        }
+        
+        if throttle != -2 {
+           
+        }
+        
+        if rudder != -2 {
+            
+        }
+        
+        // check to see if json exists with joystick name
+        guard let path = NSBundle.mainBundle().pathForResource("JoystickMapping/\(name)y", ofType: "json") else {
+            
+            // No map found
+            NSLog("No map found - setting default values...")
+            
+            
+            return
+        }
+
+        
     }
     
     func joystickStateChanged(joystick: Joystick!, axis:Int32) {
