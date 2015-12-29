@@ -13,7 +13,14 @@ Usage
 
 Modifying Source
 ------------
-LiveFlight Connect is built in Objective-C/Swift. Simply clone the repo, run and build in Xcode! 
+LiveFlight Connect is built in Objective-C/Swift. Objective-C is used for referencing lower-level APIs (IOHIDLib, NSStream for TCP connection, etc.) and Swift is used for manipulating the UI and handling joystick/keyboard events. 
+
+Clone the repo to start with. Connect-OSX uses submodules for third party libs. Run:
+
+    git submodule init
+    git submodule update
+
+Open the project in Xcode and build it - you should be good to go! 
 
 Compatible Devices
 ------------
