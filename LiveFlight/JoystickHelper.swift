@@ -9,7 +9,6 @@
 import Cocoa
 
 internal var joystickConnected = false
-internal var joystickMappedCorrectly = false
 internal var connectedJoystickName = ""
 
 class JoystickHelper: NSObject, JoystickNotificationDelegate {
@@ -121,6 +120,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             
         }
         
+
         
     }
     
@@ -128,6 +128,9 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         
         joystickConnected = false
         connectedJoystickName = ""
+        
+        // change label values
+        NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
         
     }
     

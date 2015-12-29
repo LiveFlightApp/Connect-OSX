@@ -151,10 +151,10 @@
                     <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="400" height="400"/>
+                        <rect key="contentRect" x="196" y="240" width="450" height="410"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="450" height="400"/>
-                        <value key="maxSize" type="size" width="450" height="800"/>
+                        <value key="minSize" type="size" width="450" height="410"/>
+                        <value key="maxSize" type="size" width="1200" height="800"/>
                     </window>
                     <connections>
                         <segue destination="Nod-l2-Bsw" kind="relationship" relationship="window.shadowedContentViewController" id="vp6-89-HEJ"/>
@@ -222,7 +222,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
@@ -233,7 +233,7 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
                                         <rect key="frame" x="55" y="82" width="341" height="45"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Make sure Infinite Flight is running on the same network with &quot;Infinite Flight Connect&quot; enabled." id="MNO-yO-GKm">
                                             <font key="font" metaFont="system"/>
@@ -241,12 +241,24 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="45o-gj-XjN">
+                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="45o-gj-XjN">
                                         <rect key="frame" x="209" y="161" width="32" height="32"/>
                                     </progressIndicator>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="45o-gj-XjN" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="209" id="75Q-St-fj0"/>
+                                    <constraint firstItem="aXk-oe-EEb" firstAttribute="top" secondItem="45o-gj-XjN" secondAttribute="bottom" constant="34" id="YuQ-PK-0IR"/>
+                                    <constraint firstItem="45o-gj-XjN" firstAttribute="top" secondItem="sQC-6H-fV5" secondAttribute="top" constant="107" id="nb2-A8-64Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="45o-gj-XjN" secondAttribute="trailing" constant="209" id="tye-bb-KNH"/>
+                                </constraints>
                             </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="sQC-6H-fV5" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" id="J0s-R6-FVe"/>
+                            <constraint firstAttribute="bottom" secondItem="sQC-6H-fV5" secondAttribute="bottom" id="YMn-1h-Of1"/>
+                            <constraint firstAttribute="trailing" secondItem="sQC-6H-fV5" secondAttribute="trailing" id="hsG-EQ-uQY"/>
+                            <constraint firstItem="sQC-6H-fV5" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" id="oEz-R7-SLo"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="connectingView" destination="sQC-6H-fV5" id="N0i-kZ-tFu"/>
@@ -435,6 +447,7 @@
                     </view>
                     <connections>
                         <outlet property="joystickName" destination="6KL-rb-nyZ" id="xn2-Vn-0yl"/>
+                        <outlet property="joystickRecognised" destination="Ogo-jJ-IKv" id="JDn-b0-BQt"/>
                         <outlet property="pitchLabel" destination="ch2-Cd-j3p" id="io3-ax-Hjs"/>
                         <outlet property="rollLabel" destination="iZX-iK-Cc6" id="5CF-xU-j6e"/>
                         <outlet property="rudderLabel" destination="2jF-6E-MN4" id="Hlc-eT-1AT"/>

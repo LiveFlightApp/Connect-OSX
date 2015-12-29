@@ -70,7 +70,8 @@ static JoystickManager *instance;
 
 -(void)joystickRemoved:(Joystick *)joystick name:(NSString *)name id:(NSString *)id {
     [joysticks removeAllObjects];
-    [joystickAddedDelegate joystickRemoved:joystick name:name id:id];
+    
+    [joystickAddedDelegate joystickRemoved:joystick withName:name id:id];
     
     [self setupGamepads];
     

@@ -50,6 +50,8 @@ class JoystickViewController: NSViewController {
             rudderLabel.stringValue = "Axis \(String(rudder))"
         }
         
+        NSLog("%@", connectedJoystickName)
+        
         if joystickConnected == true {
             joystickName.stringValue = connectedJoystickName
             
@@ -63,6 +65,10 @@ class JoystickViewController: NSViewController {
                 
             } else if mapStatus == 1 {
                 joystickRecognised.stringValue = "Using accurate values for your joystick (provided by LiveFlight)."
+                
+            } else {
+                joystickRecognised.stringValue = "Using generic joystick values. These may not work correctly."
+                
             }
             
             
