@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E019E401C31F66700853B33 /* JoystickMapping in Resources */ = {isa = PBXBuildFile; fileRef = 7E019E3F1C31F66700853B33 /* JoystickMapping */; };
+		7E019E421C32A48900853B33 /* JoystickHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E019E411C32A48900853B33 /* JoystickHelper.swift */; };
 		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; };
 		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; };
 		7E3F75111C2A075B00B4A8F3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F75101C2A075B00B4A8F3 /* Reachability.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		7E019E3F1C31F66700853B33 /* JoystickMapping */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JoystickMapping; path = libs/JoystickMapping; sourceTree = "<group>"; };
+		7E019E411C32A48900853B33 /* JoystickHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickHelper.swift; sourceTree = "<group>"; };
 		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		7E3F75101C2A075B00B4A8F3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = libs/Reachability.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */,
 				7E7BA5F61B89DA5200C73DA0 /* ViewController.swift */,
 				7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */,
+				7E019E411C32A48900853B33 /* JoystickHelper.swift */,
 				7EBCFE241C2EA2B7002E4078 /* KeyboardListenerWindow.swift */,
 				7EBCFE261C2EA5E8002E4078 /* KeyboardCommandsView.swift */,
 				7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */,
@@ -307,6 +310,7 @@
 				7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */,
 				7E7451701BC9D20000FB1069 /* Operation.swift in Sources */,
 				7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */,
+				7E019E421C32A48900853B33 /* JoystickHelper.swift in Sources */,
 				7E7451731BC9D20000FB1069 /* Upload.swift in Sources */,
 				7E7451711BC9D20000FB1069 /* Request.swift in Sources */,
 				7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */,
