@@ -74,7 +74,7 @@ class JoystickViewController: NSViewController {
             
         } else {
             joystickName.stringValue = "No joystick connected"
-            joystickRecognised.stringValue = ""
+            joystickRecognised.stringValue = "Plug a joystick in via USB to get started."
         }
     }
     
