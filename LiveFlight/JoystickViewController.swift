@@ -14,6 +14,8 @@ class JoystickViewController: NSViewController {
     @IBOutlet weak var rollLabel: NSTextField!
     @IBOutlet weak var throttleLabel: NSTextField!
     @IBOutlet weak var rudderLabel: NSTextField!
+    @IBOutlet weak var joystickName: NSTextField!
+    @IBOutlet weak var joystickRecognised: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,25 @@ class JoystickViewController: NSViewController {
             rudderLabel.stringValue = "Axis \(String(rudder))"
         }
         
+        if joystickConnected == true {
+            joystickName.stringValue = connectedJoystickName
+            
+            let mapStatus = NSUserDefaults.standardUserDefaults().integerForKey("mapStatus")
+            
+            if mapStatus == -2 {
+                joystickRecognised.stringValue = "Using custom-assigned values for axes."
+                
+            } else if mapStatus == 0 {
+                joystickRecognised.stringValue = "Using generic joystick values. These may not work correctly."
+                
+            } else if mapStatus == 1 {
+                joystickRecognised.stringValue = "Using accurate values for your joystick (provided by LiveFlight)."
+            }
+            
+            
+        } else {
+            joystickName.stringValue = "No joystick connected"
+        }
     }
     
     /*
@@ -60,12 +81,16 @@ class JoystickViewController: NSViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("tryPitch", object: nil)
         pitchLabel.stringValue = "Move the stick forwards and backwards"
         
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        
     }
     
     @IBAction func roll(sender: AnyObject) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryRoll", object: nil)
         rollLabel.stringValue = "Move the stick from side to side"
+        
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
         
     }
     
@@ -74,12 +99,16 @@ class JoystickViewController: NSViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("tryThrottle", object: nil)
         throttleLabel.stringValue = "Move the lever forwards and backwards"
         
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        
     }
     
     @IBAction func rudder(sender: AnyObject) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("tryRudder", object: nil)
         rudderLabel.stringValue = "Twist/move the rudder"
+        
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
         
     }
     
@@ -95,6 +124,7 @@ class JoystickViewController: NSViewController {
         NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "roll")
         NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "throttle")
         NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "rudder")
+        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
         
         // update labels
         pitchLabel.stringValue = "No axis assigned"

@@ -8,6 +8,10 @@
 
 import Cocoa
 
+internal var joystickConnected = false
+internal var joystickMappedCorrectly = false
+internal var connectedJoystickName = ""
+
 class JoystickHelper: NSObject, JoystickNotificationDelegate {
 
     let connector = InfiniteFlightAPIConnector()
@@ -56,6 +60,10 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
     func joystickAdded(joystick: Joystick!, withName name: String!, id: String!) {
         joystick.registerForNotications(self)
         
+        // set last joystick name and connected
+        connectedJoystickName = name
+        joystickConnected = true
+        
         let axesSet = NSUserDefaults.standardUserDefaults().boolForKey("axesSet")
         
         if axesSet != true {
@@ -72,6 +80,9 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
                 NSUserDefaults.standardUserDefaults().setInteger(48, forKey: "roll")
                 NSUserDefaults.standardUserDefaults().setInteger(50, forKey: "throttle")
                 NSUserDefaults.standardUserDefaults().setInteger(53, forKey: "rudder")
+                
+                // using estimated values
+                NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "mapStatus")
                 
                 return
             }
@@ -94,6 +105,9 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
                     NSUserDefaults.standardUserDefaults().setInteger(throttleAxis, forKey: "throttle")
                     NSUserDefaults.standardUserDefaults().setInteger(rudderAxis, forKey: "rudder")
                     
+                    // using mapped values
+                    NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "mapStatus")
+                    
                 } else {
                     NSLog("Failed to parse JSON")
                 }
@@ -107,6 +121,13 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             
         }
         
+        
+    }
+    
+    func joystickRemoved(joystick: Joystick!, withName name: String!, id: String!) {
+        
+        joystickConnected = false
+        connectedJoystickName = ""
         
     }
     

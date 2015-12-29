@@ -68,8 +68,26 @@ static JoystickManager *instance;
 }
 
 
+-(void)joystickRemoved:(Joystick *)joystick name:(NSString *)name id:(NSString *)id {
+    [joysticks removeAllObjects];
+    [joystickAddedDelegate joystickRemoved:joystick name:name id:id];
+    
+    [self setupGamepads];
+    
+}
+
 void gamepadWasRemoved(void* inContext, IOReturn inResult, void* inSender, IOHIDDeviceRef device) {
     NSLog(@"Gamepad was unplugged");
+    
+    IOHIDDeviceOpen(device, kIOHIDOptionsTypeNone);
+    NSString *deviceName = [NSString stringWithFormat:@"%@ %@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDManufacturerKey)), (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductKey))];
+    NSString *deviceID = [NSString stringWithFormat:@"%@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductIDKey))];
+    IOHIDDeviceRegisterInputValueCallback(device, gamepadAction, inContext);
+    
+    Joystick *joystick = [[Joystick alloc] initWithDevice:device];
+    [[JoystickManager sharedInstance] joystickRemoved:joystick name:deviceName id:deviceID];
+
+    
 }
 
 void gamepadAction(void* inContext, IOReturn inResult, void* inSender, IOHIDValueRef value) {
