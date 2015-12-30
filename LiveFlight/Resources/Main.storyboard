@@ -452,12 +452,41 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eFM-cW-Pcm" customClass="JoystickReady" customModule="Connect" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="314"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qly-xl-1P6">
+                                        <rect key="frame" x="80" y="189" width="291" height="33"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Your joystick is set up correctly!" id="0yT-d6-u8D">
+                                            <font key="font" metaFont="system" size="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jrx-JO-jqS">
+                                        <rect key="frame" x="18" y="139" width="414" height="51"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="You can now go to the Controls tab in settings (in Infinite Flight) to finish setting up axes and buttons." id="PSD-5v-4OR">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jrx-JO-jqS" firstAttribute="leading" secondItem="eFM-cW-Pcm" secondAttribute="leading" constant="20" id="Bef-Tc-bUh"/>
+                                    <constraint firstItem="qly-xl-1P6" firstAttribute="leading" secondItem="eFM-cW-Pcm" secondAttribute="leading" constant="82" id="EhJ-K4-enu"/>
+                                    <constraint firstAttribute="trailing" secondItem="qly-xl-1P6" secondAttribute="trailing" constant="81" id="R4o-ua-PaV"/>
+                                    <constraint firstItem="qly-xl-1P6" firstAttribute="top" secondItem="eFM-cW-Pcm" secondAttribute="top" constant="92" id="krO-y9-4dM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jrx-JO-jqS" secondAttribute="trailing" constant="20" id="muT-Iu-dDz"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="gNc-zc-FIs" firstAttribute="top" secondItem="1NE-hW-spB" secondAttribute="bottom" constant="4" id="1Tq-i4-RdM"/>
                             <constraint firstItem="Ogo-jJ-IKv" firstAttribute="top" secondItem="6KL-rb-nyZ" secondAttribute="bottom" constant="8" id="1Us-vW-lDI"/>
                             <constraint firstItem="9uL-kf-SgZ" firstAttribute="leading" secondItem="sG0-Ns-ZYY" secondAttribute="leading" constant="20" id="2ry-qY-STF"/>
                             <constraint firstItem="1NE-hW-spB" firstAttribute="top" secondItem="rXm-3A-qaI" secondAttribute="bottom" constant="4" id="2yV-SU-trA"/>
+                            <constraint firstItem="eFM-cW-Pcm" firstAttribute="leading" secondItem="sG0-Ns-ZYY" secondAttribute="leading" id="58x-lz-nh6"/>
                             <constraint firstAttribute="trailing" secondItem="tUu-nu-wDF" secondAttribute="trailing" constant="20" id="5ud-AW-1PI"/>
                             <constraint firstItem="kDb-2Z-VmL" firstAttribute="leading" secondItem="sG0-Ns-ZYY" secondAttribute="leading" constant="20" id="6gV-dB-zhM"/>
                             <constraint firstItem="gNI-cx-CB5" firstAttribute="leading" secondItem="XnL-qE-9wC" secondAttribute="trailing" constant="8" id="6jQ-Hn-eyF"/>
@@ -468,6 +497,7 @@
                             <constraint firstItem="tUu-nu-wDF" firstAttribute="leading" secondItem="1NE-hW-spB" secondAttribute="trailing" constant="8" id="EQI-uK-gUN"/>
                             <constraint firstAttribute="trailing" secondItem="6KL-rb-nyZ" secondAttribute="trailing" constant="20" id="FCN-iv-hJ2"/>
                             <constraint firstItem="2jF-6E-MN4" firstAttribute="leading" secondItem="gNc-zc-FIs" secondAttribute="trailing" constant="8" id="FIk-Zo-jKk"/>
+                            <constraint firstItem="eFM-cW-Pcm" firstAttribute="top" secondItem="Ogo-jJ-IKv" secondAttribute="bottom" constant="23" id="FN2-Kd-Vtv"/>
                             <constraint firstAttribute="trailing" secondItem="kDb-2Z-VmL" secondAttribute="trailing" constant="20" id="GIJ-ag-hqf"/>
                             <constraint firstItem="nfc-oa-95A" firstAttribute="top" secondItem="gNc-zc-FIs" secondAttribute="bottom" constant="42" id="HCv-MT-qhg"/>
                             <constraint firstItem="5k8-nr-G1f" firstAttribute="top" secondItem="nfc-oa-95A" secondAttribute="bottom" constant="19" id="HqU-Y6-yEc"/>
@@ -490,6 +520,7 @@
                             <constraint firstItem="bHO-q1-OrY" firstAttribute="top" secondItem="5k8-nr-G1f" secondAttribute="bottom" constant="14" id="XZt-LV-df3"/>
                             <constraint firstItem="IgX-Us-xHb" firstAttribute="leading" secondItem="nfc-oa-95A" secondAttribute="trailing" constant="60" id="Xb8-No-7Yi"/>
                             <constraint firstItem="6KL-rb-nyZ" firstAttribute="leading" secondItem="sG0-Ns-ZYY" secondAttribute="leading" constant="20" id="Yfd-9o-hG3"/>
+                            <constraint firstAttribute="bottom" secondItem="eFM-cW-Pcm" secondAttribute="bottom" id="a0l-yb-F5g"/>
                             <constraint firstItem="gNc-zc-FIs" firstAttribute="leading" secondItem="9uL-kf-SgZ" secondAttribute="trailing" constant="8" id="a5g-6s-B3i"/>
                             <constraint firstItem="iZX-iK-Cc6" firstAttribute="top" secondItem="ch2-Cd-j3p" secondAttribute="bottom" constant="8" id="aJu-TL-GN4"/>
                             <constraint firstItem="5k8-nr-G1f" firstAttribute="leading" secondItem="sG0-Ns-ZYY" secondAttribute="leading" constant="20" id="ahr-Ia-1JF"/>
@@ -506,6 +537,7 @@
                             <constraint firstItem="bHO-q1-OrY" firstAttribute="top" secondItem="5k8-nr-G1f" secondAttribute="bottom" constant="14" id="dn8-cf-Mdg"/>
                             <constraint firstAttribute="trailing" secondItem="bHO-q1-OrY" secondAttribute="trailing" constant="20" id="e7A-RH-gIk"/>
                             <constraint firstItem="iZX-iK-Cc6" firstAttribute="top" secondItem="ch2-Cd-j3p" secondAttribute="bottom" constant="8" id="iqH-V6-xAw"/>
+                            <constraint firstAttribute="trailing" secondItem="eFM-cW-Pcm" secondAttribute="trailing" id="jKf-3t-KRk"/>
                             <constraint firstItem="gNc-zc-FIs" firstAttribute="top" secondItem="1NE-hW-spB" secondAttribute="bottom" constant="4" id="kPh-iq-4n0"/>
                             <constraint firstItem="ZqD-1q-ob6" firstAttribute="leading" secondItem="sG0-Ns-ZYY" secondAttribute="leading" constant="20" id="leH-Rs-KH2"/>
                             <constraint firstItem="2jF-6E-MN4" firstAttribute="leading" secondItem="gNc-zc-FIs" secondAttribute="trailing" constant="8" id="ndk-Er-bAd"/>
@@ -537,20 +569,6 @@
                     </connections>
                 </viewController>
                 <customObject id="IoP-Vm-l3z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customView id="eFM-cW-Pcm">
-                    <rect key="frame" x="0.0" y="0.0" width="450" height="316"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qly-xl-1P6">
-                            <rect key="frame" x="145" y="178" width="160" height="35"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="You're good to go!" id="0yT-d6-u8D">
-                                <font key="font" metaFont="system" size="16"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                    </subviews>
-                </customView>
             </objects>
             <point key="canvasLocation" x="802" y="617"/>
         </scene>
@@ -619,14 +637,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="410"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView focusRingType="none" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvc-kK-UQ9">
-                                <rect key="frame" x="20" y="130" width="410" height="260"/>
+                            <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvc-kK-UQ9">
+                                <rect key="frame" x="20" y="20" width="410" height="370"/>
                                 <clipView key="contentView" focusRingType="none" id="BFv-eE-NAr">
-                                    <rect key="frame" x="1" y="0.0" width="408" height="259"/>
+                                    <rect key="frame" x="1" y="0.0" width="408" height="369"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="7mO-DA-8xj" id="IC8-7l-pqU">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="236"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="346"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -682,7 +700,7 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Lvc-kK-UQ9" secondAttribute="bottom" constant="20" id="FX7-as-Ybp"/>
+                            <constraint firstAttribute="bottom" secondItem="Lvc-kK-UQ9" secondAttribute="bottom" constant="20" id="3jc-fE-ucp"/>
                             <constraint firstItem="Lvc-kK-UQ9" firstAttribute="top" secondItem="yyp-0j-R77" secondAttribute="top" constant="20" id="H5f-hJ-Y3i"/>
                             <constraint firstAttribute="trailing" secondItem="Lvc-kK-UQ9" secondAttribute="trailing" constant="20" id="obH-gW-cJe"/>
                             <constraint firstItem="Lvc-kK-UQ9" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="20" id="u7b-cZ-xLm"/>

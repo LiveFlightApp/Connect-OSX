@@ -86,7 +86,10 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         
         let axesSet = NSUserDefaults.standardUserDefaults().boolForKey("axesSet")
         
-        if axesSet != true {
+        // this is to reset axes when upgrading. Since there is a common pattern, there shouldn't be much impact.
+        let axesSet11 = NSUserDefaults.standardUserDefaults().boolForKey("axesSet11")
+        
+        if axesSet != true || axesSet11 != true {
             // axes haven't been set yet
             
             // check to see if json exists with joystick name
@@ -139,6 +142,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         // change labels and mark as axes set
         NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet11")
         
         
     }

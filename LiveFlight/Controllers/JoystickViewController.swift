@@ -16,13 +16,11 @@ class JoystickViewController: NSViewController {
     @IBOutlet weak var rudderLabel: NSTextField!
     @IBOutlet weak var joystickName: NSTextField!
     @IBOutlet weak var joystickRecognised: NSTextField!
-    @IBOutlet var allClearView: NSView!
+    @IBOutlet var allClearView: JoystickReady!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set the background for the all clear view
-        allClearView?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0.8)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeLabelValues:", name:"changeLabelValues", object: nil)
         
@@ -57,6 +55,8 @@ class JoystickViewController: NSViewController {
 
         if joystickConfig.joystickConnected == true {
             
+            allClearView!.hidden = true
+            
             // remove duplicate words from name
             // some manufacturers include name in product name too
             var joystickNameArray = joystickConfig.connectedJoystickName.characters.split{$0 == " "}.map(String.init)
@@ -80,9 +80,6 @@ class JoystickViewController: NSViewController {
             if mapStatus == -2 {
                 joystickRecognised.stringValue = "Using custom-assigned values for axes."
                 
-
-                allClearView?.frame = NSRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 95)
-                self.view.addSubview(allClearView!)
                 
             } else if mapStatus == 0 {
                 joystickRecognised.stringValue = "Using generic joystick values. These may not work correctly."
@@ -90,8 +87,7 @@ class JoystickViewController: NSViewController {
             } else if mapStatus == 1 {
                 joystickRecognised.stringValue = "Using accurate values for your joystick (provided by LiveFlight)."
                 
-                allClearView?.frame = self.view.frame
-                self.view.addSubview(allClearView!)
+                allClearView!.hidden = false
                 
             } else {
                 joystickRecognised.stringValue = "Using generic joystick values. These may not work correctly."
