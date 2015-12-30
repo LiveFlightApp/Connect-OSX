@@ -22,6 +22,7 @@ var joystickConfig = JoystickConfig(connected: false, name: "")
 class JoystickHelper: NSObject, JoystickNotificationDelegate {
 
     let connector = InfiniteFlightAPIConnector()
+    let controls = FlightControls()
     
     //joystick values
     var rollValue = 0;
@@ -191,19 +192,20 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             
         }
         
-        let value:Int = Int(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024);
+        
+        let value:Int32 = Int32(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024);
         
         if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("pitch")) {
-            connector.didMoveAxis(0, value: Int32(value))
+            controls.pitchChanged(value)
             
         } else if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("roll")) {
-            connector.didMoveAxis(1, value: Int32(value))
+            controls.rollChanged(value)
             
         } else if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("throttle")) {
-            connector.didMoveAxis(3, value: Int32(value))
+            controls.throttleChanged(value)
             
         } else if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("rudder")) {
-            connector.didMoveAxis(2, value: Int32(value))
+            controls.rudderChanged(value)
             
         }
         

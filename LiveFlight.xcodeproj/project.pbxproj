@@ -17,6 +17,7 @@
 		7E3646AD1C3455D9003117A5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3646AC1C3455D9003117A5 /* Status.swift */; };
 		7E3646AF1C345610003117A5 /* JoystickMapping in Resources */ = {isa = PBXBuildFile; fileRef = 7E3646AE1C345610003117A5 /* JoystickMapping */; };
 		7E3646B11C345668003117A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3646B01C345668003117A5 /* Main.storyboard */; };
+		7E5378091C34A4BC006D86F0 /* FlightControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5378081C34A4BC006D86F0 /* FlightControls.swift */; };
 		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; };
 		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; };
 		7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */; };
@@ -68,6 +69,7 @@
 		7E3646AC1C3455D9003117A5 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = ViewSubclasses/StatusMessages/Status.swift; sourceTree = "<group>"; };
 		7E3646AE1C345610003117A5 /* JoystickMapping */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JoystickMapping; path = LiveFlight/libs/JoystickMapping; sourceTree = SOURCE_ROOT; };
 		7E3646B01C345668003117A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		7E5378081C34A4BC006D86F0 /* FlightControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlightControls.swift; path = Controllers/FlightControls.swift; sourceTree = "<group>"; };
 		7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPadViewController.h; path = Controllers/ControlPadViewController.h; sourceTree = "<group>"; };
 		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlPadViewController.m; path = Controllers/ControlPadViewController.m; sourceTree = "<group>"; };
 		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPad.h; path = ViewSubclasses/ControlPad/ControlPad.h; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 				7E3646A01C34557A003117A5 /* KeyboardListenerWindow.swift */,
 			);
 			name = Keyboard;
+			sourceTree = "<group>";
+		};
+		7E5378071C34A4A2006D86F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E5378081C34A4BC006D86F0 /* FlightControls.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		7E5585D81BD2CD8F0028D9FD /* Infinite Flight Connect */ = {
@@ -206,6 +216,7 @@
 				7E3646A31C34558D003117A5 /* KeyboardCommandsView.swift */,
 				7E3646B01C345668003117A5 /* Main.storyboard */,
 				7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */,
+				7E5378071C34A4A2006D86F0 /* Controllers */,
 				7E3646991C3453A6003117A5 /* View Subclasses */,
 				7E36469F1C345540003117A5 /* Keyboard */,
 				7EC762AA1C2DF315006FF9B8 /* Joystick */,
@@ -342,6 +353,7 @@
 				7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */,
 				7E3646A61C34558D003117A5 /* KeyboardCommandsView.swift in Sources */,
 				7E7451731BC9D20000FB1069 /* Upload.swift in Sources */,
+				7E5378091C34A4BC006D86F0 /* FlightControls.swift in Sources */,
 				7E7451711BC9D20000FB1069 /* Request.swift in Sources */,
 				7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */,
 			);
