@@ -5,3 +5,4 @@
 #import "JoystickManager.h"
 #import "InfiniteFlightAPIConnector.h"
 #import "UDPReceiver.h"
+#include <ifaddrs.h>
