@@ -21,7 +21,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         connectingView.backgroundColor = NSColor.lightGrayColor()
-        spinner.startAnimation(self)
+        //spinner.startAnimation(self)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeView:", name:"connectionStarted", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentUpdateView:", name:"updateAvailable", object: nil)
