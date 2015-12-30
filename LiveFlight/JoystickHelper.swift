@@ -101,14 +101,13 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
                 NSUserDefaults.standardUserDefaults().setInteger(50, forKey: "throttle")
                 NSUserDefaults.standardUserDefaults().setInteger(53, forKey: "rudder")
                 
-                // using estimated values
+                // using generic values
                 NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "mapStatus")
                 
                 return
             }
             
             // if this point is reached, a map exists
-            
             let fileData = NSData(contentsOfFile: path)
             
             do {
