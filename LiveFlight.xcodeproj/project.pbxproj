@@ -12,6 +12,7 @@
 		7E20458F1BCA78BF00A03F11 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */; };
 		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; };
 		7E30F6991C32AE4D00EB7843 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30F6981C32AE4D00EB7843 /* Reachability.swift */; };
+		7E36469C1C3453E6003117A5 /* JoystickReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36469B1C3453E6003117A5 /* JoystickReady.swift */; };
 		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; };
 		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; };
 		7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */; };
@@ -62,6 +63,7 @@
 		7E20458E1BCA78BF00A03F11 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		7E30F6981C32AE4D00EB7843 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = libs/Reachability.swift/Reachability/Reachability.swift; sourceTree = "<group>"; };
+		7E36469B1C3453E6003117A5 /* JoystickReady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoystickReady.swift; path = "View Subclasses/JoystickReady.swift"; sourceTree = "<group>"; };
 		7E5585D51BD2CD7D0028D9FD /* ControlPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPadViewController.h; sourceTree = "<group>"; };
 		7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPadViewController.m; sourceTree = "<group>"; };
 		7E5585D91BD2CDF20028D9FD /* ControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPad.h; sourceTree = "<group>"; };
@@ -108,6 +110,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E3646991C3453A6003117A5 /* View Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				7E36469A1C3453B3003117A5 /* Status Messages */,
+				7E5585DC1BD2CDF50028D9FD /* ControlPad */,
+			);
+			name = "View Subclasses";
+			sourceTree = "<group>";
+		};
+		7E36469A1C3453B3003117A5 /* Status Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7E36469B1C3453E6003117A5 /* JoystickReady.swift */,
+			);
+			name = "Status Messages";
+			sourceTree = "<group>";
+		};
 		7E5585D81BD2CD8F0028D9FD /* Infinite Flight Connect */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +200,8 @@
 				7EBCFE261C2EA5E8002E4078 /* KeyboardCommandsView.swift */,
 				7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */,
 				7ED9BE201BE6B3CB00C85BD0 /* Main.storyboard */,
+				7E3646991C3453A6003117A5 /* View Subclasses */,
 				7EC762AA1C2DF315006FF9B8 /* Joystick */,
-				7E5585DC1BD2CDF50028D9FD /* ControlPad */,
 				7E5585D81BD2CD8F0028D9FD /* Infinite Flight Connect */,
 				7E7BA5F21B89DA5200C73DA0 /* Supporting Files */,
 				7E7BA6111B8A60FA00C73DA0 /* LiveFlight-Bridging-Header.h */,
@@ -302,6 +321,7 @@
 				7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */,
 				7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */,
 				7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */,
+				7E36469C1C3453E6003117A5 /* JoystickReady.swift in Sources */,
 				7EBCFE271C2EA5E8002E4078 /* KeyboardCommandsView.swift in Sources */,
 				7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */,
 				7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */,
