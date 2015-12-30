@@ -248,14 +248,14 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5">
+                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5" customClass="Status" customModule="Connect" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="411"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
                                         <rect key="frame" x="71" y="219" width="308" height="39"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to Infinite Flight..." id="Ywu-88-EQd">
                                             <font key="font" metaFont="system" size="19"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
@@ -263,7 +263,7 @@
                                         <rect key="frame" x="55" y="180" width="341" height="45"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Make sure Infinite Flight is running on the same network with &quot;Infinite Flight Connect&quot; enabled." id="MNO-yO-GKm">
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
@@ -499,7 +499,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eFM-cW-Pcm" customClass="JoystickReady" customModule="Connect" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eFM-cW-Pcm" customClass="Status" customModule="Connect" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="314"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qly-xl-1P6">

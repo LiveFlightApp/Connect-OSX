@@ -16,7 +16,7 @@ class JoystickViewController: NSViewController {
     @IBOutlet weak var rudderLabel: NSTextField!
     @IBOutlet weak var joystickName: NSTextField!
     @IBOutlet weak var joystickRecognised: NSTextField!
-    @IBOutlet var allClearView: JoystickReady!
+    @IBOutlet var allClearView: Status!
     
     override func viewDidLoad() {
         super.viewDidLoad()

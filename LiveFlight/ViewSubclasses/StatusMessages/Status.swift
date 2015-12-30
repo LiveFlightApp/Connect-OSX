@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class JoystickReady: NSView {
+class Status: NSView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame:frameRect)
@@ -19,7 +19,7 @@ class JoystickReady: NSView {
         super.init(coder: coder)!
         
         // set the background for the all clear view
-        self.backgroundColor = NSColor(calibratedRed: (130.0/255.0), green: (130.0/255.0), blue: (130.0/255.0), alpha: 0.9)
+        self.backgroundColor = NSColor(calibratedRed: (50.0/255.0), green: (50.0/255.0), blue: (50.0/255.0), alpha: 0.95)
         
 
     }
