@@ -11,7 +11,7 @@
 
 @implementation Joystick
 
-@synthesize device;
+@synthesize device, productName, productId, manufacturerName;
 
 - (id)initWithDevice:(IOHIDDeviceRef)theDevice
 {
@@ -102,7 +102,8 @@
         
         for (i=0; i<delegates.count; ++i) {
             id <JoystickNotificationDelegate> delegate = [delegates objectAtIndex:i];
-            [hatswitch checkValue:value andDispatchButtonPressesWithIndexOffset:offset toDelegate:delegate];
+            int valueInt = (int)value;
+            [hatswitch checkValue:valueInt andDispatchButtonPressesWithIndexOffset:offset toDelegate:delegate];
         }
         
         return;

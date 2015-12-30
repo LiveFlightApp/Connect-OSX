@@ -24,8 +24,8 @@
 
 + (JoystickManager *)sharedInstance;
 - (unsigned long)connectedJoysticks;
-- (void)registerNewJoystick:(Joystick *)joystick name:(NSString *)name id:(NSString *)id;
-- (void)joystickRemoved:(Joystick *)joystick name:(NSString *)name id:(NSString *)id;
+- (void)registerNewJoystick:(Joystick *)joystick;
+- (void)joystickRemoved:(Joystick *)joystick;
 - (int)deviceIDByReference:(IOHIDDeviceRef)deviceRef;
 - (Joystick *)joystickByID:(int)joystickID;
 

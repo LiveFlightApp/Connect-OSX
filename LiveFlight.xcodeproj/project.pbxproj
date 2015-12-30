@@ -441,7 +441,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/LiveFlight",
-					"$(PROJECT_DIR)/LiveFlight/DevMateKit.framework/Frameworks/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/LiveFlight/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -463,7 +462,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/LiveFlight",
-					"$(PROJECT_DIR)/LiveFlight/DevMateKit.framework/Frameworks/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/LiveFlight/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
