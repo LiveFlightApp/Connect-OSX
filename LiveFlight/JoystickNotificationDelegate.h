@@ -12,8 +12,8 @@
 
 @protocol JoystickNotificationDelegate
 
-- (void)joystickAdded:(Joystick*)joystick withName:(NSString *)name id:(NSString *)id;
-- (void)joystickRemoved:(Joystick*)joystick withName:(NSString *)name id:(NSString *)id;
+- (void)joystickAdded:(Joystick*)joystick;
+- (void)joystickRemoved:(Joystick*)joystick;
 - (void)joystickStateChanged:(Joystick*)joystick axis:(int)axis;
 - (void)joystickButtonPushed:(int)buttonIndex onJoystick:(Joystick*)joystick;
 - (void)joystickButtonReleased:(int)buttonIndex onJoystick:(Joystick*)joystick;

@@ -77,11 +77,11 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
     }
     
     //joystick work
-    func joystickAdded(joystick: Joystick!, withName name: String!, id: String!) {
+    func joystickAdded(joystick: Joystick!) {
         joystick.registerForNotications(self)
         
         // set last joystick name and connected
-        joystickConfig = JoystickConfig(connected: true, name: name)
+        joystickConfig = JoystickConfig(connected: true, name: ("\(joystick.manufacturerName) \(joystick.productName)"))
         
         
         let axesSet = NSUserDefaults.standardUserDefaults().boolForKey("axesSet")
@@ -90,7 +90,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             // axes haven't been set yet
             
             // check to see if json exists with joystick name
-            guard let path = NSBundle.mainBundle().pathForResource("JoystickMapping/\(name)", ofType: "json") else {
+            guard let path = NSBundle.mainBundle().pathForResource("JoystickMapping/\(joystick.manufacturerName) \(joystick.productName)", ofType: "json") else {
                 
                 // No map found
                 NSLog("No map found - setting default values...")
@@ -144,7 +144,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         
     }
     
-    func joystickRemoved(joystick: Joystick!, withName name: String!, id: String!) {
+    func joystickRemoved(joystick: Joystick!) {
         
         joystickConfig = JoystickConfig(connected: false, name: "")
         

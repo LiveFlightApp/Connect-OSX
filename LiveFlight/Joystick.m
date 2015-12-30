@@ -19,6 +19,11 @@
     if (self) {
         device = theDevice;
         
+        // metadata first
+        self.manufacturerName = [NSString stringWithFormat:@"%@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDManufacturerKey))];
+        self.productName = [NSString stringWithFormat:@"%@", (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductKey))];
+        self.productId = (int)IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductIDKey));
+        
         delegates = [[NSMutableArray alloc] initWithCapacity:0];
         
         elements = (__bridge NSArray *)IOHIDDeviceCopyMatchingElements(theDevice, NULL, kIOHIDOptionsTypeNone);
@@ -53,6 +58,7 @@
 
             
         }
+        
         buttons = [NSArray arrayWithArray:tempButtons];
         axes = [NSArray arrayWithArray:tempAxes];
         hats = [NSArray arrayWithArray:tempHats];

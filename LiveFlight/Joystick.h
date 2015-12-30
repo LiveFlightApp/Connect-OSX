@@ -17,18 +17,21 @@
     NSArray *buttons;
     NSArray *hats;
     NSMutableArray *delegates;
+    NSString *productName;
+    int productId;
 }
 
 @property(readwrite) IOHIDDeviceRef device;
 @property(readonly) unsigned int numButtons;
 @property(readonly) unsigned int numAxes;
 @property(readonly) unsigned int numHats;
+@property(readwrite) NSString *manufacturerName;
+@property(readwrite) NSString *productName;
+@property(readwrite) int productId;
 
 - (id)initWithDevice:(IOHIDDeviceRef)theDevice;
 - (int)getElementIndex:(IOHIDElementRef)theElement;
-
 - (double)getRelativeValueOfAxesIndex:(int)index;
-
 - (void)elementReportedChange:(IOHIDElementRef)theElement;
 - (void)registerForNotications:(id <JoystickNotificationDelegate>)delegate;
 - (void)deregister:(id<JoystickNotificationDelegate>)delegate;
