@@ -225,7 +225,14 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="410"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
+                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="45o-gj-XjN">
+                                        <rect key="frame" x="209" y="213" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="m5E-R3-xfC"/>
+                                            <constraint firstAttribute="height" constant="32" id="rsA-Lp-JK9"/>
+                                        </constraints>
+                                    </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
                                         <rect key="frame" x="71" y="238" width="308" height="39"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to Infinite Flight..." id="Ywu-88-EQd">
                                             <font key="font" metaFont="system" size="19"/>
@@ -233,7 +240,7 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
                                         <rect key="frame" x="55" y="134" width="341" height="45"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Make sure Infinite Flight is running on the same network with &quot;Infinite Flight Connect&quot; enabled." id="MNO-yO-GKm">
                                             <font key="font" metaFont="system"/>
@@ -241,15 +248,22 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="45o-gj-XjN">
-                                        <rect key="frame" x="209" y="213" width="32" height="32"/>
-                                    </progressIndicator>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="45o-gj-XjN" secondAttribute="trailing" constant="209" id="1yI-7h-0ee"/>
+                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="top" secondItem="sQC-6H-fV5" secondAttribute="top" constant="133" id="4fs-fM-BHC"/>
+                                    <constraint firstItem="aXk-oe-EEb" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="57" id="67E-jZ-tTG"/>
+                                    <constraint firstItem="aXk-oe-EEb" firstAttribute="top" secondItem="45o-gj-XjN" secondAttribute="bottom" constant="34" id="I7c-eC-5Pe"/>
+                                    <constraint firstAttribute="trailing" secondItem="RAd-rt-Gl8" secondAttribute="trailing" constant="73" id="J9t-Sk-wiX"/>
+                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="73" id="UdJ-vp-Twn"/>
+                                    <constraint firstAttribute="trailing" secondItem="aXk-oe-EEb" secondAttribute="trailing" constant="56" id="eDr-WK-FGs"/>
+                                    <constraint firstItem="45o-gj-XjN" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="209" id="f3X-FJ-7xF"/>
+                                </constraints>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="sQC-6H-fV5" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" id="J0s-R6-FVe"/>
                             <constraint firstAttribute="bottom" secondItem="sQC-6H-fV5" secondAttribute="bottom" id="YMn-1h-Of1"/>
+                            <constraint firstItem="sQC-6H-fV5" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" id="cnx-fh-K2j"/>
                             <constraint firstAttribute="trailing" secondItem="sQC-6H-fV5" secondAttribute="trailing" id="hsG-EQ-uQY"/>
                             <constraint firstItem="sQC-6H-fV5" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" id="oEz-R7-SLo"/>
                         </constraints>

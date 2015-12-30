@@ -54,7 +54,7 @@
     [udpSocket_ beginReceiving:&receivingError];
 }
 
--(void)didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
     //received packet on port 15000
 
     NSString *packet = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
