@@ -31,6 +31,8 @@ class JoystickViewController: NSViewController {
     
     func changeLabelValues(notification:NSNotification) {
         
+        allClearView!.hidden = true
+        
         let pitch = NSUserDefaults.standardUserDefaults().integerForKey("pitch")
         let roll = NSUserDefaults.standardUserDefaults().integerForKey("roll")
         let throttle = NSUserDefaults.standardUserDefaults().integerForKey("throttle")
@@ -54,8 +56,6 @@ class JoystickViewController: NSViewController {
         
 
         if joystickConfig.joystickConnected == true {
-            
-            allClearView!.hidden = true
             
             // remove duplicate words from name
             // some manufacturers include name in product name too
