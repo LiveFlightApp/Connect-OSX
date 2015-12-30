@@ -37,7 +37,7 @@ NSOutputStream *outputStream;
     lastSend = [NSDate date];
     
     //send notification to hide loading view
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionStarted" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionStarted" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:ip, @"ip", nil]];
     
     return;
     

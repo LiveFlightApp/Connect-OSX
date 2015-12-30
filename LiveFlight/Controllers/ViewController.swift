@@ -8,10 +8,12 @@
 
 import Cocoa
 
+
+
 class ViewController: NSViewController {
     
     @IBOutlet weak var connectingView:NSView!
-    @IBOutlet weak var spinner:NSProgressIndicator!
+    @IBOutlet var ipLabel:NSTextField!
     
     var alertIsShown = false
     
@@ -21,7 +23,6 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         connectingView.backgroundColor = NSColor.lightGrayColor()
-        //spinner.startAnimation(self)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeView:", name:"connectionStarted", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentUpdateView:", name:"updateAvailable", object: nil)
@@ -43,6 +44,7 @@ class ViewController: NSViewController {
         dispatch_async(dispatch_get_main_queue(),{
             
             self.connectingView.hidden = true
+            self.ipLabel.stringValue = "Infinite Flight is at \(notification.userInfo!["ip"] as! String!)" // this is passed in notification
             
         })
         
@@ -103,53 +105,10 @@ class ViewController: NSViewController {
 
 
     
-    //MARK - Call functions from buttons
-    
-    @IBAction func previousCamera(sender: AnyObject) {
+    @IBAction func openJoystickGuide(sender: AnyObject) {
         
-        connector.previousCamera()
-        
-    }
-    
-    @IBAction func nextCamera(sender: AnyObject) {
-        
-        connector.nextCamera()
-        
-    }
-    
-    @IBAction func cockpitCamera(sender: AnyObject) {
-        
-        connector.cockpitCamera()
-        
-    }
-    
-    @IBAction func vcCamera(sender: AnyObject) {
-        
-        connector.vcCamera()
-        
-    }
-    
-    @IBAction func followCamera(sender: AnyObject) {
-        
-        connector.followCamera()
-        
-    }
-    
-    @IBAction func onboardCamera(sender: AnyObject) {
-        
-        connector.onboardCamera()
-        
-    }
-    
-    @IBAction func flybyCamera(sender: AnyObject) {
-        
-        connector.flybyCamera()
-        
-    }
-    
-    @IBAction func towerCamera(sender: AnyObject) {
-        
-        connector.towerCamera()
+        let forumURL = "https://community.infinite-flight.com/t/joysticks-on-ios-android-over-the-network-liveflight-connect/20017?u=carmalonso"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
         
     }
 

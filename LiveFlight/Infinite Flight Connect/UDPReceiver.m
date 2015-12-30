@@ -108,7 +108,6 @@
     InfiniteFlightAPIConnector *apiConnector = [[InfiniteFlightAPIConnector alloc] init];
     [apiConnector connectToInfiniteFlightWithIP:string];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionStarted" object:nil];
     
 }
 
