@@ -82,7 +82,6 @@ class JoystickViewController: NSViewController {
                 
 
                 allClearView?.frame = NSRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 95)
-                allClearView.cons
                 self.view.addSubview(allClearView!)
                 
             } else if mapStatus == 0 {
