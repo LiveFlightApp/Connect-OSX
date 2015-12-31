@@ -21,23 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var joystickHelper = JoystickHelper()
     
     func applicationWillFinishLaunching(notification: NSNotification) {
-        logAppInfo()
-    }
-    
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        
-        
-        /*
-            Check Networking Status
-            ========================
-        */
-        
-        do {
-            reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
-        } catch ReachabilityError.FailedToCreateWithAddress(_) {
-            NSLog("Can't connect to LiveFlight")
-            return
-        } catch {}
         
         /*
             Load Settings
@@ -48,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // not a valid url, set default to desktop
             
             if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-             
+                
                 NSUserDefaults.standardUserDefaults().setValue(String(dir), forKey: "logPath")
                 
             }
@@ -92,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
         let currentDelaySetup = NSUserDefaults.standardUserDefaults().boolForKey("packetDelaySetup")
         
-
+        
         if currentDelaySetup == false {
             //set to 10ms as default
             NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
@@ -110,6 +93,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             packetSpacingButton.title = "Toggle Delay Between Packets (\(currentDelay)ms)"
             
         }
+        
+        
+        logAppInfo()
+    }
+    
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        
+        /*
+            Check Networking Status
+            ========================
+        */
+        
+        do {
+            reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
+        } catch ReachabilityError.FailedToCreateWithAddress(_) {
+            NSLog("Can't connect to LiveFlight")
+            return
+        } catch {}
         
         
         /*
@@ -310,6 +312,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         optionsWindow.showWindow(self)
         
+    }
+    
+    @IBAction func nextCamera(sender: AnyObject) {
+        connector.nextCamera()
+    }
+    
+    @IBAction func previousCamera(sender: AnyObject) {
+        connector.previousCamera()
+    }
+    
+    @IBAction func cockpitCamera(sender: AnyObject) {
+        connector.cockpitCamera()
+    }
+    
+    @IBAction func vcCamera(sender: AnyObject) {
+        connector.vcCamera()
+    }
+    
+    @IBAction func followCamera(sender: AnyObject) {
+        connector.followCamera()
+    }
+    
+    @IBAction func onBoardCamera(sender: AnyObject) {
+        connector.onboardCamera()
+    }
+    
+    @IBAction func flybyCamera(sender: AnyObject) {
+        connector.flybyCamera()
+    }
+    
+    @IBAction func towerCamera(sender: AnyObject) {
+        connector.towerCamera()
     }
     
     func getIFAddresses() -> [String] {

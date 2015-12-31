@@ -153,6 +153,62 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Cameras" id="a6p-t0-fDu">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Cameras" id="iwW-E0-OoC">
+                                    <items>
+                                        <menuItem title="Previous Camera" keyEquivalent="q" id="1bD-sH-mpE">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="previousCamera:" target="Voe-Tx-rLC" id="GFM-gS-Kic"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Next Camera" keyEquivalent="e" id="lzH-ov-dgZ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="nextCamera:" target="Voe-Tx-rLC" id="BJx-XQ-HxD"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eP3-MP-Jyi"/>
+                                        <menuItem title="Cockpit Camera" id="Gbe-TV-AJ9">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="cockpitCamera:" target="Voe-Tx-rLC" id="eWy-zj-vRd"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Virtual Cockpit Camera" id="bEm-RD-9KH">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="vcCamera:" target="Voe-Tx-rLC" id="Qs4-mH-jim"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Follow Camera" id="hVU-nS-FPD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="followCamera:" target="Voe-Tx-rLC" id="c91-Se-UOj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="On-Board Camera" id="IQ5-oQ-qHS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="onBoardCamera:" target="Voe-Tx-rLC" id="XAX-yM-ojl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Fly-By Camera" id="H2K-qb-2no">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="flybyCamera:" target="Voe-Tx-rLC" id="Axz-Ny-jEs"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Tower Camera" id="ul9-2R-upk">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="towerCamera:" target="Voe-Tx-rLC" id="arc-sV-8SQ"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">

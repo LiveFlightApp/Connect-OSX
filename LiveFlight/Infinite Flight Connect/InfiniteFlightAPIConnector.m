@@ -274,7 +274,7 @@ NSOutputStream *outputStream;
 }
 
 -(void)flybyCamera {
-    [self sendWithString:@"Commands.SetFlybyCamera" params:nil isJoystick:false];
+    [self sendWithString:@"Commands.SetFlyByCamera" params:nil isJoystick:false];
 }
 
 -(void)zoomOut {
