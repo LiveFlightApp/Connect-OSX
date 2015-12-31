@@ -81,8 +81,17 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
     func joystickAdded(joystick: Joystick!) {
         joystick.registerForNotications(self)
         
-        // remove last map just in case
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("mapStatus")
+        if NSUserDefaults.standardUserDefaults().integerForKey("lastJoystick") != Int(joystick.productId) {
+            // different joystick. Reset
+         
+            // remove last map
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("mapStatus")
+            
+            // set axesSet to false
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "axesSet")
+            
+        }
+        
         
         // set last joystick name and connected
         joystickConfig = JoystickConfig(connected: true, name: ("\(joystick.manufacturerName) \(joystick.productName)"))
@@ -148,6 +157,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet")
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet11")
         
+        NSUserDefaults.standardUserDefaults().setInteger(Int(joystick.productId), forKey: "lastJoystick")
         
     }
     
@@ -155,8 +165,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         
         joystickConfig = JoystickConfig(connected: false, name: "")
         
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("mapStatus")
-        
+
         // change label values
         NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
         
