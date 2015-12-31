@@ -81,6 +81,9 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
     func joystickAdded(joystick: Joystick!) {
         joystick.registerForNotications(self)
         
+        // remove last map just in case
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("mapStatus")
+        
         // set last joystick name and connected
         joystickConfig = JoystickConfig(connected: true, name: ("\(joystick.manufacturerName) \(joystick.productName)"))
         
@@ -151,6 +154,8 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
     func joystickRemoved(joystick: Joystick!) {
         
         joystickConfig = JoystickConfig(connected: false, name: "")
+        
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("mapStatus")
         
         // change label values
         NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
