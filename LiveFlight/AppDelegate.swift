@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var logButton: NSMenuItem!
     @IBOutlet var packetSpacingButton: NSMenuItem!
     var optionsWindow: NSWindowController!
+    var mainWindow: NSWindowController!
     var reachability: Reachability?
     var receiver = UDPReceiver()
     var connector = InfiniteFlightAPIConnector()
@@ -311,6 +312,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         optionsWindow = storyboard.instantiateControllerWithIdentifier("optionsWindow") as! NSWindowController
         
         optionsWindow.showWindow(self)
+        
+    }
+    
+    @IBAction func openMainWindow(sender: AnyObject) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        mainWindow = storyboard.instantiateControllerWithIdentifier("mainWindow") as! NSWindowController
+        
+        mainWindow.showWindow(self)
         
     }
     

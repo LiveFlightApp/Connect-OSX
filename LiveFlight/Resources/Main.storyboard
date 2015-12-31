@@ -335,6 +335,13 @@
                                                 <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="UcG-NX-8Uy"/>
+                                        <menuItem title="Open Connect Window" id="97i-dO-TG8">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openMainWindow:" target="Voe-Tx-rLC" id="jaO-rP-D27"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -401,7 +408,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="mainWindow" id="B8D-0N-5wS" customClass="WindowController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
