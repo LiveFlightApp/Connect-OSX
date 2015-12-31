@@ -110,7 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         do {
             reachability =  try Reachability(hostname: "http://www.liveflightapp.com/")
         } catch ReachabilityError.FailedToCreateWithAddress(_) {
-            NSLog("Can't connect to LiveFlight")
+            NSLog("Failed to create connection")
             return
         } catch {}
         
@@ -122,6 +122,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let nsObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
         let bundleVersion = nsObject as! String
+
         
         if reachability?.isReachable() == true {
 
@@ -181,7 +182,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             
         } else {
-            NSLog("Can't connect to the internet, sorry.")
+            NSLog("Network isn't reachable - postpone update search...")
         }
         
         NSLog("\n\n")

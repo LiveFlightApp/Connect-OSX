@@ -8,14 +8,25 @@
 
 import Cocoa
 
-class OptionsViewController: NSViewController {
+class OptionsViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet weak var logLocationLabel:NSTextField!
+    @IBOutlet weak var manualIpValue:NSTextField!
+    @IBOutlet weak var manualIpToggle:NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.logLocationLabel!.stringValue = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String
+        self.manualIpToggle.state = Int(NSUserDefaults.standardUserDefaults().boolForKey("manualIP"))
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey("manualIPValue") != nil {
+        
+            self.manualIpValue!.stringValue = NSUserDefaults.standardUserDefaults().valueForKey("manualIPValue") as! String
+            
+        }
+        
+        self.manualIpValue.delegate = self
         
     }
     
@@ -56,6 +67,28 @@ class OptionsViewController: NSViewController {
         }
         
         showRestartPrompt()
+        
+    }
+    
+    //"manualIPValue"
+    @IBAction func toggleManualIP(sender: AnyObject) {
+        
+        if manualIpToggle.state == 0 {
+            //manualIpToggle.enabled = false
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "manualIP")
+        } else if manualIpToggle.state == 1 {
+            //manualIpToggle.enabled = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "manualIP")
+        }
+        
+        showRestartPrompt()
+        
+    }
+    
+    override func controlTextDidEndEditing(obj: NSNotification) {
+        
+        // enter pressed, save new IP
+        NSUserDefaults.standardUserDefaults().setValue(manualIpValue.stringValue, forKey: "manualIPValue")
         
     }
     

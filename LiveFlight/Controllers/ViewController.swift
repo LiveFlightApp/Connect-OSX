@@ -90,10 +90,14 @@ class ViewController: NSViewController {
                     
                     self.alertIsShown = false
                     
-                    //start UDP listener
-                    var receiver = UDPReceiver()
-                    receiver = UDPReceiver()
-                    receiver.startUDPListener()
+                    if NSUserDefaults.standardUserDefaults().boolForKey("manualIP") != true {
+                    
+                        //start UDP listener
+                        var receiver = UDPReceiver()
+                        receiver = UDPReceiver()
+                        receiver.startUDPListener()
+                        
+                    }
                 }
             })
             

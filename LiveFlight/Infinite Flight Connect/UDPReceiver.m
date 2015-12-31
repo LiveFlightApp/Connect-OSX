@@ -33,25 +33,37 @@
     
     int port = 15000; //IF broadcasts on 15000
     
-    NSLog(@"Starting UDP listener on port %d", port);
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"manualIP"] == true) {
+        
+        // manual IP mode is enabled, ignore UDP search
+        
+        InfiniteFlightAPIConnector *apiConnector = [[InfiniteFlightAPIConnector alloc] init];
+        [apiConnector connectToInfiniteFlightWithIP:[[NSUserDefaults standardUserDefaults] valueForKey:@"manualIPValue"]];
+        
+        
+    } else {
     
-    udpSocket_ = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    
-    NSError *error = nil;
-    
-    if (![udpSocket_ bindToPort:port error:&error])
-    {
-        NSLog(@"Error binding: %@", error);
-        return;
+        NSLog(@"Starting UDP listener on port %d", port);
+        
+        udpSocket_ = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        
+        NSError *error = nil;
+        
+        if (![udpSocket_ bindToPort:port error:&error])
+        {
+            NSLog(@"Error binding: %@", error);
+            return;
+        }
+        if (![udpSocket_ beginReceiving:&error])
+        {
+            NSLog(@"Error starting server: %@", error);
+            return;
+        }
+        
+        NSError *receivingError;
+        [udpSocket_ beginReceiving:&receivingError];
+            
     }
-    if (![udpSocket_ beginReceiving:&error])
-    {
-        NSLog(@"Error starting server: %@", error);
-        return;
-    }
-    
-    NSError *receivingError;
-    [udpSocket_ beginReceiving:&receivingError];
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
