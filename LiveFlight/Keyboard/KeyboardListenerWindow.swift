@@ -15,6 +15,7 @@ import Cocoa
 
 class KeyboardListenerWindow: NSWindow {
     var connector = InfiniteFlightAPIConnector()
+    let controls = FlightControls()
     var keydown = false
     
     //MARK - keyboard events
@@ -187,25 +188,25 @@ class KeyboardListenerWindow: NSWindow {
         } else if (event.keyCode == 123) {
             // left arrow key
             if (keydown != true) {
-                connector.rollLeft()
+                controls.leftArrow()
             }
             keydown = true
         } else if (event.keyCode == 124) {
             // right arrow key
             if (keydown != true) {
-                connector.rollRight()
+                controls.rightArrow()
             }
             keydown = true
         } else if (event.keyCode == 126) {
             // up arrow key
             if (keydown != true) {
-                connector.pitchUp()
+                controls.upArrow()
             }
             keydown = true
         } else if (event.keyCode == 125) {
             // down arrow key
             if (keydown != true) {
-                connector.pitchDown()
+                controls.downArrow()
             }
             keydown = true
         }
