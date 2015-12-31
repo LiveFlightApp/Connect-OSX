@@ -186,29 +186,27 @@ class KeyboardListenerWindow: NSWindow {
             }
             keydown = true
         } else if (event.keyCode == 123) {
+            
+            // - The following don't need the keyDown bool; timing is handled by InfiniteFlightAPIConnector
+            
             // left arrow key
-            if (keydown != true) {
-                controls.leftArrow()
-            }
-            keydown = true
+            controls.leftArrow()
+            
         } else if (event.keyCode == 124) {
             // right arrow key
-            if (keydown != true) {
-                controls.rightArrow()
-            }
-            keydown = true
+            
+            controls.rightArrow()
+                
         } else if (event.keyCode == 126) {
             // up arrow key
-            if (keydown != true) {
-                controls.upArrow()
-            }
-            keydown = true
+            
+            controls.upArrow()
+        
         } else if (event.keyCode == 125) {
             // down arrow key
-            if (keydown != true) {
-                controls.downArrow()
-            }
-            keydown = true
+           
+            controls.downArrow()
+            
         }
         
         
@@ -222,7 +220,6 @@ class KeyboardListenerWindow: NSWindow {
     
     override func keyUp(event: NSEvent)
     {
-        NSLog("keyUp")
         //connector.didPressButton(Int32(event.keyCode), state: 1)
         keydown = false
     }

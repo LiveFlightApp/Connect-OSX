@@ -178,7 +178,7 @@ NSOutputStream *outputStream;
                 [self writeResult:result];
                 
             } else {
-                NSLog(@"Ignoring packet, too soon since previous...");
+                //NSLog(@"Ignoring packet, too soon since previous...");
             }
                 
         } else {
