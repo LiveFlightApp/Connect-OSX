@@ -285,6 +285,56 @@ NSOutputStream *outputStream;
     [self sendWithString:@"Commands.CameraZoomIn" params:nil isJoystick:false];
 }
 
+-(void)movePOVWithValue:(int)value {
+    
+    // constants
+    int viewUpId = 0;
+    int viewDownId = 180;
+    int viewLeftId = 270;
+    int viewRightId = 90;
+    int neutralId = -2;
+    
+    //POV axis
+    int xValue = 0;
+    int yValue = 0;
+    
+    if (value == viewUpId) {
+        xValue = 0;
+        yValue = -1;
+        
+    } else if (value == viewDownId) {
+        xValue = 0;
+        yValue = 1;
+        
+    } else if (value == viewLeftId) {
+        xValue = -1;
+        yValue = 0;
+        
+    } else if (value == viewRightId) {
+        xValue = 1;
+        yValue = 0;
+    
+    } else if (value == neutralId) {
+        xValue = 0;
+        yValue = 0;
+        
+    }
+    
+    NSString *xParam = [NSString stringWithFormat:@"{\"Name\":\"X\",\"Value\":\"%d\"}", xValue];
+    NSString *yParam = [NSString stringWithFormat:@"{\"Name\":\"Y\",\"Value\":\"%d\"}", yValue];
+    
+    NSData *xData = [xParam dataUsingEncoding:NSUTF8StringEncoding];
+    id xJson = [NSJSONSerialization JSONObjectWithData:xData options:0 error:nil];
+    
+    NSData *yData = [yParam dataUsingEncoding:NSUTF8StringEncoding];
+    id yJson = [NSJSONSerialization JSONObjectWithData:yData options:0 error:nil];
+    
+    NSArray *params = [NSArray arrayWithObjects:xJson, yJson, nil];
+    
+    [self sendWithString:@"NetworkJoystick.SetPOVState" params:params isJoystick:false];
+    
+}
+
 /*
     Airplane State
     ========================

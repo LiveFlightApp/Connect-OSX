@@ -34,6 +34,7 @@
 -(void)onboardCamera;
 -(void)towerCamera;
 -(void)flybyCamera;
+-(void)movePOVWithValue:(int)value;
 -(void)zoomOut;
 -(void)zoomIn;
 -(void)flapsDown;

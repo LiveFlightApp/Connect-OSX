@@ -192,22 +192,60 @@ class KeyboardListenerWindow: NSWindow {
             // - The following don't need the keyDown bool; timing is handled by InfiniteFlightAPIConnector
             
             // left arrow key
-            controls.leftArrow()
+            
+            if shiftPressed != true {
+            
+                controls.leftArrow()
+         
+            } else {
+                
+                // move camera left
+                connector.movePOVWithValue(270)
+                
+            }
             
         } else if (event.keyCode == 124) {
             // right arrow key
             
-            controls.rightArrow()
+            if shiftPressed != true {
+                
+                controls.rightArrow()
+
+            } else {
+                
+                // move camera right
+                connector.movePOVWithValue(90)
+                
+            }
                 
         } else if (event.keyCode == 126) {
             // up arrow key
             
-            controls.upArrow()
+            if shiftPressed != true {
+                
+                controls.upArrow()
+
+                
+            } else {
+                
+                // move camera up
+                connector.movePOVWithValue(0)
+                
+            }
         
         } else if (event.keyCode == 125) {
             // down arrow key
            
-            controls.downArrow()
+            if shiftPressed != true {
+                
+                controls.downArrow()
+                
+            } else {
+                
+                // move camera down
+                connector.movePOVWithValue(180)
+                
+            }
             
         } else if (event.keyCode == 2) {
             // D key
@@ -233,6 +271,7 @@ class KeyboardListenerWindow: NSWindow {
     override func keyUp(event: NSEvent)
     {
         //connector.didPressButton(Int32(event.keyCode), state: 1)
+        connector.movePOVWithValue(-2)
         keydown = false
     }
     
