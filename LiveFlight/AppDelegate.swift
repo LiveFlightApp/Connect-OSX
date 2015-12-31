@@ -231,6 +231,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
+    @IBAction func openLiveFlightFacebook(sender: AnyObject) {
+        
+        let liveFlightURL = "http://www.facebook.com/liveflightapp"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        
+    }
+    
+    @IBAction func openLiveFlightTwitter(sender: AnyObject) {
+        
+        let liveFlightURL = "http://www.twitter.com/liveflightapp"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        
+    }
+    
     @IBAction func toggleLogging(sender: AnyObject) {
         //enable/disable logging
         

@@ -125,6 +125,18 @@
                                                 <action selector="openLiveFlight:" target="Voe-Tx-rLC" id="Pav-2J-e5T"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="LiveFlight on Facebook" id="FUr-ed-OwN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openLiveFlightFacebook:" target="Voe-Tx-rLC" id="O4d-D9-MbL"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="LiveFlight on Twitter" id="8XU-i1-ZJN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openLiveFlightTwitter:" target="Voe-Tx-rLC" id="o1d-wK-u6e"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
