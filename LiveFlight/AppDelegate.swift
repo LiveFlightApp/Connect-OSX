@@ -346,6 +346,58 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         connector.towerCamera()
     }
     
+    @IBAction func landingGear(sender: AnyObject) {
+        connector.landingGear()
+    }
+    
+    @IBAction func spoilers(sender: AnyObject) {
+        connector.spoilers()
+    }
+    
+    @IBAction func flapsUp(sender: AnyObject) {
+        connector.flapsUp()
+    }
+    
+    @IBAction func flapsDown(sender: AnyObject) {
+        connector.flapsDown()
+    }
+    
+    @IBAction func brakes(sender: AnyObject) {
+        connector.parkingBrakes()
+    }
+    
+    @IBAction func autopilot(sender: AnyObject) {
+        connector.autopilot()
+    }
+    
+    @IBAction func pushback(sender: AnyObject) {
+        connector.pushback()
+    }
+    
+    @IBAction func pause(sender: AnyObject) {
+        connector.togglePause()
+    }
+    
+    @IBAction func landingLight(sender: AnyObject) {
+        connector.landing()
+    }
+    
+    @IBAction func strobeLight(sender: AnyObject) {
+        connector.strobe()
+    }
+    
+    @IBAction func beaconLight(sender: AnyObject) {
+        connector.beacon()
+    }
+    
+    @IBAction func navLight(sender: AnyObject) {
+        connector.nav()
+    }
+    
+    @IBAction func atcMenu(sender: AnyObject) {
+        connector.atcMenu()
+    }
+    
     func getIFAddresses() -> [String] {
         var addresses = [String]()
         

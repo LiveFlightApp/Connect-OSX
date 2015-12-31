@@ -209,6 +209,110 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Controls" id="7Nj-wP-uYP">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Controls" id="aS8-iJ-ACR">
+                                    <items>
+                                        <menuItem title="Landing Gear Toggle" keyEquivalent="g" id="fX0-0z-wOH">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="landingGear:" target="Voe-Tx-rLC" id="1Iw-R9-SfX"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="edB-ub-qrF"/>
+                                        <menuItem title="Spoilers Toggle" keyEquivalent="/" id="EXJ-6D-47M">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="spoilers:" target="Voe-Tx-rLC" id="Aak-Pe-SuD"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eFF-8n-Oyy"/>
+                                        <menuItem title="Flaps Up" keyEquivalent="[" id="aOJ-ki-7KB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="flapsUp:" target="Voe-Tx-rLC" id="yGS-Dn-uFO"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Flaps Down" keyEquivalent="]" id="Lws-pX-rDH">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="flapsDown:" target="Voe-Tx-rLC" id="OIS-FW-Syw"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="08a-p6-Dfg"/>
+                                        <menuItem title="Parking Brakes" keyEquivalent="." id="80L-G3-A0k">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="brakes:" target="Voe-Tx-rLC" id="2xW-LG-t3U"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="en3-D5-rtI"/>
+                                        <menuItem title="Autopilot Toggle" keyEquivalent="z" id="gRC-Aw-7UB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="autopilot:" target="Voe-Tx-rLC" id="cDN-Ay-mUH"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Pushback Toggle" keyEquivalent="p" id="dlL-Ci-1cu">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="pushback:" target="Voe-Tx-rLC" id="h7N-Nf-rJ5"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eda-9O-au4"/>
+                                        <menuItem title="Pause Toggle" keyEquivalent=" " id="jCI-vT-wdl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="pause:" target="Voe-Tx-rLC" id="07x-N0-4Xk"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Lights" id="faF-2N-aU6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Lights" id="3Bk-AJ-mR9">
+                                    <items>
+                                        <menuItem title="Landing Lights" keyEquivalent="l" id="IQN-Gm-wuL">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="landingLight:" target="Voe-Tx-rLC" id="7CW-AN-21j"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Strobe Lights" keyEquivalent="s" id="g6u-KK-g5y">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="strobeLight:" target="Voe-Tx-rLC" id="PPB-CE-l4g"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Nav Lights" keyEquivalent="n" id="Vne-Ix-vsQ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="navLight:" target="Voe-Tx-rLC" id="hYE-Ws-TYI"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Beacon Lights" keyEquivalent="b" id="0Ia-uR-Tq3">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="beaconLight:" target="Voe-Tx-rLC" id="bwP-vn-56j"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Live" id="GtD-9J-JBg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Live" id="27O-id-RiF">
+                                    <items>
+                                        <menuItem title="Toggle ATC Menu" keyEquivalent="a" id="rQq-96-Bme">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="atcMenu:" target="Voe-Tx-rLC" id="Zth-1k-csJ"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
