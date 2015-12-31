@@ -71,37 +71,42 @@ class ViewController: NSViewController {
     
     func tcpError(notification: NSNotification) {
 
-        if alertIsShown == false {
-        
-            alertIsShown = true
+        // run on main thread
+        dispatch_async(dispatch_get_main_queue(),{
             
-            let alert = NSAlert()
-            alert.messageText = "There was a problem"
-            alert.addButtonWithTitle("OK")
-            alert.informativeText = "LiveFlight Connect has lost connection to Infinite Flight.\n\nMake sure it is connected via the same network as this Mac. Try restarting Infinite Flight if issues persist."
+            if self.alertIsShown == false {
             
-            alert.beginSheetModalForWindow(self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
-                if returnCode == NSAlertFirstButtonReturn {
-                    dispatch_async(dispatch_get_main_queue(),{
+                self.alertIsShown = true
+                
+                let alert = NSAlert()
+                alert.messageText = "There was a problem"
+                alert.addButtonWithTitle("OK")
+                alert.informativeText = "LiveFlight Connect has lost connection to Infinite Flight.\n\nMake sure it is connected via the same network as this Mac. Try restarting Infinite Flight if issues persist."
+                
+                alert.beginSheetModalForWindow(self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
+                    if returnCode == NSAlertFirstButtonReturn {
+                        dispatch_async(dispatch_get_main_queue(),{
+                            
+                            self.connectingView.hidden = false
+                            
+                        })
                         
-                        self.connectingView.hidden = false
+                        self.alertIsShown = false
                         
-                    })
-                    
-                    self.alertIsShown = false
-                    
-                    if NSUserDefaults.standardUserDefaults().boolForKey("manualIP") != true {
-                    
-                        //start UDP listener
-                        var receiver = UDPReceiver()
-                        receiver = UDPReceiver()
-                        receiver.startUDPListener()
+                        if NSUserDefaults.standardUserDefaults().boolForKey("manualIP") != true {
                         
+                            //start UDP listener
+                            var receiver = UDPReceiver()
+                            receiver = UDPReceiver()
+                            receiver.startUDPListener()
+                            
+                        }
                     }
-                }
-            })
+                })
+                
+            }
             
-        }
+        })
         
     }
 
