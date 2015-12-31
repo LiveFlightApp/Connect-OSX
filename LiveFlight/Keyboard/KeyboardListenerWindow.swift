@@ -18,6 +18,8 @@ class KeyboardListenerWindow: NSWindow {
     let controls = FlightControls()
     var keydown = false
     
+    var shiftPressed = false
+    
     //MARK - keyboard events
     override func keyDown(event: NSEvent)
     {
@@ -207,6 +209,16 @@ class KeyboardListenerWindow: NSWindow {
            
             controls.downArrow()
             
+        } else if (event.keyCode == 2) {
+            // D key
+            
+            controls.throttleUpArrow()
+            
+        } else if (event.keyCode == 8) {
+            // C arrow key
+            
+            controls.throttleDownArrow()
+            
         }
         
         
@@ -228,14 +240,16 @@ class KeyboardListenerWindow: NSWindow {
         switch event.modifierFlags.intersect(.DeviceIndependentModifierFlagsMask) {
         case NSEventModifierFlags.ShiftKeyMask :
             NSLog("Shift key pressed")
+            shiftPressed = true
         case NSEventModifierFlags.ControlKeyMask:
             NSLog("Control Pressed..")
         case NSEventModifierFlags.AlternateKeyMask :
             NSLog("Option pressend...")
         case NSEventModifierFlags.CommandKeyMask:
-            NSLog("Command key  pressed..")
+            NSLog("Command key pressed..")
         default:
             NSLog("No modifier keys pressed")
+            shiftPressed = false
         }
     }
     

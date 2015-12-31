@@ -36,6 +36,12 @@ class KeyboardCommandsView: NSViewController, NSTableViewDataSource, NSTableView
     func getDataArray () -> NSArray{
         let dataArray:[NSDictionary] =
             [
+                ["Command": "Pitch Up", "Key": "Down Arrow"],
+                ["Command": "Pitch Down", "Key": "Up Arrow"],
+                ["Command": "Roll Left", "Key": "Left Arrow"],
+                ["Command": "Roll Right", "Key": "Right Arrow"],
+                ["Command": "Increase Throttle", "Key": "D"],
+                ["Command": "Decrease Throttle", "Key": "C"],
                 ["Command": "Landing Gear Toggle", "Key": "G"],
                 ["Command": "Spoilers Toggle", "Key": "/"],
                 ["Command": "Flaps Up", "Key": "["],

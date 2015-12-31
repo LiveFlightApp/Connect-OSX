@@ -28,6 +28,7 @@ class FlightControls: NSObject {
     
     // delta when key is pressed
     var deltaForKeyPress = 100
+    var deltaThrottleForKeyPress = 50
     
     func pitchChanged(value:Int32) {
         
@@ -112,6 +113,36 @@ class FlightControls: NSObject {
             
             // pass command with new value
             connector.didMoveAxis(1, value: rollValue)
+            
+        }
+        
+    }
+    
+    func throttleUpArrow() {
+        // increase pitch
+        
+        if throttleValue > -1024 {
+            
+            // subtract delta
+            throttleValue -= deltaThrottleForKeyPress
+            
+            // pass command with new value
+            connector.didMoveAxis(3, value: throttleValue)
+            
+        }
+        
+    }
+    
+    func throttleDownArrow() {
+        // decrease throttle
+        
+        if throttleValue < 1024 {
+            
+            // subtract delta
+            throttleValue += deltaThrottleForKeyPress
+            
+            // pass command with new value
+            connector.didMoveAxis(3, value: throttleValue)
             
         }
         
