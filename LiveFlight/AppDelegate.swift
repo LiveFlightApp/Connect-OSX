@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet var logButton: NSMenuItem!
     @IBOutlet var packetSpacingButton: NSMenuItem!
+    var optionsWindow: NSWindowController!
     var reachability: Reachability?
     var receiver = UDPReceiver()
     var connector = InfiniteFlightAPIConnector()
@@ -43,12 +44,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             ========================
         */
         
+        if NSUserDefaults.standardUserDefaults().valueForKey("logPath") == nil { //NSURL(string: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String) == nil {
+            // not a valid url, set default to desktop
+            
+            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+             
+                NSUserDefaults.standardUserDefaults().setValue(String(dir), forKey: "logPath")
+                
+            }
+            
+        }
+        
         if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
             
             //output to file
             let file = "liveflight_log.txt"
             
-            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            if let dir : NSString = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String {
+                
+                NSLog("Logging enabled to directory: %@", dir)
+                
                 let path = dir.stringByAppendingPathComponent(file);
                 
                 //remove old file
@@ -82,7 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             //set to 10ms as default
             NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "packetDelaySetup")
-            packetSpacingButton.title = "Toggle delay between packets (10ms)"
+            packetSpacingButton.title = "Toggle Delay Between Packets (10ms)"
             
             //set all axes to -2
             NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "pitch")
@@ -92,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             
         } else {
-            packetSpacingButton.title = "Toggle delay between packets (\(currentDelay)ms)"
+            packetSpacingButton.title = "Toggle Delay Between Packets (\(currentDelay)ms)"
             
         }
         
@@ -268,24 +283,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if currentDelay == 0 {
             //set to 10
             NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
-            packetSpacingButton.title = "Toggle delay between packets (10ms)"
+            packetSpacingButton.title = "Toggle Delay Between Packets (10ms)"
             
         } else if currentDelay == 10 {
             //set to 20
             NSUserDefaults.standardUserDefaults().setInteger(20, forKey: "packetDelay")
-            packetSpacingButton.title = "Toggle delay between packets (20ms)"
+            packetSpacingButton.title = "Toggle Delay Between Packets (20ms)"
             
         } else if currentDelay == 20 {
             //set to 50
             NSUserDefaults.standardUserDefaults().setInteger(50, forKey: "packetDelay")
-            packetSpacingButton.title = "Toggle delay between packets (50ms)"
+            packetSpacingButton.title = "Toggle Delay Between Packets (50ms)"
             
         } else {
             //set to 0
             NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "packetDelay")
-            packetSpacingButton.title = "Toggle delay between packets (0ms)"
+            packetSpacingButton.title = "Toggle Delay Between Packets (0ms)"
             
         }
+        
+    }
+    
+    @IBAction func openOptionsWindow(sender: AnyObject) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        optionsWindow = storyboard.instantiateControllerWithIdentifier("optionsWindow") as! NSWindowController
+        
+        optionsWindow.showWindow(self)
         
     }
     

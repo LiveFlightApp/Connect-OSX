@@ -4,6 +4,92 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
+        <!--Window Controller-->
+        <scene sceneID="bCl-NL-T1o">
+            <objects>
+                <windowController storyboardIdentifier="optionsWindow" id="P1r-Op-rGb" sceneMemberID="viewController">
+                    <window key="window" title="Preferences | LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="h8q-Ui-fnD">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                    </window>
+                    <connections>
+                        <segue destination="S3t-OD-JTR" kind="relationship" relationship="window.shadowedContentViewController" id="GT7-Gi-VeG"/>
+                    </connections>
+                </windowController>
+                <customObject id="uOo-02-ed9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399" y="2256"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="4EY-lb-lcK">
+            <objects>
+                <viewController id="S3t-OD-JTR" customClass="OptionsViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="641-fg-lYM">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="170"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USu-UB-r4e">
+                                <rect key="frame" x="18" y="133" width="211" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Log Location" id="VlZ-kx-jMN">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFT-0o-ib1">
+                                <rect key="frame" x="18" y="108" width="444" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="RqT-xl-lT9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ye-gb-05B">
+                                <rect key="frame" x="14" y="72" width="137" height="32"/>
+                                <buttonCell key="cell" type="push" title="Select Log Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hKZ-Nf-v0e">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectLogFolder:" target="S3t-OD-JTR" id="xJe-Mp-cFk"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-uX-HgA">
+                                <rect key="frame" x="14" y="8" width="137" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reset Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MwT-8S-KeH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetSettings" target="S3t-OD-JTR" id="6Er-4Q-4vI"/>
+                                </connections>
+                            </button>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="fQ1-bc-b3p">
+                                <rect key="frame" x="20" y="65" width="440" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-OH-bBR">
+                                <rect key="frame" x="18" y="44" width="211" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reset Settings" id="zjn-ez-aGN">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="logLocationLabel" destination="yFT-0o-ib1" id="fWl-KO-P4p"/>
+                    </connections>
+                </viewController>
+                <customObject id="ybY-Vi-mrQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="187" y="2279"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -21,9 +107,30 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="Services" id="NMo-om-nkz">
+                                        <menuItem title="Preferences" id="FEq-n4-0ug">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                            <connections>
+                                                <action selector="openOptionsWindow:" target="Voe-Tx-rLC" id="YcL-im-bmx"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Advanced Settings" id="1UK-Ey-KvQ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Advanced Settings" id="LNW-4f-dgV">
+                                                <items>
+                                                    <menuItem title="Enable Logging (restart required)" id="QUf-lS-Umh">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="toggleLogging:" target="Voe-Tx-rLC" id="B9F-IW-a5Z"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Toggle Delay Between Packets (0ms)" id="MqX-ay-Tmd">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="togglePacketSpacing:" target="Voe-Tx-rLC" id="QUF-M5-zwc"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
                                         <menuItem title="Hide LiveFlight" keyEquivalent="h" id="Olw-nP-bQN">
@@ -37,35 +144,10 @@
                                                 <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show All" id="Kd2-mp-pUS">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
                                         <menuItem title="Quit LiveFlight" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="Settings" id="YUm-8X-QMq">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Settings" id="LNW-4f-dgV">
-                                    <items>
-                                        <menuItem title="Enable Logging (restart required)" id="QUf-lS-Umh">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="toggleLogging:" target="Voe-Tx-rLC" id="B9F-IW-a5Z"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Toggle delay between packets (0ms)" id="MqX-ay-Tmd">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="togglePacketSpacing:" target="Voe-Tx-rLC" id="QUF-M5-zwc"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -154,7 +236,7 @@
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74.5" y="-96"/>
+            <point key="canvasLocation" x="-1.5" y="-95"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -174,7 +256,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="214"/>
+            <point key="canvasLocation" x="74" y="292"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="HTJ-B1-nQz">
@@ -745,7 +827,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="30o-Xa-3ny">
-                                    <rect key="frame" x="1" y="243" width="408" height="16"/>
+                                    <rect key="frame" x="1" y="353" width="408" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="dW9-cE-ctd">
