@@ -194,14 +194,45 @@ NSOutputStream *outputStream;
 
 -(void)writeResult:(NSMutableData *)result {
     
-    NSInteger sent = [outputStream write:result.bytes maxLength:result.length];
-    NSLog(@"Write result: %ld", (long)sent);
-    if (sent == -1) {
-        //error. probably disconnected
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"tcpError" object:nil];
+    // check to see if output stream is open
+    
+    if (outputStream.streamStatus != NSStreamStatusOpen) {
+        
+        NSLog(@"ERROR: Output stream isn't open");
+        
+        // isn't open
+        
+        // close TCP connection
+        [self close];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"manualIP"]; // disable manual IP - the user can re-enable if necessary
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"tcpError" object:nil]; // present TCP error window
+        
+        
+    } else {
+        
+        // stream is open, we can write to it
+    
+        NSInteger sent = [outputStream write:result.bytes maxLength:result.length];
+        NSLog(@"Write result: %ld", (long)sent);
+        
+        // check that there is no error
+        if (sent == -1) {
+            
+            // close TCP connection
+            [self close];
+            
+            //error. probably disconnected
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"tcpError" object:nil];
+            
+        
+        }
+        
     }
     
 }
+
 
 
 #pragma mark joystick actions
