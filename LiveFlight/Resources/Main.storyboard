@@ -147,6 +147,12 @@
                                                 <action selector="openOptionsWindow:" target="Voe-Tx-rLC" id="YcL-im-bmx"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Gamepad Mode" id="xU1-N0-hRp">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleGamepadMode:" target="Voe-Tx-rLC" id="TwX-4x-KB2"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Advanced Settings" id="1UK-Ey-KvQ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Advanced Settings" id="LNW-4f-dgV">
@@ -424,6 +430,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect" customModuleProvider="target">
                     <connections>
+                        <outlet property="gamepadModeButton" destination="xU1-N0-hRp" id="2CO-G2-kHC"/>
                         <outlet property="logButton" destination="QUf-lS-Umh" id="Tmt-Mv-ekN"/>
                         <outlet property="packetSpacingButton" destination="MqX-ay-Tmd" id="XmD-Lt-uPD"/>
                     </connections>

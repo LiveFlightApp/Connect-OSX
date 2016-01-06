@@ -172,9 +172,7 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
     }
     
     func joystickStateChanged(joystick: Joystick!, axis:Int32) {
-        
-        NSLog("Axis changed: \(axis)")
-        
+  
         //check to see if calibrating
         if (tryPitch == true) {
             //detect axis then save
@@ -207,7 +205,22 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         }
         
         
-        let value:Int32 = Int32(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024);
+        var value:Int32 = 0
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey("gamepadMode") == true {
+        
+            // is a gamepad
+            // values are [-128, 128]
+            
+             value = Int32(joystick.getRelativeValueOfAxesIndex(axis) * 8)
+            
+        } else {
+            
+            // raw values are [0, 1024]
+            
+            value = Int32(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024)
+
+        }
         
         if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("pitch")) {
             controls.pitchChanged(value)

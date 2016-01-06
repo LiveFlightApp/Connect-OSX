@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet var gamepadModeButton: NSMenuItem!
     @IBOutlet var logButton: NSMenuItem!
     @IBOutlet var packetSpacingButton: NSMenuItem!
     var optionsWindow: NSWindowController!
@@ -62,15 +63,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
-            logButton.state = 1;
+            logButton.state = 1
             
         } else {
             
             NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
-            logButton.state = 0;
+            logButton.state = 0
         }
         
+        // set gamepad mode toggle
+        if NSUserDefaults.standardUserDefaults().boolForKey("gamepadMode") == true {
+            
+            gamepadModeButton.state = 1
+            
+        } else {
+            
+            gamepadModeButton.state = 0
+            
+        }
         
+
         //set delay button appropriately
         let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
         let currentDelaySetup = NSUserDefaults.standardUserDefaults().boolForKey("packetDelaySetup")
@@ -260,6 +272,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let liveFlightURL = "http://www.twitter.com/liveflightapp"
         NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        
+    }
+    
+    @IBAction func toggleGamepadMode(sender: AnyObject) {
+        // enable/disable gamepad mode
+        
+        if gamepadModeButton.state == 0 {
+            //enable
+            gamepadModeButton.state = 1
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "gamepadMode")
+        } else {
+            gamepadModeButton.state = 0
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "gamepadMode")
+        }
         
     }
     

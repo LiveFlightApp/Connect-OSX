@@ -173,8 +173,6 @@
 
 - (double)getRelativeValueOfAxesIndex:(int)index {
     
-    NSLog(@"Axis: %d", index);
-    
     if (![[axes objectAtIndex:index] isEqual:@""]) {
         
         IOHIDElementRef theElement = (__bridge IOHIDElementRef)([axes objectAtIndex:index]);
