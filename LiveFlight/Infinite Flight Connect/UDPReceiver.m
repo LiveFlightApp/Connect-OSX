@@ -47,6 +47,10 @@
         
         udpSocket_ = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
         
+        // disable IPV6
+        [udpSocket_ setIPv4Enabled:true];
+        [udpSocket_ setIPv6Enabled:false];
+        
         NSError *error = nil;
         
         if (![udpSocket_ bindToPort:port error:&error])
