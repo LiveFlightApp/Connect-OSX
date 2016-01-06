@@ -27,11 +27,11 @@
             <objects>
                 <viewController id="S3t-OD-JTR" customClass="OptionsViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="641-fg-lYM">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="262"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="295"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USu-UB-r4e">
-                                <rect key="frame" x="18" y="225" width="211" height="17"/>
+                                <rect key="frame" x="18" y="258" width="211" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Log Location" id="VlZ-kx-jMN">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -39,7 +39,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFT-0o-ib1">
-                                <rect key="frame" x="18" y="200" width="444" height="17"/>
+                                <rect key="frame" x="18" y="233" width="444" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="RqT-xl-lT9">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -47,7 +47,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ye-gb-05B">
-                                <rect key="frame" x="14" y="164" width="137" height="32"/>
+                                <rect key="frame" x="14" y="197" width="137" height="32"/>
                                 <buttonCell key="cell" type="push" title="Select Log Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hKZ-Nf-v0e">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-uX-HgA">
-                                <rect key="frame" x="14" y="10" width="137" height="32"/>
+                                <rect key="frame" x="14" y="13" width="137" height="32"/>
                                 <buttonCell key="cell" type="push" title="Reset Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MwT-8S-KeH">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -67,19 +67,19 @@
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="fQ1-bc-b3p">
-                                <rect key="frame" x="20" y="157" width="440" height="5"/>
+                                <rect key="frame" x="20" y="190" width="440" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="UaV-l0-G9Q">
-                                <rect key="frame" x="20" y="68" width="440" height="5"/>
+                                <rect key="frame" x="20" y="76" width="440" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-OH-bBR">
-                                <rect key="frame" x="18" y="46" width="211" height="17"/>
+                                <rect key="frame" x="18" y="49" width="211" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reset Settings" id="zjn-ez-aGN">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -87,7 +87,7 @@
                                 </textFieldCell>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbR-3k-EYb">
-                                <rect key="frame" x="18" y="84" width="191" height="35"/>
+                                <rect key="frame" x="18" y="117" width="191" height="35"/>
                                 <buttonCell key="cell" type="check" title="Enable Manual IP Address" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="VTm-dm-c5o">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rjc-hc-C9y">
-                                <rect key="frame" x="224" y="90" width="225" height="22"/>
+                                <rect key="frame" x="224" y="123" width="225" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="192.168.1.1" drawsBackground="YES" id="xWd-2I-dAV">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -105,9 +105,17 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BU8-4S-bXt">
-                                <rect key="frame" x="18" y="125" width="211" height="17"/>
+                                <rect key="frame" x="18" y="158" width="211" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Manual IP Address" id="F0b-Ky-k00">
                                     <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a94-vi-daD">
+                                <rect key="frame" x="18" y="94" width="444" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This is highly experimental. Don't enable this if you don't know what it is." id="feX-9B-Fvb">
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -122,7 +130,7 @@
                 </viewController>
                 <customObject id="ybY-Vi-mrQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="2325"/>
+            <point key="canvasLocation" x="187" y="2341.5"/>
         </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
@@ -979,14 +987,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="410"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvc-kK-UQ9">
-                                <rect key="frame" x="20" y="20" width="410" height="370"/>
+                            <scrollView focusRingType="none" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvc-kK-UQ9">
+                                <rect key="frame" x="20" y="107" width="410" height="283"/>
                                 <clipView key="contentView" focusRingType="none" id="BFv-eE-NAr">
-                                    <rect key="frame" x="1" y="0.0" width="408" height="369"/>
+                                    <rect key="frame" x="1" y="0.0" width="408" height="282"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="7mO-DA-8xj" id="IC8-7l-pqU">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="346"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="259"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1040,12 +1048,44 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvY-kZ-Llg">
+                                <rect key="frame" x="18" y="15" width="406" height="51"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="PtW-0a-elW">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">1) Open the Controls tab in Infinite Flight settings 2) Tap on "Roll", then press and hold the left or right arrow keys. 3) Repeat for Pitch and Throttle, using the Up/Down or D/C keys.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VSK-AL-38b">
+                                <rect key="frame" x="18" y="68" width="401" height="20"/>
+                                <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="In order to use the keyboard to control pitch, roll and throttle: " id="JJs-Lf-TTj">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-OK-bhz">
+                                <rect key="frame" x="20" y="97" width="414" height="4"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Lvc-kK-UQ9" secondAttribute="bottom" constant="20" id="3jc-fE-ucp"/>
+                            <constraint firstItem="VSK-AL-38b" firstAttribute="top" secondItem="Jbz-OK-bhz" secondAttribute="bottom" constant="11" id="3oL-qt-t4h"/>
+                            <constraint firstItem="VSK-AL-38b" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="20" id="B1y-yc-gLt"/>
+                            <constraint firstAttribute="trailing" secondItem="nvY-kZ-Llg" secondAttribute="trailing" constant="24" id="BMx-xA-VbF"/>
                             <constraint firstItem="Lvc-kK-UQ9" firstAttribute="top" secondItem="yyp-0j-R77" secondAttribute="top" constant="20" id="H5f-hJ-Y3i"/>
+                            <constraint firstItem="nvY-kZ-Llg" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="24" id="Zga-R6-ybW"/>
+                            <constraint firstItem="VSK-AL-38b" firstAttribute="top" secondItem="Jbz-OK-bhz" secondAttribute="bottom" constant="11" id="h1M-sM-gwP"/>
+                            <constraint firstAttribute="trailing" secondItem="VSK-AL-38b" secondAttribute="trailing" constant="33" id="h7p-X7-uAU"/>
+                            <constraint firstItem="Jbz-OK-bhz" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="18" id="jda-1n-WCB"/>
                             <constraint firstAttribute="trailing" secondItem="Lvc-kK-UQ9" secondAttribute="trailing" constant="20" id="obH-gW-cJe"/>
+                            <constraint firstItem="Jbz-OK-bhz" firstAttribute="top" secondItem="Lvc-kK-UQ9" secondAttribute="bottom" constant="8" id="s3T-1M-w1A"/>
+                            <constraint firstItem="nvY-kZ-Llg" firstAttribute="top" secondItem="VSK-AL-38b" secondAttribute="bottom" constant="2" id="tfp-Iq-jAm"/>
                             <constraint firstItem="Lvc-kK-UQ9" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="20" id="u7b-cZ-xLm"/>
+                            <constraint firstAttribute="bottom" secondItem="nvY-kZ-Llg" secondAttribute="bottom" constant="15" id="zHn-Tc-u5c"/>
                         </constraints>
                     </view>
                     <connections>
