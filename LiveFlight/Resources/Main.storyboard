@@ -1065,8 +1065,8 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-OK-bhz">
-                                <rect key="frame" x="20" y="97" width="414" height="4"/>
+                            <box verticalHuggingPriority="750" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-OK-bhz">
+                                <rect key="frame" x="20" y="97" width="410" height="4"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
@@ -1077,10 +1077,11 @@
                             <constraint firstItem="VSK-AL-38b" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="20" id="B1y-yc-gLt"/>
                             <constraint firstAttribute="trailing" secondItem="nvY-kZ-Llg" secondAttribute="trailing" constant="24" id="BMx-xA-VbF"/>
                             <constraint firstItem="Lvc-kK-UQ9" firstAttribute="top" secondItem="yyp-0j-R77" secondAttribute="top" constant="20" id="H5f-hJ-Y3i"/>
+                            <constraint firstItem="Jbz-OK-bhz" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="20" id="OFM-8W-Nm9"/>
+                            <constraint firstAttribute="trailing" secondItem="Jbz-OK-bhz" secondAttribute="trailing" constant="20" id="X68-lJ-D6O"/>
                             <constraint firstItem="nvY-kZ-Llg" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="24" id="Zga-R6-ybW"/>
                             <constraint firstItem="VSK-AL-38b" firstAttribute="top" secondItem="Jbz-OK-bhz" secondAttribute="bottom" constant="11" id="h1M-sM-gwP"/>
                             <constraint firstAttribute="trailing" secondItem="VSK-AL-38b" secondAttribute="trailing" constant="33" id="h7p-X7-uAU"/>
-                            <constraint firstItem="Jbz-OK-bhz" firstAttribute="leading" secondItem="yyp-0j-R77" secondAttribute="leading" constant="18" id="jda-1n-WCB"/>
                             <constraint firstAttribute="trailing" secondItem="Lvc-kK-UQ9" secondAttribute="trailing" constant="20" id="obH-gW-cJe"/>
                             <constraint firstItem="Jbz-OK-bhz" firstAttribute="top" secondItem="Lvc-kK-UQ9" secondAttribute="bottom" constant="8" id="s3T-1M-w1A"/>
                             <constraint firstItem="nvY-kZ-Llg" firstAttribute="top" secondItem="VSK-AL-38b" secondAttribute="bottom" constant="2" id="tfp-Iq-jAm"/>

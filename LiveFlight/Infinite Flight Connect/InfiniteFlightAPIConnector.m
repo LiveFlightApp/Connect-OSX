@@ -196,11 +196,13 @@ NSOutputStream *outputStream;
     
     // check to see if output stream is open
     
-    if (outputStream.streamStatus != NSStreamStatusOpen) {
+    NSLog(@"%lu", (unsigned long)outputStream.streamStatus);
+    
+    if (outputStream.streamStatus == NSStreamStatusError) {
         
-        NSLog(@"ERROR: Output stream isn't open");
+        NSLog(@"Output stream error");
         
-        // isn't open
+        // error with output stream
         
         // close TCP connection
         [self close];
