@@ -207,18 +207,20 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         
         var value:Int32 = 0
         
+        // print relVal - this is useful for debugging
+        let relVal = joystick.getRelativeValueOfAxesIndex(axis)
+        NSLog("RelVal: \(relVal)")
+        
         if NSUserDefaults.standardUserDefaults().boolForKey("gamepadMode") == true {
         
             // is a gamepad
             // values are [-128, 128]
             
-             value = Int32(joystick.getRelativeValueOfAxesIndex(axis) * 8)
+             value = Int32(joystick.getRelativeValueOfAxesIndex(axis) * 2048)
             
         } else {
             
             // raw values are [0, 1024]
-            let relVal = joystick.getRelativeValueOfAxesIndex(axis)
-            NSLog("RelVal: \(relVal)")
             value = Int32(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024)
 
         }
