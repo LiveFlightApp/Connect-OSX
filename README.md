@@ -3,6 +3,8 @@ LiveFlight Connect for OS X allows you to control Infinite Flight on an iOS or A
 
 Uses Infinite Flight Connect, a TCP-based API introduced in version 15.10.0.
 
+![](https://cdn.discourse.org/business/uploads/infinite_flight/original/3X/b/d/bdf296e94c96f375902144d48ff9db67fec376e9.png "LiveFlight Connect for OS X")
+
 Usage
 ------------
   * Install the latest version at <a href="http://connect.liveflightapp.com">connect.liveflightapp.com</a>.
@@ -28,6 +30,7 @@ There's no guarantee this will play perfectly with your joystick or configuratio
   * Thrustmaster T-Flight Hotas X
   * Saitek X52 Pro
   * Logitech Extreme 3D
+  * Saitek Yoke and Throttle Quadrant
 
 Licenses
 -----------

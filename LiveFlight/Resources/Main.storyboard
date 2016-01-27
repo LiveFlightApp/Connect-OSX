@@ -1052,7 +1052,7 @@
                                 <rect key="frame" x="18" y="15" width="406" height="51"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="PtW-0a-elW">
                                     <font key="font" metaFont="system"/>
-                                    <string key="title">1) Open the Controls tab in Infinite Flight settings 2) Tap on "Roll", then press and hold the left or right arrow keys. 3) Repeat for Pitch and Throttle, using the Up/Down or D/C keys.</string>
+                                    <string key="title">1) Open the Controls tab in Infinite Flight settings. 2) Tap on "Roll", then press and hold the left or right arrow keys. 3) Repeat for Pitch and Throttle, using the Up/Down or D/C keys.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
