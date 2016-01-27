@@ -31,3 +31,10 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
+
+##
+## these are local versions of things used for App Store releases
+##
+
+Release.xcodeproj
+Release/
