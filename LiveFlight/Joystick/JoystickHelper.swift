@@ -217,7 +217,8 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         } else {
             
             // raw values are [0, 1024]
-            
+            let relVal = joystick.getRelativeValueOfAxesIndex(axis)
+            NSLog("RelVal: \(relVal)")
             value = Int32(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024)
 
         }
