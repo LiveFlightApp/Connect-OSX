@@ -198,7 +198,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         NSLog("\n\n")
         
+        #if RELEASE
         
+            /*
+                App Store Release
+                ========================
+            */
+            Release().setupReleaseFrameworks()
+            
+        #endif
+
+
         /*
             Init Networking
             ========================

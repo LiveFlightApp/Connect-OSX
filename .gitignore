@@ -38,3 +38,5 @@ Carthage/Build
 
 Release.xcodeproj
 Release/
+Crashlytics.framework/
+Fabric.framework/
