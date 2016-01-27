@@ -390,7 +390,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" id="sEy-cb-d7h">
                                     <items>
-                                        <menuItem title="Joystick Setup Guide" id="2LG-lf-quS">
+                                        <menuItem title="Setup Guides" id="2LG-lf-quS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openJoystickGuide:" target="Voe-Tx-rLC" id="VfW-6n-NEt"/>
@@ -409,7 +409,7 @@
                                                 <action selector="openForum:" target="Voe-Tx-rLC" id="Prg-x4-59a"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="LiveFlight" id="pgG-TR-T5L">
+                                        <menuItem title="LiveFlight Tracker" id="pgG-TR-T5L">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openLiveFlight:" target="Voe-Tx-rLC" id="Pav-2J-e5T"/>
@@ -425,6 +425,19 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openLiveFlightTwitter:" target="Voe-Tx-rLC" id="o1d-wK-u6e"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="jGb-py-OcY"/>
+                                        <menuItem title="Terms and Conditions" id="r6a-Xk-8YJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openTerms:" target="Voe-Tx-rLC" id="771-0C-ERl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Privacy Policy" id="I9z-vg-fG4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openPrivacyPolicy:" target="Voe-Tx-rLC" id="sxr-f4-aEh"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -1066,7 +1079,7 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-OK-bhz">
-                                <rect key="frame" x="20" y="97" width="410" height="4"/>
+                                <rect key="frame" x="20" y="97" width="410" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>

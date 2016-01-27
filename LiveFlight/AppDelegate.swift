@@ -245,7 +245,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func openJoystickGuide(sender: AnyObject) {
         
-        let forumURL = "https://community.infinite-flight.com/t/joysticks-on-ios-android-over-the-network-liveflight-connect/20017?u=carmalonso"
+        let forumURL = "http://help.liveflightapp.com/"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        
+    }
+    
+    @IBAction func openTerms(sender: AnyObject) {
+        
+        let forumURL = "http://help.liveflightapp.com/legal/terms"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        
+    }
+    
+    @IBAction func openPrivacyPolicy(sender: AnyObject) {
+        
+        let forumURL = "http://help.liveflightapp.com/legal/privacy"
         NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
         
     }
