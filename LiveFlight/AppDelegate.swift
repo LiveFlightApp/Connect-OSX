@@ -27,18 +27,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Load Settings
             ========================
         */
+
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("logPath") == nil { //NSURL(string: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String) == nil {
-            // not a valid url, set default to desktop
+        // we always save to app sandbox
+        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
             
-            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-                
-                NSUserDefaults.standardUserDefaults().setValue(String(dir), forKey: "logPath")
-                
-            }
+            let logDir = "\(dir)/Logs"
+            NSUserDefaults.standardUserDefaults().setValue(String(logDir), forKey: "logPath")
             
         }
-        
+            
+
         if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
             
             //output to file
