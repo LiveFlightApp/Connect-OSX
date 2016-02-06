@@ -18,6 +18,12 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
         
         self.logLocationLabel!.stringValue = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String
+        
+        
+        /*
+        
+        // manual IP is deprecated
+        
         self.manualIpToggle.state = Int(NSUserDefaults.standardUserDefaults().boolForKey("manualIP"))
         
         if NSUserDefaults.standardUserDefaults().valueForKey("manualIPValue") != nil {
@@ -26,11 +32,17 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
             
         }
         
-        self.manualIpValue.delegate = self
+        self.manualIpValue.delegate = self*/
         
     }
     
     @IBAction func selectLogFolder(sender:AnyObject) {
+        
+        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String)
+        
+        /*
+        
+        // this doesn't work well with app sandboxing
         
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true
@@ -56,7 +68,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
                 
             }
             
-        }
+        }*/
 
     }
     
@@ -70,7 +82,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
         
     }
     
-    //"manualIPValue"
+    /*
     @IBAction func toggleManualIP(sender: AnyObject) {
         
         if manualIpToggle.state == 0 {
@@ -84,6 +96,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
         showRestartPrompt()
         
     }
+    */
     
     override func controlTextDidEndEditing(obj: NSNotification) {
         

@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if NSUserDefaults.standardUserDefaults().valueForKey("logPath") == nil { //NSURL(string: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String) == nil {
             // not a valid url, set default to desktop
             
-            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
                 
                 NSUserDefaults.standardUserDefaults().setValue(String(dir), forKey: "logPath")
                 
@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
             
             //output to file
-            let file = "liveflight_log.txt"
+            let file = "LiveFlight_Connect.log"
             
             if let dir : NSString = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String {
                 
