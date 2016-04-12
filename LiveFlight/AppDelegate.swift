@@ -27,22 +27,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Load Settings
             ========================
         */
+
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("logPath") == nil { //NSURL(string: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String) == nil {
-            // not a valid url, set default to desktop
+        // we always save to app sandbox
+        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
             
-            if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-                
-                NSUserDefaults.standardUserDefaults().setValue(String(dir), forKey: "logPath")
-                
-            }
+            let logDir = "\(dir)/Logs"
+            NSUserDefaults.standardUserDefaults().setValue(String(logDir), forKey: "logPath")
             
         }
-        
+            
+
         if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
             
             //output to file
-            let file = "liveflight_log.txt"
+            let file = "LiveFlight_Connect.log"
             
             if let dir : NSString = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String {
                 
@@ -126,79 +125,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {}
         
         
-        /*
-            Versioning
-            ========================
-        */
         
-        let nsObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
-        let bundleVersion = nsObject as! String
+        #if RELEASE
+        
+            /*
+                App Store Release
+                ========================
+            */
+            Release().setupReleaseFrameworks()
+            
+        #endif
 
-        
-        if reachability?.isReachable() == true {
 
-            NSLog("Checking versions...")
-            
-            //fetch versioning json
-            let url = NSURL(string: "http://connect.liveflightapp.com/config/config.json")
-            let request = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 60)
-            
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-                
-                do {
-                    if let response:NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
-                        
-                        let results: NSArray = response["mac"] as! NSArray
-
-                        //sort so highest version is at top
-                        let descriptor: NSSortDescriptor = NSSortDescriptor(key: "version", ascending: false)
-                        let sortedResults: NSArray = results.sortedArrayUsingDescriptors([descriptor])
-                        
-                        if let log = sortedResults[0]["log"] {
-                            if let versionNumber = sortedResults[0]["version"] {
-                                
-                                
-                                NSLog("Current version: \(bundleVersion)")
-                                NSLog("Newest version: \(versionNumber!) - \(log!)")
-                                
-                                //compare this version number to bundle version
-                                
-                                NSUserDefaults.standardUserDefaults().setValue(log, forKey: "nextLog")
-                                NSUserDefaults.standardUserDefaults().setDouble(Double(versionNumber as! NSNumber), forKey: "nextVersion")
-                                
-                                if (Double(versionNumber as! NSNumber) > Double(bundleVersion)) {
-                  
-                                    
-                                    //new version exists, present update dialog
-                                    NSLog("New version available!\n\n")
-                                    NSNotificationCenter.defaultCenter().postNotificationName("updateAvailable", object: sortedResults[0])
-                                    
-                                    
-                                } else {
-                                    
-                                    NSLog("Up to date\n\n")
-                                    
-                                }
-                            }
-                        }
-                        
-                    } else {
-                        NSLog("Failed to parse JSON")
-                    }
-                } catch let serializationError as NSError {
-                    NSLog(String(serializationError))
-                }
-                
-            }
-            
-            
-        } else {
-            NSLog("Network isn't reachable - postpone update search...")
-        }
-        
-        NSLog("\n\n")
-        
-        
         /*
             Init Networking
             ========================
@@ -235,7 +173,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func openJoystickGuide(sender: AnyObject) {
         
-        let forumURL = "https://community.infinite-flight.com/t/joysticks-on-ios-android-over-the-network-liveflight-connect/20017?u=carmalonso"
+        let forumURL = "http://help.liveflightapp.com/"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        
+    }
+    
+    @IBAction func openTerms(sender: AnyObject) {
+        
+        let forumURL = "http://help.liveflightapp.com/legal/terms"
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        
+    }
+    
+    @IBAction func openPrivacyPolicy(sender: AnyObject) {
+        
+        let forumURL = "http://help.liveflightapp.com/legal/privacy"
         NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
         
     }

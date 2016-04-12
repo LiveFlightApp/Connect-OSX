@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
@@ -8,7 +8,7 @@
         <scene sceneID="bCl-NL-T1o">
             <objects>
                 <windowController storyboardIdentifier="optionsWindow" id="P1r-Op-rGb" sceneMemberID="viewController">
-                    <window key="window" title="Preferences | LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="h8q-Ui-fnD">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="h8q-Ui-fnD">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -25,30 +25,22 @@
         <!--Options View Controller-->
         <scene sceneID="4EY-lb-lcK">
             <objects>
-                <viewController id="S3t-OD-JTR" customClass="OptionsViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S3t-OD-JTR" customClass="OptionsViewController" customModule="LiveFlight_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="641-fg-lYM">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="295"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USu-UB-r4e">
-                                <rect key="frame" x="18" y="258" width="211" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Log Location" id="VlZ-kx-jMN">
+                                <rect key="frame" x="18" y="203" width="271" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Have a problem with LiveFlight Connect? " id="VlZ-kx-jMN">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFT-0o-ib1">
-                                <rect key="frame" x="18" y="233" width="444" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="RqT-xl-lT9">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ye-gb-05B">
-                                <rect key="frame" x="14" y="197" width="137" height="32"/>
-                                <buttonCell key="cell" type="push" title="Select Log Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hKZ-Nf-v0e">
+                                <rect key="frame" x="14" y="120" width="137" height="32"/>
+                                <buttonCell key="cell" type="push" title="Open Log Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hKZ-Nf-v0e">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -66,12 +58,6 @@
                                     <action selector="resetSettings" target="S3t-OD-JTR" id="6Er-4Q-4vI"/>
                                 </connections>
                             </button>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="fQ1-bc-b3p">
-                                <rect key="frame" x="20" y="190" width="440" height="5"/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
-                            </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="UaV-l0-G9Q">
                                 <rect key="frame" x="20" y="76" width="440" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -86,37 +72,19 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbR-3k-EYb">
-                                <rect key="frame" x="18" y="117" width="191" height="35"/>
-                                <buttonCell key="cell" type="check" title="Enable Manual IP Address" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="VTm-dm-c5o">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-Lc-fgV">
+                                <rect key="frame" x="18" y="156" width="444" height="39"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Grab the &quot;LiveFlight_Connect.log&quot; file via the button below, and email it to contact@liveflightapp.com" id="B1b-Kg-IEi">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="toggleManualIP:" target="S3t-OD-JTR" id="jlP-n6-cvi"/>
-                                </connections>
-                            </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rjc-hc-C9y">
-                                <rect key="frame" x="224" y="123" width="225" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="192.168.1.1" drawsBackground="YES" id="xWd-2I-dAV">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BU8-4S-bXt">
-                                <rect key="frame" x="18" y="158" width="211" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Manual IP Address" id="F0b-Ky-k00">
-                                    <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a94-vi-daD">
-                                <rect key="frame" x="18" y="94" width="444" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This is highly experimental. Don't enable this if you don't know what it is." id="feX-9B-Fvb">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFT-0o-ib1">
+                                <rect key="frame" x="18" y="90" width="444" height="24"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/" id="RqT-xl-lT9">
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -124,13 +92,11 @@
                     </view>
                     <connections>
                         <outlet property="logLocationLabel" destination="yFT-0o-ib1" id="fWl-KO-P4p"/>
-                        <outlet property="manualIpToggle" destination="UbR-3k-EYb" id="2xh-n9-ldv"/>
-                        <outlet property="manualIpValue" destination="Rjc-hc-C9y" id="pfS-NS-BJy"/>
                     </connections>
                 </viewController>
                 <customObject id="ybY-Vi-mrQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="2341.5"/>
+            <point key="canvasLocation" x="187" y="2314"/>
         </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
@@ -390,7 +356,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" id="sEy-cb-d7h">
                                     <items>
-                                        <menuItem title="Joystick Setup Guide" id="2LG-lf-quS">
+                                        <menuItem title="Setup Guides" id="2LG-lf-quS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openJoystickGuide:" target="Voe-Tx-rLC" id="VfW-6n-NEt"/>
@@ -409,7 +375,7 @@
                                                 <action selector="openForum:" target="Voe-Tx-rLC" id="Prg-x4-59a"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="LiveFlight" id="pgG-TR-T5L">
+                                        <menuItem title="LiveFlight Tracker" id="pgG-TR-T5L">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openLiveFlight:" target="Voe-Tx-rLC" id="Pav-2J-e5T"/>
@@ -427,6 +393,19 @@
                                                 <action selector="openLiveFlightTwitter:" target="Voe-Tx-rLC" id="o1d-wK-u6e"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="jGb-py-OcY"/>
+                                        <menuItem title="Terms and Conditions" id="r6a-Xk-8YJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openTerms:" target="Voe-Tx-rLC" id="771-0C-ERl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Privacy Policy" id="I9z-vg-fG4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openPrivacyPolicy:" target="Voe-Tx-rLC" id="sxr-f4-aEh"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -436,7 +415,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Connect" customModuleProvider="target">
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LiveFlight_Connect" customModuleProvider="target">
                     <connections>
                         <outlet property="gamepadModeButton" destination="xU1-N0-hRp" id="2CO-G2-kHC"/>
                         <outlet property="logButton" destination="QUf-lS-Umh" id="Tmt-Mv-ekN"/>
@@ -450,8 +429,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="Connect" customModuleProvider="target">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="LiveFlight_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="LiveFlight Connect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="KeyboardListenerWindow" customModule="LiveFlight_Connect" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="450" height="410"/>
@@ -495,7 +474,7 @@
         <!--View Controller-->
         <scene sceneID="I75-pD-g5N">
             <objects>
-                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JqP-a7-f56" customClass="ViewController" customModule="LiveFlight_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="30H-kZ-p24">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="413"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -551,7 +530,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5" customClass="Status" customModule="Connect" customModuleProvider="target">
+                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5" customClass="Status" customModule="LiveFlight_Connect" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="411"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
@@ -616,7 +595,7 @@
         <!--Joystick View Controller-->
         <scene sceneID="GEc-QC-TTA">
             <objects>
-                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yz8-8L-7HY" customClass="JoystickViewController" customModule="LiveFlight_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sG0-Ns-ZYY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="410"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -802,7 +781,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eFM-cW-Pcm" customClass="Status" customModule="Connect" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eFM-cW-Pcm" customClass="Status" customModule="LiveFlight_Connect" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="314"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qly-xl-1P6">
@@ -982,7 +961,7 @@
         <!--Keyboard Commands View-->
         <scene sceneID="KQm-qq-20X">
             <objects>
-                <viewController id="kIm-c6-ghD" customClass="KeyboardCommandsView" customModule="Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kIm-c6-ghD" customClass="KeyboardCommandsView" customModule="LiveFlight_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yyp-0j-R77">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="410"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1066,7 +1045,7 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-OK-bhz">
-                                <rect key="frame" x="20" y="97" width="410" height="4"/>
+                                <rect key="frame" x="20" y="97" width="410" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
