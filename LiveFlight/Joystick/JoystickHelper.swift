@@ -52,10 +52,10 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             ========================
         */
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryPitch:", name:"tryPitch", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRoll:", name:"tryRoll", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryThrottle:", name:"tryThrottle", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickHelper.tryPitch(_:)), name:"tryPitch", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickHelper.tryRoll(_:)), name:"tryRoll", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickHelper.tryThrottle(_:)), name:"tryThrottle", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickHelper.tryRudder(_:)), name:"tryRudder", object: nil)
         
 
         

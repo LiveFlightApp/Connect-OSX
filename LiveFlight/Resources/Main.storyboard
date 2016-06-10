@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
@@ -83,7 +85,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFT-0o-ib1">
                                 <rect key="frame" x="18" y="90" width="444" height="24"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/" id="RqT-xl-lT9">
-                                    <font key="font" metaFont="system" size="11"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -481,13 +483,16 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-T9-5DU">
                                 <rect key="frame" x="126" y="263" width="198" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="m80-yB-fOA"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connected!" id="c8n-30-ssh">
                                     <font key="font" metaFont="system" size="21"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgJ-PO-7Gk">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wgJ-PO-7Gk">
                                 <rect key="frame" x="18" y="238" width="414" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="Afn-OJ-49I">
                                     <font key="font" metaFont="system"/>
@@ -495,10 +500,10 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-4Q-GI6">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-4Q-GI6">
                                 <rect key="frame" x="256" y="30" width="168" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="156" id="fOn-nu-HQN"/>
+                                    <constraint firstAttribute="width" constant="156" id="JUA-Nq-fpK"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Joystick Setup Guide" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nRu-sZ-3Af">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -508,15 +513,18 @@
                                     <action selector="openJoystickGuide:" target="JqP-a7-f56" id="GI3-a5-CpG"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-ef-IhH">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-ef-IhH">
                                 <rect key="frame" x="18" y="62" width="179" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="qNC-RZ-Kyc"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Need help getting started?" id="STH-yp-fbn">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpF-v1-hBn">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dpF-v1-hBn">
                                 <rect key="frame" x="18" y="20" width="216" height="37"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Check out the LiveFlight joystick setup guide!" id="w5W-Lj-OTB">
                                     <font key="font" metaFont="system"/>
@@ -524,25 +532,31 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-is-pE6">
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-is-pE6">
                                 <rect key="frame" x="20" y="85" width="410" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5" customClass="Status" customModule="LiveFlight_Connect" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="sQC-6H-fV5" customClass="Status" customModule="LiveFlight_Connect" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="411"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-rt-Gl8">
                                         <rect key="frame" x="71" y="219" width="308" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="8h0-8v-Jx0"/>
+                                        </constraints>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to Infinite Flight..." id="Ywu-88-EQd">
                                             <font key="font" metaFont="system" size="19"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-oe-EEb">
                                         <rect key="frame" x="55" y="180" width="341" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="i37-DS-RrQ"/>
+                                        </constraints>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Make sure Infinite Flight is running on the same network with &quot;Infinite Flight Connect&quot; enabled." id="MNO-yO-GKm">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -551,36 +565,36 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="top" secondItem="sQC-6H-fV5" secondAttribute="top" constant="133" id="4fs-fM-BHC"/>
-                                    <constraint firstItem="aXk-oe-EEb" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="57" id="67E-jZ-tTG"/>
-                                    <constraint firstAttribute="trailing" secondItem="RAd-rt-Gl8" secondAttribute="trailing" constant="73" id="J9t-Sk-wiX"/>
-                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="73" id="UdJ-vp-Twn"/>
-                                    <constraint firstAttribute="trailing" secondItem="aXk-oe-EEb" secondAttribute="trailing" constant="56" id="eDr-WK-FGs"/>
+                                    <constraint firstItem="aXk-oe-EEb" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="57" id="ICB-c1-idT"/>
+                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="centerX" secondItem="sQC-6H-fV5" secondAttribute="centerX" id="aT1-7e-bIQ"/>
+                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="centerX" secondItem="aXk-oe-EEb" secondAttribute="centerX" id="eXD-MD-dry"/>
+                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="top" secondItem="sQC-6H-fV5" secondAttribute="top" constant="153" id="jzB-m6-EPn"/>
+                                    <constraint firstItem="aXk-oe-EEb" firstAttribute="top" secondItem="sQC-6H-fV5" secondAttribute="top" constant="186" id="kzy-U1-YN5"/>
+                                    <constraint firstItem="RAd-rt-Gl8" firstAttribute="leading" secondItem="sQC-6H-fV5" secondAttribute="leading" constant="73" id="pkZ-oO-AKf"/>
                                 </constraints>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="dpF-v1-hBn" secondAttribute="bottom" constant="17" id="2qi-fe-0pH"/>
-                            <constraint firstItem="sQC-6H-fV5" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" id="7PY-ZW-IIA"/>
-                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" constant="169" id="Djr-4R-wOr"/>
-                            <constraint firstItem="K2K-T9-5DU" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" constant="128" id="FyN-KT-pLK"/>
-                            <constraint firstAttribute="bottom" secondItem="sQC-6H-fV5" secondAttribute="bottom" id="IZ9-GZ-9Zs"/>
-                            <constraint firstAttribute="trailing" secondItem="K2K-T9-5DU" secondAttribute="trailing" constant="128" id="Jiw-vU-a7W"/>
-                            <constraint firstItem="2Ei-ef-IhH" firstAttribute="top" secondItem="Ssi-is-pE6" secondAttribute="bottom" constant="8" id="KKi-9u-Dmo"/>
-                            <constraint firstAttribute="trailing" secondItem="Ssi-is-pE6" secondAttribute="trailing" constant="20" id="Kgz-Dq-Sr4"/>
-                            <constraint firstItem="sQC-6H-fV5" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" id="Lp7-S6-yFu"/>
-                            <constraint firstItem="dpF-v1-hBn" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" constant="20" id="Tz0-gZ-Pkc"/>
-                            <constraint firstAttribute="bottom" secondItem="WHa-4Q-GI6" secondAttribute="bottom" constant="34" id="VvM-IK-3NZ"/>
-                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="top" secondItem="K2K-T9-5DU" secondAttribute="bottom" constant="8" id="WQO-cZ-k3J"/>
-                            <constraint firstAttribute="trailing" secondItem="wgJ-PO-7Gk" secondAttribute="trailing" constant="168" id="Wq7-cO-UhW"/>
-                            <constraint firstItem="Ssi-is-pE6" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" constant="20" id="Zrm-NA-CE7"/>
-                            <constraint firstAttribute="trailing" secondItem="WHa-4Q-GI6" secondAttribute="trailing" constant="32" id="bT0-6o-cov"/>
-                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="top" secondItem="K2K-T9-5DU" secondAttribute="bottom" constant="8" id="cOG-PG-2EO"/>
-                            <constraint firstAttribute="trailing" secondItem="sQC-6H-fV5" secondAttribute="trailing" id="cep-0Z-cmf"/>
-                            <constraint firstItem="WHa-4Q-GI6" firstAttribute="leading" secondItem="dpF-v1-hBn" secondAttribute="trailing" constant="30" id="dxT-BJ-zUX"/>
-                            <constraint firstItem="WHa-4Q-GI6" firstAttribute="leading" secondItem="dpF-v1-hBn" secondAttribute="trailing" constant="30" id="eeE-ih-74n"/>
-                            <constraint firstItem="K2K-T9-5DU" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" constant="125" id="oH3-TP-zNC"/>
-                            <constraint firstItem="dpF-v1-hBn" firstAttribute="top" secondItem="2Ei-ef-IhH" secondAttribute="bottom" constant="5" id="rmI-2u-xg6"/>
+                            <constraint firstItem="2Ei-ef-IhH" firstAttribute="leading" secondItem="dpF-v1-hBn" secondAttribute="leading" id="30r-uL-GOG"/>
+                            <constraint firstAttribute="bottom" secondItem="sQC-6H-fV5" secondAttribute="bottom" id="8h0-Zc-vFG"/>
+                            <constraint firstItem="WHa-4Q-GI6" firstAttribute="baseline" secondItem="dpF-v1-hBn" secondAttribute="firstBaseline" id="BPt-lw-k1H"/>
+                            <constraint firstItem="sQC-6H-fV5" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" constant="2" id="Cj3-4m-udh"/>
+                            <constraint firstItem="K2K-T9-5DU" firstAttribute="centerX" secondItem="sQC-6H-fV5" secondAttribute="centerX" id="J1y-8S-ptQ"/>
+                            <constraint firstItem="sQC-6H-fV5" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" id="LdE-Gf-YYd"/>
+                            <constraint firstItem="K2K-T9-5DU" firstAttribute="top" secondItem="30H-kZ-p24" secondAttribute="top" constant="125" id="LnO-I5-0ES"/>
+                            <constraint firstItem="Ssi-is-pE6" firstAttribute="leading" secondItem="2Ei-ef-IhH" secondAttribute="leading" id="Rjj-m8-BDH"/>
+                            <constraint firstAttribute="bottom" secondItem="dpF-v1-hBn" secondAttribute="bottom" constant="20" symbolic="YES" id="V1X-DY-0QY"/>
+                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="trailing" secondItem="Ssi-is-pE6" secondAttribute="trailing" id="WrT-HM-hK5"/>
+                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="top" secondItem="K2K-T9-5DU" secondAttribute="bottom" constant="8" symbolic="YES" id="e7n-RJ-hMt"/>
+                            <constraint firstItem="dpF-v1-hBn" firstAttribute="top" secondItem="2Ei-ef-IhH" secondAttribute="bottom" constant="5" id="hmC-sr-n5k"/>
+                            <constraint firstAttribute="trailing" secondItem="wgJ-PO-7Gk" secondAttribute="trailing" constant="20" symbolic="YES" id="ieA-0J-Fqh"/>
+                            <constraint firstItem="K2K-T9-5DU" firstAttribute="centerX" secondItem="wgJ-PO-7Gk" secondAttribute="centerX" id="kdG-O3-gmJ"/>
+                            <constraint firstAttribute="trailing" secondItem="WHa-4Q-GI6" secondAttribute="trailing" constant="32" id="pyo-p7-Sge"/>
+                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="leading" secondItem="30H-kZ-p24" secondAttribute="leading" constant="20" symbolic="YES" id="qnp-xC-NA0"/>
+                            <constraint firstItem="2Ei-ef-IhH" firstAttribute="top" secondItem="Ssi-is-pE6" secondAttribute="bottom" constant="8" symbolic="YES" id="rvB-Fr-dpc"/>
+                            <constraint firstItem="wgJ-PO-7Gk" firstAttribute="leading" secondItem="Ssi-is-pE6" secondAttribute="leading" id="tXe-6L-VBx"/>
+                            <constraint firstItem="WHa-4Q-GI6" firstAttribute="leading" secondItem="dpF-v1-hBn" secondAttribute="trailing" constant="30" id="txM-eN-col"/>
+                            <constraint firstAttribute="bottom" secondItem="WHa-4Q-GI6" secondAttribute="bottom" constant="37" id="wRT-d5-JHE"/>
                         </constraints>
                     </view>
                     <connections>

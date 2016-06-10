@@ -22,7 +22,7 @@ class JoystickViewController: NSViewController {
         super.viewDidLoad()
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeLabelValues:", name:"changeLabelValues", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.changeLabelValues(_:)), name:"changeLabelValues", object: nil)
         
         //this is a hack, to avoid having to create a new NSNotification object
         NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
@@ -63,11 +63,11 @@ class JoystickViewController: NSViewController {
             
             var filter = Dictionary<String,Int>()
             var len = joystickNameArray.count
-            for var index = 0; index < len  ;++index {
+            for var index = 0; index < len  ;index += 1 {
                 let value = joystickNameArray[index]
                 if (filter[value] != nil) {
                     joystickNameArray.removeAtIndex(index--)
-                    len--
+                    len -= 1
                 }else{
                     filter[value] = 1
                 }
