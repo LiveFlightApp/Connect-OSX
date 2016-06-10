@@ -22,8 +22,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeView:", name:"connectionStarted", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentUpdateView:", name:"updateAvailable", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.removeView(_:)), name:"connectionStarted", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.presentUpdateView(_:)), name:"updateAvailable", object: nil)
 
         
     }
@@ -38,7 +38,7 @@ class ViewController: NSViewController {
     func removeView(notification: NSNotification) {
         
         // add observer for connection errors
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tcpError:", name:"tcpError", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.tcpError(_:)), name:"tcpError", object: nil)
         
         NSLog("Removing view...")
         dispatch_async(dispatch_get_main_queue(),{
