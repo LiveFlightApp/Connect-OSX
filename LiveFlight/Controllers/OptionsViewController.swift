@@ -17,7 +17,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.logLocationLabel!.stringValue = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String
+        self.logLocationLabel!.stringValue = UserDefaults.standard.value(forKey: "logPath") as! String
         
         
         /*
@@ -38,7 +38,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func selectLogFolder(sender:AnyObject) {
         
-        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String)
+        NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: UserDefaults.standard.value(forKey: "logPath") as! String)
         
         /*
         
@@ -74,8 +74,8 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func resetSettings(sender: AnyObject) {
         
-        for key in NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys {
-            NSUserDefaults.standardUserDefaults().removeObjectForKey(key)
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key)
         }
         
         showRestartPrompt()
@@ -98,10 +98,10 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     }
     */
     
-    override func controlTextDidEndEditing(obj: NSNotification) {
+    func controlTextDidEndEditing(obj: NSNotification) {
         
         // enter pressed, save new IP
-        NSUserDefaults.standardUserDefaults().setValue(manualIpValue.stringValue, forKey: "manualIPValue")
+        UserDefaults.standard.setValue(manualIpValue.stringValue, forKey: "manualIPValue")
         
     }
     
@@ -109,10 +109,10 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
         
         let alert = NSAlert()
         alert.messageText = "Changes saved!"
-        alert.addButtonWithTitle("OK")
+        alert.addButton(withTitle: "OK")
         alert.informativeText = "Restart LiveFlight Connect for the changes to take effect."
             
-        alert.beginSheetModalForWindow(self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
             
             NSLog("Restart prompt shown and closed.")
             

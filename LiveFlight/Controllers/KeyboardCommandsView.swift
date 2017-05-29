@@ -15,23 +15,16 @@ class KeyboardCommandsView: NSViewController, NSTableViewDataSource, NSTableView
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        
     }
     
-    func numberOfRowsInTableView(aTableView: NSTableView) -> Int
-    {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         let numberOfRows:Int = getDataArray().count
         return numberOfRows
     }
-    
-    //set values
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
-        
-        return getDataArray().objectAtIndex(row).objectForKey(tableColumn!.identifier)
-        
+
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        return (getDataArray().object(at: row) as! NSDictionary).object(forKey: tableColumn!.identifier)
     }
-    
-    
     
     func getDataArray () -> NSArray{
         let dataArray:[NSDictionary] =
@@ -71,7 +64,7 @@ class KeyboardCommandsView: NSViewController, NSTableViewDataSource, NSTableView
                 ["Command": "ATC Commands", "Key":"Numbers [1-0]"]
             ];
 
-        return dataArray;
+        return dataArray as NSArray;
     }
     
 }

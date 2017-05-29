@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1B78B21ED7339600FB0F58 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78AC1ED7339600FB0F58 /* HTTPSecurity.swift */; };
+		7E1B78B31ED7339600FB0F58 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78AD1ED7339600FB0F58 /* Operation.swift */; };
+		7E1B78B41ED7339600FB0F58 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78AE1ED7339600FB0F58 /* Request.swift */; };
+		7E1B78B51ED7339600FB0F58 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78AF1ED7339600FB0F58 /* StatusCode.swift */; };
+		7E1B78B61ED7339600FB0F58 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78B11ED7339600FB0F58 /* Upload.swift */; };
+		7E1B78BC1ED733A200FB0F58 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78B91ED733A200FB0F58 /* GCDAsyncSocket.m */; };
+		7E1B78BD1ED733A200FB0F58 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B78BB1ED733A200FB0F58 /* GCDAsyncUdpSocket.m */; };
 		7E2045951BCAF95A00A03F11 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2045941BCAF95A00A03F11 /* Credits.rtf */; };
 		7E36469E1C3454EF003117A5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36469D1C3454EF003117A5 /* Reachability.swift */; };
 		7E3646A11C34557A003117A5 /* KeyboardListenerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3646A01C34557A003117A5 /* KeyboardListenerWindow.swift */; };
@@ -22,17 +29,11 @@
 		7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585D61BD2CD7D0028D9FD /* ControlPadViewController.m */; };
 		7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5585DA1BD2CDF20028D9FD /* ControlPad.m */; };
 		7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */; };
-		7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */; };
-		7E7451701BC9D20000FB1069 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516A1BC9D20000FB1069 /* Operation.swift */; };
-		7E7451711BC9D20000FB1069 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516B1BC9D20000FB1069 /* Request.swift */; };
-		7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516C1BC9D20000FB1069 /* StatusCode.swift */; };
-		7E7451731BC9D20000FB1069 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74516E1BC9D20000FB1069 /* Upload.swift */; };
 		7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */; };
 		7E7BA5F91B89DA5200C73DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA5F81B89DA5200C73DA0 /* Images.xcassets */; };
 		7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6141B8A60FC00C73DA0 /* Joystick.m */; };
 		7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6161B8A60FC00C73DA0 /* JoystickHatswitch.m */; };
 		7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */; };
-		7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */; };
 		7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */; };
 		7E898E141B936AFD00208F54 /* RoundedIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7E898E131B936AFD00208F54 /* RoundedIcon.icns */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E1B78AC1ED7339600FB0F58 /* HTTPSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSecurity.swift; sourceTree = "<group>"; };
+		7E1B78AD1ED7339600FB0F58 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		7E1B78AE1ED7339600FB0F58 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7E1B78AF1ED7339600FB0F58 /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		7E1B78B01ED7339600FB0F58 /* SwiftHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftHTTP.h; sourceTree = "<group>"; };
+		7E1B78B11ED7339600FB0F58 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		7E1B78B81ED733A200FB0F58 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		7E1B78B91ED733A200FB0F58 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		7E1B78BA1ED733A200FB0F58 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		7E1B78BB1ED733A200FB0F58 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		7E2045941BCAF95A00A03F11 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		7E36469D1C3454EF003117A5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		7E3646A01C34557A003117A5 /* KeyboardListenerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardListenerWindow.swift; path = Keyboard/KeyboardListenerWindow.swift; sourceTree = "<group>"; };
@@ -78,12 +89,6 @@
 		7E5585DA1BD2CDF20028D9FD /* ControlPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlPad.m; path = ViewSubclasses/ControlPad/ControlPad.m; sourceTree = "<group>"; };
 		7E62A56F1B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteFlightAPIConnector.h; sourceTree = "<group>"; };
 		7E62A5701B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteFlightAPIConnector.m; sourceTree = "<group>"; };
-		7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSecurity.swift; sourceTree = "<group>"; };
-		7E74516A1BC9D20000FB1069 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
-		7E74516B1BC9D20000FB1069 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		7E74516C1BC9D20000FB1069 /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
-		7E74516D1BC9D20000FB1069 /* SwiftHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftHTTP.h; sourceTree = "<group>"; };
-		7E74516E1BC9D20000FB1069 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		7E7BA5EF1B89DA5200C73DA0 /* LiveFlight Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LiveFlight Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BA5F31B89DA5200C73DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7BA5F41B89DA5200C73DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +101,6 @@
 		7E7BA6171B8A60FC00C73DA0 /* JoystickNotificationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickNotificationDelegate.h; sourceTree = "<group>"; };
 		7E7BA6181B8A60FC00C73DA0 /* JoystickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickManager.h; sourceTree = "<group>"; };
 		7E7BA6191B8A60FC00C73DA0 /* JoystickManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickManager.m; sourceTree = "<group>"; };
-		7E80A4061BC6BE5100CF70FA /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		7E80A4091BC6C19E00CF70FA /* UDPReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPReceiver.h; sourceTree = "<group>"; };
 		7E80A40A1BC6C19E00CF70FA /* UDPReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPReceiver.m; sourceTree = "<group>"; };
 		7E898E131B936AFD00208F54 /* RoundedIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RoundedIcon.icns; sourceTree = "<group>"; };
@@ -114,6 +117,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E1B78AB1ED7339600FB0F58 /* SwiftHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				7E1B78AC1ED7339600FB0F58 /* HTTPSecurity.swift */,
+				7E1B78AD1ED7339600FB0F58 /* Operation.swift */,
+				7E1B78AE1ED7339600FB0F58 /* Request.swift */,
+				7E1B78AF1ED7339600FB0F58 /* StatusCode.swift */,
+				7E1B78B01ED7339600FB0F58 /* SwiftHTTP.h */,
+				7E1B78B11ED7339600FB0F58 /* Upload.swift */,
+			);
+			name = SwiftHTTP;
+			path = LiveFlight/libs/SwiftHTTP/Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		7E1B78B71ED733A200FB0F58 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				7E1B78B81ED733A200FB0F58 /* GCDAsyncSocket.h */,
+				7E1B78B91ED733A200FB0F58 /* GCDAsyncSocket.m */,
+				7E1B78BA1ED733A200FB0F58 /* GCDAsyncUdpSocket.h */,
+				7E1B78BB1ED733A200FB0F58 /* GCDAsyncUdpSocket.m */,
+			);
+			name = GCD;
+			path = LiveFlight/libs/CocoaAsyncSocket/Source/GCD;
+			sourceTree = SOURCE_ROOT;
+		};
 		7E3646991C3453A6003117A5 /* View Subclasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,30 +198,6 @@
 			name = ControlPad;
 			sourceTree = "<group>";
 		};
-		7E7451671BC9D1E400FB1069 /* GCDAsyncUDPSocket */ = {
-			isa = PBXGroup;
-			children = (
-				7E80A4061BC6BE5100CF70FA /* GCDAsyncUdpSocket.h */,
-				7E80A4071BC6BE5100CF70FA /* GCDAsyncUdpSocket.m */,
-			);
-			name = GCDAsyncUDPSocket;
-			path = ../libs/CocoaAsyncSocket/Source/GCD;
-			sourceTree = "<group>";
-		};
-		7E7451741BC9D20600FB1069 /* SwiftHTTP */ = {
-			isa = PBXGroup;
-			children = (
-				7E7451691BC9D20000FB1069 /* HTTPSecurity.swift */,
-				7E74516A1BC9D20000FB1069 /* Operation.swift */,
-				7E74516B1BC9D20000FB1069 /* Request.swift */,
-				7E74516C1BC9D20000FB1069 /* StatusCode.swift */,
-				7E74516D1BC9D20000FB1069 /* SwiftHTTP.h */,
-				7E74516E1BC9D20000FB1069 /* Upload.swift */,
-			);
-			name = SwiftHTTP;
-			path = ../libs/SwiftHTTP;
-			sourceTree = "<group>";
-		};
 		7E7BA5E61B89DA5200C73DA0 = {
 			isa = PBXGroup;
 			children = (
@@ -235,8 +240,8 @@
 			children = (
 				7E2045941BCAF95A00A03F11 /* Credits.rtf */,
 				7E3646AE1C345610003117A5 /* JoystickMapping */,
-				7E7451671BC9D1E400FB1069 /* GCDAsyncUDPSocket */,
-				7E7451741BC9D20600FB1069 /* SwiftHTTP */,
+				7E1B78B71ED733A200FB0F58 /* GCD */,
+				7E1B78AB1ED7339600FB0F58 /* SwiftHTTP */,
 				7E36469D1C3454EF003117A5 /* Reachability.swift */,
 				7E898E131B936AFD00208F54 /* RoundedIcon.icns */,
 				7E7BA5F31B89DA5200C73DA0 /* Info.plist */,
@@ -290,12 +295,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Cameron Carmichael Alonso";
 				TargetAttributes = {
 					7E7BA5EE1B89DA5200C73DA0 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = DR44D6XSFQ;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -340,25 +346,26 @@
 				7E3646A11C34557A003117A5 /* KeyboardListenerWindow.swift in Sources */,
 				7E5585DB1BD2CDF20028D9FD /* ControlPad.m in Sources */,
 				7E53780B1C3548C9006D86F0 /* OptionsViewController.swift in Sources */,
-				7E74516F1BC9D20000FB1069 /* HTTPSecurity.swift in Sources */,
-				7E80A4081BC6BE5100CF70FA /* GCDAsyncUdpSocket.m in Sources */,
 				7E62A5711B98B9B800D8D2D5 /* InfiniteFlightAPIConnector.m in Sources */,
+				7E1B78BD1ED733A200FB0F58 /* GCDAsyncUdpSocket.m in Sources */,
 				7E3646A91C3455AF003117A5 /* JoystickHelper.swift in Sources */,
 				7E80A40B1BC6C19E00CF70FA /* UDPReceiver.m in Sources */,
 				7E3646AD1C3455D9003117A5 /* Status.swift in Sources */,
 				7E3646A71C34558D003117A5 /* ViewController.swift in Sources */,
+				7E1B78B31ED7339600FB0F58 /* Operation.swift in Sources */,
 				7E7BA61C1B8A60FC00C73DA0 /* JoystickHatswitch.m in Sources */,
 				7E3646AB1C3455BB003117A5 /* JoystickViewController.swift in Sources */,
 				7E7BA61B1B8A60FC00C73DA0 /* Joystick.m in Sources */,
 				7E7BA61D1B8A60FC00C73DA0 /* JoystickManager.m in Sources */,
+				7E1B78BC1ED733A200FB0F58 /* GCDAsyncSocket.m in Sources */,
 				7E5585D71BD2CD7D0028D9FD /* ControlPadViewController.m in Sources */,
-				7E7451701BC9D20000FB1069 /* Operation.swift in Sources */,
+				7E1B78B51ED7339600FB0F58 /* StatusCode.swift in Sources */,
+				7E1B78B21ED7339600FB0F58 /* HTTPSecurity.swift in Sources */,
+				7E1B78B61ED7339600FB0F58 /* Upload.swift in Sources */,
 				7E36469E1C3454EF003117A5 /* Reachability.swift in Sources */,
-				7E7451721BC9D20000FB1069 /* StatusCode.swift in Sources */,
 				7E3646A61C34558D003117A5 /* KeyboardCommandsView.swift in Sources */,
-				7E7451731BC9D20000FB1069 /* Upload.swift in Sources */,
+				7E1B78B41ED7339600FB0F58 /* Request.swift in Sources */,
 				7E5378091C34A4BC006D86F0 /* FlightControls.swift in Sources */,
-				7E7451711BC9D20000FB1069 /* Request.swift in Sources */,
 				7E7BA5F51B89DA5200C73DA0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,8 +386,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -424,8 +433,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -444,6 +455,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -451,8 +463,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DR44D6XSFQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -466,6 +479,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LiveFlight/LiveFlight-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Connect-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -473,8 +487,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DR44D6XSFQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -487,6 +502,7 @@
 				PRODUCT_NAME = "LiveFlight Connect";
 				SWIFT_OBJC_BRIDGING_HEADER = "LiveFlight/LiveFlight-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Connect-Swift.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
