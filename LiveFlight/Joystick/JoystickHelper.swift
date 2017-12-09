@@ -52,43 +52,41 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             ========================
         */
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryPitch:", name:"tryPitch", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRoll:", name:"tryRoll", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryThrottle:", name:"tryThrottle", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryRudder:", name:"tryRudder", object: nil)
-        
-
+        NotificationCenter.default.addObserver(self, selector: #selector(tryPitch(notification:)), name:NSNotification.Name(rawValue: "tryPitch"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tryRoll(notification:)), name:NSNotification.Name(rawValue: "tryRoll"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tryThrottle(notification:)), name:NSNotification.Name(rawValue: "tryThrottle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tryRudder(notification:)), name:NSNotification.Name(rawValue: "tryRudder"), object: nil)
         
     }
     
-    func tryPitch(notification: NSNotification) {
+    @objc func tryPitch(notification: NSNotification) {
         tryPitch = true
     }
     
-    func tryRoll(notification: NSNotification) {
+    @objc func tryRoll(notification: NSNotification) {
         tryRoll = true
     }
     
-    func tryThrottle(notification: NSNotification) {
+    @objc func tryThrottle(notification: NSNotification) {
         tryThrottle = true
     }
     
-    func tryRudder(notification: NSNotification) {
+    @objc func tryRudder(notification: NSNotification) {
         tryRudder = true
     }
     
     //joystick work
-    func joystickAdded(joystick: Joystick!) {
-        joystick.registerForNotications(self)
+    func joystickAdded(_ joystick: Joystick!) {
+        joystick.register(forNotications: self)
         
-        if NSUserDefaults.standardUserDefaults().integerForKey("lastJoystick") != Int(joystick.productId) {
+        if UserDefaults.standard.integer(forKey: "lastJoystick") != Int(joystick.productId) {
             // different joystick. Reset
          
             // remove last map
-            NSUserDefaults.standardUserDefaults().removeObjectForKey("mapStatus")
+            UserDefaults.standard.removeObject(forKey: "mapStatus")
             
             // set axesSet to false
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "axesSet")
+            UserDefaults.standard.set(false, forKey: "axesSet")
             
         }
         
@@ -97,28 +95,28 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         joystickConfig = JoystickConfig(connected: true, name: ("\(joystick.manufacturerName) \(joystick.productName)"))
         
         
-        let axesSet = NSUserDefaults.standardUserDefaults().boolForKey("axesSet")
+        let axesSet = UserDefaults.standard.bool(forKey: "axesSet")
         
         // this is to reset axes when upgrading. Since there is a common pattern, there shouldn't be much impact.
-        let axesSet11 = NSUserDefaults.standardUserDefaults().boolForKey("axesSet11")
+        let axesSet11 = UserDefaults.standard.bool(forKey: "axesSet11")
         
         if axesSet != true || axesSet11 != true {
             // axes haven't been set yet
             
             // check to see if json exists with joystick name
-            guard let path = NSBundle.mainBundle().pathForResource("JoystickMapping/\(joystick.manufacturerName) \(joystick.productName)", ofType: "json") else {
+            guard let path = Bundle.main.path(forResource: "JoystickMapping/\(joystick.manufacturerName) \(joystick.productName)", ofType: "json") else {
                 
                 // No map found
                 NSLog("No map found - setting default values...")
                 
                 // Default values
-                NSUserDefaults.standardUserDefaults().setInteger(49, forKey: "pitch")
-                NSUserDefaults.standardUserDefaults().setInteger(48, forKey: "roll")
-                NSUserDefaults.standardUserDefaults().setInteger(50, forKey: "throttle")
-                NSUserDefaults.standardUserDefaults().setInteger(53, forKey: "rudder")
+                UserDefaults.standard.set(49, forKey: "pitch")
+                UserDefaults.standard.set(48, forKey: "roll")
+                UserDefaults.standard.set(50, forKey: "throttle")
+                UserDefaults.standard.set(53, forKey: "rudder")
                 
                 // using generic values
-                NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "mapStatus")
+                UserDefaults.standard.set(0, forKey: "mapStatus")
                 
                 return
             }
@@ -127,80 +125,80 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
             let fileData = NSData(contentsOfFile: path)
             
             do {
-                if let response:NSDictionary = try NSJSONSerialization.JSONObjectWithData(fileData!, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
+                if let response:NSDictionary = try JSONSerialization.jsonObject(with: fileData! as Data, options:JSONSerialization.ReadingOptions.mutableContainers) as? Dictionary<String, AnyObject> as! NSDictionary {
                     
-                    let pitchAxis = response.valueForKey("Pitch-OSX") as! Int
-                    let rollAxis = response.valueForKey("Roll-OSX") as! Int
-                    let throttleAxis = response.valueForKey("Throttle-OSX") as! Int
-                    let rudderAxis = response.valueForKey("Rudder-OSX") as! Int
+                    let pitchAxis = response.value(forKey: "Pitch-OSX") as! Int
+                    let rollAxis = response.value(forKey: "Roll-OSX") as! Int
+                    let throttleAxis = response.value(forKey: "Throttle-OSX") as! Int
+                    let rudderAxis = response.value(forKey: "Rudder-OSX") as! Int
                     
                     //save values
-                    NSUserDefaults.standardUserDefaults().setInteger(pitchAxis, forKey: "pitch")
-                    NSUserDefaults.standardUserDefaults().setInteger(rollAxis, forKey: "roll")
-                    NSUserDefaults.standardUserDefaults().setInteger(throttleAxis, forKey: "throttle")
-                    NSUserDefaults.standardUserDefaults().setInteger(rudderAxis, forKey: "rudder")
+                    UserDefaults.standard.set(pitchAxis, forKey: "pitch")
+                    UserDefaults.standard.set(rollAxis, forKey: "roll")
+                    UserDefaults.standard.set(throttleAxis, forKey: "throttle")
+                    UserDefaults.standard.set(rudderAxis, forKey: "rudder")
                     
                     // using mapped values
-                    NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "mapStatus")
+                    UserDefaults.standard.set(1, forKey: "mapStatus")
                     
                 } else {
                     NSLog("Failed to parse JSON")
                 }
             } catch let serializationError as NSError {
-                NSLog(String(serializationError))
+                NSLog(String(describing: serializationError))
             }
             
         }
         
         // change labels and mark as axes set
-        NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet")
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "axesSet11")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object:nil)
+        UserDefaults.standard.set(true, forKey: "axesSet")
+        UserDefaults.standard.set(true, forKey: "axesSet11")
         
-        NSUserDefaults.standardUserDefaults().setInteger(Int(joystick.productId), forKey: "lastJoystick")
+        UserDefaults.standard.set(Int(joystick.productId), forKey: "lastJoystick")
         
     }
     
-    func joystickRemoved(joystick: Joystick!) {
+    func joystickRemoved(_ joystick: Joystick!) {
         
         joystickConfig = JoystickConfig(connected: false, name: "")
         
 
         // change label values
-        NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object:nil)
         
     }
     
-    func joystickStateChanged(joystick: Joystick!, axis:Int32) {
+    func joystickStateChanged(_ joystick: Joystick!, axis:Int32) {
   
         //check to see if calibrating
         if (tryPitch == true) {
             //detect axis then save
-            NSUserDefaults.standardUserDefaults().setInteger(Int(axis), forKey: "pitch")
+            UserDefaults.standard.set(Int(axis), forKey: "pitch")
             tryPitch = false
             
-            NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object:nil)
             
         } else if (tryRoll == true) {
             //detect axis then save
-            NSUserDefaults.standardUserDefaults().setInteger(Int(axis), forKey: "roll")
+            UserDefaults.standard.set(Int(axis), forKey: "roll")
             tryRoll = false
             
-            NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object:nil)
             
         } else if (tryThrottle == true) {
             //detect axis then save
-            NSUserDefaults.standardUserDefaults().setInteger(Int(axis), forKey: "throttle")
+            UserDefaults.standard.set(Int(axis), forKey: "throttle")
             tryThrottle = false
             
-            NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object:nil)
             
         } else if (tryRudder == true) {
             //detect axis then save
-            NSUserDefaults.standardUserDefaults().setInteger(Int(axis), forKey: "rudder")
+            UserDefaults.standard.set(Int(axis), forKey: "rudder")
             tryRudder = false
             
-            NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object:nil)
             
         }
         
@@ -208,46 +206,46 @@ class JoystickHelper: NSObject, JoystickNotificationDelegate {
         var value:Int32 = 0
         
         // print relVal - this is useful for debugging
-        let relVal = joystick.getRelativeValueOfAxesIndex(axis)
+        let relVal = joystick.getRelativeValue(ofAxesIndex: axis)
         NSLog("RelVal: \(relVal)")
         
-        if NSUserDefaults.standardUserDefaults().boolForKey("gamepadMode") == true {
+        if UserDefaults.standard.bool(forKey: "gamepadMode") == true {
         
             // is a gamepad
             // values are [-128, 128]
             
-             value = Int32(joystick.getRelativeValueOfAxesIndex(axis) * 2048)
+            value = Int32(joystick.getRelativeValue(ofAxesIndex: axis) * 2048)
             
         } else {
             
             // raw values are [0, 1024]
-            value = Int32(((joystick.getRelativeValueOfAxesIndex(axis) * 2) - 1) * 1024)
+            value = Int32(((joystick.getRelativeValue(ofAxesIndex: axis) * 2) - 1) * 1024)
 
         }
         
-        if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("pitch")) {
-            controls.pitchChanged(value)
+        if (Int(axis) == UserDefaults.standard.integer(forKey: "pitch")) {
+            controls.pitchChanged(value: value)
             
-        } else if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("roll")) {
-            controls.rollChanged(value)
+        } else if (Int(axis) == UserDefaults.standard.integer(forKey: "roll")) {
+            controls.rollChanged(value: value)
             
-        } else if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("throttle")) {
-            controls.throttleChanged(value)
+        } else if (Int(axis) == UserDefaults.standard.integer(forKey: "throttle")) {
+            controls.throttleChanged(value: value)
             
-        } else if (Int(axis) == NSUserDefaults.standardUserDefaults().integerForKey("rudder")) {
-            controls.rudderChanged(value)
+        } else if (Int(axis) == UserDefaults.standard.integer(forKey: "rudder")) {
+            controls.rudderChanged(value: value)
             
         }
         
     }
     
-    func joystickButtonReleased(buttonIndex: Int32, onJoystick joystick: Joystick!) {
+    func joystickButtonReleased(_ buttonIndex: Int32, on joystick: Joystick!) {
         NSLog("Button --> Released \(buttonIndex)")
         connector.didPressButton(buttonIndex, state: 1)
         
     }
     
-    func joystickButtonPushed(buttonIndex: Int32, onJoystick joystick: Joystick!) {
+    func joystickButtonPushed(_ buttonIndex: Int32, on joystick: Joystick!) {
         
         NSLog("Button --> Pressed \(buttonIndex)")
         connector.didPressButton(buttonIndex, state: 0)

@@ -27,8 +27,8 @@ class FlightControls: NSObject {
     var throttleValue:Int32 = 0
     
     // delta when key is pressed
-    var deltaForKeyPress = 100
-    var deltaThrottleForKeyPress = 50
+    var deltaForKeyPress:Int32 = 100
+    var deltaThrottleForKeyPress:Int32 = 50
     
     func pitchChanged(value:Int32) {
         

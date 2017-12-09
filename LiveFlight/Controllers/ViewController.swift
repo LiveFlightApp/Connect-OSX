@@ -22,61 +22,39 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeView:", name:"connectionStarted", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentUpdateView:", name:"updateAvailable", object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(removeView(notification:)), name:NSNotification.Name(rawValue: "connectionStarted"), object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(presentUpdateView(notification:)), name:NSNotification.Name(rawValue: "updateAvailable"), object: nil)
         
     }
     
     
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
     
-    func removeView(notification: NSNotification) {
+    @objc func removeView(notification: NSNotification) {
         
         // add observer for connection errors
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tcpError:", name:"tcpError", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tcpError(notification:)), name:NSNotification.Name(rawValue: "tcpError"), object: nil)
         
         NSLog("Removing view...")
-        dispatch_async(dispatch_get_main_queue(),{
+        DispatchQueue.main.sync {
             
-            self.connectingView.hidden = true
+            self.connectingView.isHidden = true
             self.ipLabel.stringValue = "Infinite Flight is at \(notification.userInfo!["ip"] as! String!)" // this is passed in notification
             
-        })
+        }
         
     }
     
-    func presentUpdateView(notification: NSNotification) {
-
-        let log = NSUserDefaults.standardUserDefaults().valueForKey("nextLog")
-        let version = NSUserDefaults.standardUserDefaults().doubleForKey("nextVersion")
-        
-        let message = "Version \(version) is available:\n\nChangelog:\n\(log!)"
-        
-        let alert = NSAlert()
-        alert.messageText = "An update is available"
-        alert.addButtonWithTitle("Download Update")
-        alert.informativeText = message
-        
-        alert.beginSheetModalForWindow(self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
-            if returnCode == NSAlertFirstButtonReturn {
-                NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://connect.liveflightapp.com/update/mac")!)
-                NSApplication.sharedApplication().terminate(self)
-            }
-        })
-        
-    }
-    
-    func tcpError(notification: NSNotification) {
+    @objc func tcpError(notification: NSNotification) {
 
         // remove to stop duplicates
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tcpError", object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "tcpError"), object: nil)
         
-        dispatch_async(dispatch_get_main_queue(),{
+        DispatchQueue.main.sync {
         
             if self.alertIsShown == false {
             
@@ -84,20 +62,20 @@ class ViewController: NSViewController {
                 
                 let alert = NSAlert()
                 alert.messageText = "There was a problem"
-                alert.addButtonWithTitle("OK")
+                alert.addButton(withTitle: "OK")
                 alert.informativeText = "LiveFlight Connect has lost connection to Infinite Flight.\n\nMake sure it is connected via the same network as this Mac. Try restarting Infinite Flight if issues persist."
                 
-                alert.beginSheetModalForWindow(self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
-                    if returnCode == NSAlertFirstButtonReturn {
-                        dispatch_async(dispatch_get_main_queue(),{
+                alert.beginSheetModal(for: self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
+                    if returnCode == NSApplication.ModalResponse.alertFirstButtonReturn {
+                        DispatchQueue.main.sync {
                             
-                            self.connectingView.hidden = false
+                            self.connectingView.isHidden = false
                             
-                        })
+                        }
                         
                         self.alertIsShown = false
                         
-                        if NSUserDefaults.standardUserDefaults().boolForKey("manualIP") != true {
+                        if UserDefaults.standard.bool(forKey: "manualIP") != true {
                         
                             //start UDP listener
                             var receiver = UDPReceiver()
@@ -110,7 +88,7 @@ class ViewController: NSViewController {
                 
             }
             
-        })
+        }
         
     }
 
@@ -118,8 +96,8 @@ class ViewController: NSViewController {
     
     @IBAction func openJoystickGuide(sender: AnyObject) {
         
-        let forumURL = "http://help.liveflightapp.com/connect/setup-guide"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        let forumURL = "https://help.liveflightapp.com/hc/en-us/articles/115003328053-Setup-Guide"
+        NSWorkspace.shared.open(URL(string: forumURL)!)
         
     }
 
@@ -131,14 +109,14 @@ extension NSView {
     var backgroundColor: NSColor? {
         get {
             if let colorRef = self.layer?.backgroundColor {
-                return NSColor(CGColor: colorRef)
+                return NSColor(cgColor: colorRef)
             } else {
                 return nil
             }
         }
         set {
             self.wantsLayer = true
-            self.layer?.backgroundColor = newValue?.CGColor
+            self.layer?.backgroundColor = newValue?.cgColor
         }
     }
 }

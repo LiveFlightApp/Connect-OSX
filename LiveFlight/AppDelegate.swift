@@ -18,10 +18,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var optionsWindow: NSWindowController!
     var reachability: Reachability?
     var receiver = UDPReceiver()
-    var connector = InfiniteFlightAPIConnector()
+    @objc var connector = InfiniteFlightAPIConnector()
     var joystickHelper = JoystickHelper()
     
-    func applicationWillFinishLaunching(notification: NSNotification) {
+    func applicationWillFinishLaunching(_ notification: Notification) {
         
         /*
             Load Settings
@@ -30,74 +30,74 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         
         // we always save to app sandbox
-        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+        if let dir : String = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first {
             
             let logDir = "\(dir)/Logs"
-            NSUserDefaults.standardUserDefaults().setValue(String(logDir), forKey: "logPath")
+            UserDefaults.standard.set(String(logDir), forKey: "logPath")
             
         }
             
 
-        if NSUserDefaults.standardUserDefaults().boolForKey("logging") == true {
+        if UserDefaults.standard.bool(forKey: "logging") == true {
             
             //output to file
             let file = "LiveFlight_Connect.log"
             
-            if let dir : NSString = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String {
+            if let dir : String = UserDefaults.standard.string(forKey: "logPath") {
                 
                 NSLog("Logging enabled to directory: %@", dir)
                 
-                let path = dir.stringByAppendingPathComponent(file);
+                let path = String(describing: URL(string: dir)!.appendingPathComponent(file));
                 
                 //remove old file
                 do {
-                    try NSFileManager.defaultManager().removeItemAtPath(path)
+                    try FileManager.default.removeItem(atPath: path)
                 }
                 catch let error as NSError {
                     error.description
                 }
                 
-                freopen(path.cStringUsingEncoding(NSASCIIStringEncoding)!, "a+", stderr)
+                freopen(path.cString(using: String.Encoding.ascii)!, "a+", stderr)
                 
             }
             
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
-            logButton.state = 1
+            UserDefaults.standard.set(true, forKey: "logging")
+            logButton.state = NSControl.StateValue(rawValue: 1)
             
         } else {
             
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
-            logButton.state = 0
+            UserDefaults.standard.set(false, forKey: "logging")
+            logButton.state = NSControl.StateValue(rawValue: 0)
         }
         
         // set gamepad mode toggle
-        if NSUserDefaults.standardUserDefaults().boolForKey("gamepadMode") == true {
+        if UserDefaults.standard.bool(forKey: "gamepadMode") == true {
             
-            gamepadModeButton.state = 1
+            gamepadModeButton.state = NSControl.StateValue(rawValue: 1)
             
         } else {
             
-            gamepadModeButton.state = 0
+            gamepadModeButton.state = NSControl.StateValue(rawValue: 0)
             
         }
         
 
         //set delay button appropriately
-        let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
-        let currentDelaySetup = NSUserDefaults.standardUserDefaults().boolForKey("packetDelaySetup")
+        let currentDelay = UserDefaults.standard.integer(forKey: "packetDelay")
+        let currentDelaySetup = UserDefaults.standard.bool(forKey: "packetDelaySetup")
         
         
         if currentDelaySetup == false {
             //set to 10ms as default
-            NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "packetDelaySetup")
+            UserDefaults.standard.set(10, forKey: "packetDelay")
+            UserDefaults.standard.set(true, forKey: "packetDelaySetup")
             packetSpacingButton.title = "Toggle Delay Between Packets (10ms)"
             
             //set all axes to -2
-            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "pitch")
-            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "roll")
-            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "throttle")
-            NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "rudder")
+            UserDefaults.standard.set(-2, forKey: "pitch")
+            UserDefaults.standard.set(-2, forKey: "roll")
+            UserDefaults.standard.set(-2, forKey: "throttle")
+            UserDefaults.standard.set(-2, forKey: "rudder")
             
             
         } else {
@@ -109,8 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         logAppInfo()
     }
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        
+    func applicationDidFinishLaunching(_ notification: Notification) {
         
         /*
             Check Networking Status
@@ -123,7 +122,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSLog("Failed to create connection")
             return
         } catch {}
-        
         
         
         #if RELEASE
@@ -155,11 +153,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func logAppInfo() {
         
-        let nsObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
+        let nsObject = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
         let bundleVersion = nsObject as! String
         NSLog("LiveFlight Connect version \(bundleVersion)")
-        NSLog("OS: \(NSProcessInfo().operatingSystemVersionString)")
-        NSLog("AppKit: \(NSAppKitVersionNumber)")
+        NSLog("OS: \(ProcessInfo().operatingSystemVersionString)")
+        NSLog("AppKit: \(NSAppKitVersion.current)")
         NSLog("IFAddresses: \(getIFAddresses())")
 
         NSLog("\n\n")
@@ -174,69 +172,69 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func openJoystickGuide(sender: AnyObject) {
         
         let forumURL = "http://help.liveflightapp.com/"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        NSWorkspace.shared.open(URL(string: forumURL)!)
         
     }
     
     @IBAction func openTerms(sender: AnyObject) {
         
-        let forumURL = "http://help.liveflightapp.com/legal/terms"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        let forumURL = "https://help.liveflightapp.com/hc/en-us/articles/115003332994-Terms-of-Service"
+        NSWorkspace.shared.open(URL(string: forumURL)!)
         
     }
     
     @IBAction func openPrivacyPolicy(sender: AnyObject) {
         
-        let forumURL = "http://help.liveflightapp.com/legal/privacy"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        let forumURL = "https://help.liveflightapp.com/hc/en-us/articles/115003327793-Privacy-Policy"
+        NSWorkspace.shared.open(URL(string: forumURL)!)
         
     }
     
     @IBAction func openGitHub(sender: AnyObject) {
         
         let githubURL = "https://github.com/LiveFlightApp/Connect-OSX"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: githubURL)!)
+        NSWorkspace.shared.open(URL(string: githubURL)!)
         
     }
     
     @IBAction func openForum(sender: AnyObject) {
         
-        let forumURL = "https://community.infinite-flight.com/?u=carmalonso"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: forumURL)!)
+        let forumURL = "https://community.infinite-flight.com/"
+       NSWorkspace.shared.open(URL(string: forumURL)!)
         
     }
     
     @IBAction func openLiveFlight(sender: AnyObject) {
         
         let liveFlightURL = "http://www.liveflightapp.com"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        NSWorkspace.shared.open(URL(string: liveFlightURL)!)
         
     }
     
     @IBAction func openLiveFlightFacebook(sender: AnyObject) {
         
         let liveFlightURL = "http://www.facebook.com/liveflightapp"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        NSWorkspace.shared.open(URL(string: liveFlightURL)!)
         
     }
     
     @IBAction func openLiveFlightTwitter(sender: AnyObject) {
         
         let liveFlightURL = "http://www.twitter.com/liveflightapp"
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: liveFlightURL)!)
+        NSWorkspace.shared.open(URL(string: liveFlightURL)!)
         
     }
     
     @IBAction func toggleGamepadMode(sender: AnyObject) {
         // enable/disable gamepad mode
         
-        if gamepadModeButton.state == 0 {
+        if gamepadModeButton.state.rawValue == 0 {
             //enable
-            gamepadModeButton.state = 1
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "gamepadMode")
+            gamepadModeButton.state = NSControl.StateValue(rawValue: 1)
+            UserDefaults.standard.set(true, forKey: "gamepadMode")
         } else {
-            gamepadModeButton.state = 0
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "gamepadMode")
+            gamepadModeButton.state = NSControl.StateValue(rawValue: 0)
+            UserDefaults.standard.set(false, forKey: "gamepadMode")
         }
         
     }
@@ -244,13 +242,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func toggleLogging(sender: AnyObject) {
         //enable/disable logging
         
-        if logButton.state == 0 {
+        if logButton.state.rawValue == 0 {
             //enable
-            logButton.state = 1
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logging")
+            logButton.state = NSControl.StateValue(rawValue: 1)
+            UserDefaults.standard.set(true, forKey: "logging")
         } else {
-            logButton.state = 0
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "logging")
+            logButton.state = NSControl.StateValue(rawValue: 0)
+            UserDefaults.standard.set(false, forKey: "logging")
         }
         
     }
@@ -259,26 +257,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //change delay between sending packets
         //0, 10, 20, 50ms.
         
-        let currentDelay = NSUserDefaults.standardUserDefaults().integerForKey("packetDelay")
+        let currentDelay = UserDefaults.standard.integer(forKey: "packetDelay")
         
         if currentDelay == 0 {
             //set to 10
-            NSUserDefaults.standardUserDefaults().setInteger(10, forKey: "packetDelay")
+            UserDefaults.standard.set(10, forKey: "packetDelay")
             packetSpacingButton.title = "Toggle Delay Between Packets (10ms)"
             
         } else if currentDelay == 10 {
             //set to 20
-            NSUserDefaults.standardUserDefaults().setInteger(20, forKey: "packetDelay")
+            UserDefaults.standard.set(20, forKey: "packetDelay")
             packetSpacingButton.title = "Toggle Delay Between Packets (20ms)"
             
         } else if currentDelay == 20 {
             //set to 50
-            NSUserDefaults.standardUserDefaults().setInteger(50, forKey: "packetDelay")
+            UserDefaults.standard.set(50, forKey: "packetDelay")
             packetSpacingButton.title = "Toggle Delay Between Packets (50ms)"
             
         } else {
             //set to 0
-            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "packetDelay")
+            UserDefaults.standard.set(0, forKey: "packetDelay")
             packetSpacingButton.title = "Toggle Delay Between Packets (0ms)"
             
         }
@@ -286,8 +284,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func openOptionsWindow(sender: AnyObject) {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        optionsWindow = storyboard.instantiateControllerWithIdentifier("optionsWindow") as! NSWindowController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        optionsWindow = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "optionsWindow")) as! NSWindowController
         
         optionsWindow.showWindow(self)
         
@@ -378,10 +376,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func getIFAddresses() -> [String] {
-        var addresses = [String]()
+        /*var addresses = [String]()
         
         // Get list of all interfaces on the local machine:
-        var ifaddr : UnsafeMutablePointer<ifaddrs> = nil
+        var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddr) == 0 {
             
             // For each interface ...
@@ -405,9 +403,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
             freeifaddrs(ifaddr)
-        }
+        }*/
         
-        return addresses
+        return []
     }
     
 }

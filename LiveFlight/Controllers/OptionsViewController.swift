@@ -17,18 +17,18 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.logLocationLabel!.stringValue = NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String
+        self.logLocationLabel!.stringValue = UserDefaults.standard.string(forKey: "logPath") as! String
         
         
         /*
         
         // manual IP is deprecated
         
-        self.manualIpToggle.state = Int(NSUserDefaults.standardUserDefaults().boolForKey("manualIP"))
+        self.manualIpToggle.state = Int(UserDefaults.standard.bool(forKey: "manualIP"))
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("manualIPValue") != nil {
+        if UserDefaults.standard.string(forKey: "manualIPValue") != nil {
         
-            self.manualIpValue!.stringValue = NSUserDefaults.standardUserDefaults().valueForKey("manualIPValue") as! String
+            self.manualIpValue!.stringValue = UserDefaults.standard.string(forKey: "manualIPValue") as! String
             
         }
         
@@ -38,7 +38,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func selectLogFolder(sender:AnyObject) {
         
-        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: NSUserDefaults.standardUserDefaults().valueForKey("logPath") as! String)
+        NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: UserDefaults.standard.string(forKey: "logPath") as! String)
         
         /*
         
@@ -60,7 +60,7 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
                     let folderPath = url.absoluteString.stringByReplacingOccurrencesOfString("file://", withString: "")
                     
                     self.logLocationLabel!.stringValue = folderPath
-                    NSUserDefaults.standardUserDefaults().setValue(folderPath, forKey: "logPath")
+                    UserDefaults.standard.set(folderPath, forKey: "logPath")
                     
                     self.showRestartPrompt()
                     
@@ -74,8 +74,8 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func resetSettings(sender: AnyObject) {
         
-        for key in NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys {
-            NSUserDefaults.standardUserDefaults().removeObjectForKey(key)
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key)
         }
         
         showRestartPrompt()
@@ -87,10 +87,10 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
         
         if manualIpToggle.state == 0 {
             //manualIpToggle.enabled = false
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "manualIP")
+            UserDefaults.standard.set(false, forKey: "manualIP")
         } else if manualIpToggle.state == 1 {
             //manualIpToggle.enabled = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "manualIP")
+            UserDefaults.standard.set(true, forKey: "manualIP")
         }
         
         showRestartPrompt()
@@ -98,10 +98,10 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
     }
     */
     
-    override func controlTextDidEndEditing(obj: NSNotification) {
+    override func controlTextDidBeginEditing(_ obj: Notification) {
         
         // enter pressed, save new IP
-        NSUserDefaults.standardUserDefaults().setValue(manualIpValue.stringValue, forKey: "manualIPValue")
+        UserDefaults.standard.set(manualIpValue.stringValue, forKey: "manualIPValue")
         
     }
     
@@ -109,10 +109,10 @@ class OptionsViewController: NSViewController, NSTextFieldDelegate {
         
         let alert = NSAlert()
         alert.messageText = "Changes saved!"
-        alert.addButtonWithTitle("OK")
+        alert.addButton(withTitle: "OK")
         alert.informativeText = "Restart LiveFlight Connect for the changes to take effect."
             
-        alert.beginSheetModalForWindow(self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
             
             NSLog("Restart prompt shown and closed.")
             

@@ -190,7 +190,7 @@
 				7E74516E1BC9D20000FB1069 /* Upload.swift */,
 			);
 			name = SwiftHTTP;
-			path = ../libs/SwiftHTTP;
+			path = ../libs/SwiftHTTP/Source;
 			sourceTree = "<group>";
 		};
 		7E7BA5E61B89DA5200C73DA0 = {
@@ -295,7 +295,7 @@
 				TargetAttributes = {
 					7E7BA5EE1B89DA5200C73DA0 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = DR44D6XSFQ;
+						DevelopmentTeam = 56U9FMKHJR;
 					};
 				};
 			};
@@ -451,8 +451,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 56U9FMKHJR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -466,6 +467,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LiveFlight/LiveFlight-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Connect-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -473,8 +475,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 56U9FMKHJR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -487,6 +490,7 @@
 				PRODUCT_NAME = "LiveFlight Connect";
 				SWIFT_OBJC_BRIDGING_HEADER = "LiveFlight/LiveFlight-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Connect-Swift.h";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

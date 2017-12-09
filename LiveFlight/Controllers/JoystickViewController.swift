@@ -22,21 +22,21 @@ class JoystickViewController: NSViewController {
         super.viewDidLoad()
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeLabelValues:", name:"changeLabelValues", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLabelValues(notification:)), name:NSNotification.Name(rawValue: "changeLabelValues"), object: nil)
         
         //this is a hack, to avoid having to create a new NSNotification object
-        NSNotificationCenter.defaultCenter().postNotificationName("changeLabelValues", object:nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeLabelValues"), object: nil)
         
     }
     
-    func changeLabelValues(notification:NSNotification) {
+    @objc func changeLabelValues(notification:NSNotification) {
         
-        allClearView!.hidden = true
+        allClearView!.isHidden = true
         
-        let pitch = NSUserDefaults.standardUserDefaults().integerForKey("pitch")
-        let roll = NSUserDefaults.standardUserDefaults().integerForKey("roll")
-        let throttle = NSUserDefaults.standardUserDefaults().integerForKey("throttle")
-        let rudder = NSUserDefaults.standardUserDefaults().integerForKey("rudder")
+        let pitch = UserDefaults.standard.integer(forKey: "pitch")
+        let roll = UserDefaults.standard.integer(forKey: "roll")
+        let throttle = UserDefaults.standard.integer(forKey: "throttle")
+        let rudder = UserDefaults.standard.integer(forKey: "rudder")
         
         if pitch != -2 {
             pitchLabel.stringValue = "Axis \(String(pitch))"
@@ -63,19 +63,19 @@ class JoystickViewController: NSViewController {
             
             var filter = Dictionary<String,Int>()
             var len = joystickNameArray.count
-            for var index = 0; index < len  ;++index {
+            for index in 0..<len {
                 let value = joystickNameArray[index]
                 if (filter[value] != nil) {
-                    joystickNameArray.removeAtIndex(index--)
-                    len--
+                    joystickNameArray.remove(at: (index - 1))
+                    len -= 1
                 }else{
                     filter[value] = 1
                 }
             }
             
-            joystickName.stringValue = joystickNameArray.joinWithSeparator(" ")
+            joystickName.stringValue = joystickNameArray.joined(separator: " ")
             
-            let mapStatus = NSUserDefaults.standardUserDefaults().integerForKey("mapStatus")
+            let mapStatus = UserDefaults.standard.integer(forKey: "mapStatus")
             
             if mapStatus == -2 {
                 joystickRecognised.stringValue = "Using custom-assigned values for axes."
@@ -87,7 +87,7 @@ class JoystickViewController: NSViewController {
             } else if mapStatus == 1 {
                 joystickRecognised.stringValue = "Using accurate values for your joystick (provided by LiveFlight)."
                 
-                allClearView!.hidden = false
+                allClearView!.isHidden = false
                 
             } else {
                 joystickRecognised.stringValue = "Using generic joystick values. These may not work correctly."
@@ -108,37 +108,37 @@ class JoystickViewController: NSViewController {
     
     @IBAction func pitch(sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("tryPitch", object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tryPitch"), object: nil)
         pitchLabel.stringValue = "Move the stick forwards and backwards"
         
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        UserDefaults.standard.set(-2, forKey: "mapStatus")
         
     }
     
     @IBAction func roll(sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("tryRoll", object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tryRoll"), object: nil)
         rollLabel.stringValue = "Move the stick from side to side"
         
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        UserDefaults.standard.set(-2, forKey: "mapStatus")
         
     }
     
     @IBAction func throttle(sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("tryThrottle", object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tryThrottle"), object: nil)
         throttleLabel.stringValue = "Move the lever forwards and backwards"
         
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        UserDefaults.standard.set(-2, forKey: "mapStatus")
         
     }
     
     @IBAction func rudder(sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("tryRudder", object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tryRudder"), object: nil)
         rudderLabel.stringValue = "Twist/move the rudder"
         
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        UserDefaults.standard.set(-2, forKey: "mapStatus")
         
     }
     
@@ -150,11 +150,11 @@ class JoystickViewController: NSViewController {
     @IBAction func clear(sender: AnyObject) {
         
         // remove saved axes
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "pitch")
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "roll")
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "throttle")
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "rudder")
-        NSUserDefaults.standardUserDefaults().setInteger(-2, forKey: "mapStatus")
+        UserDefaults.standard.set(-2, forKey: "pitch")
+        UserDefaults.standard.set(-2, forKey: "roll")
+        UserDefaults.standard.set(-2, forKey: "throttle")
+        UserDefaults.standard.set(-2, forKey: "rudder")
+        UserDefaults.standard.set(-2, forKey: "mapStatus")
         
         // update labels
         pitchLabel.stringValue = "No axis assigned"

@@ -21,7 +21,7 @@ class KeyboardListenerWindow: NSWindow {
     var shiftPressed = false
     
     //MARK - keyboard events
-    override func keyDown(event: NSEvent)
+    override func keyDown(with event: NSEvent)
     {
         NSLog("keyDown: \(event.keyCode)!")
         
@@ -200,7 +200,7 @@ class KeyboardListenerWindow: NSWindow {
             } else {
                 
                 // move camera left
-                connector.movePOVWithValue(270)
+                connector.movePOV(withValue: 270)
                 
             }
             
@@ -214,7 +214,7 @@ class KeyboardListenerWindow: NSWindow {
             } else {
                 
                 // move camera right
-                connector.movePOVWithValue(90)
+                connector.movePOV(withValue: 90)
                 
             }
                 
@@ -229,7 +229,7 @@ class KeyboardListenerWindow: NSWindow {
             } else {
                 
                 // move camera up
-                connector.movePOVWithValue(0)
+                connector.movePOV(withValue: 0)
                 
             }
         
@@ -243,7 +243,7 @@ class KeyboardListenerWindow: NSWindow {
             } else {
                 
                 // move camera down
-                connector.movePOVWithValue(180)
+                connector.movePOV(withValue: 180)
                 
             }
             
@@ -268,23 +268,22 @@ class KeyboardListenerWindow: NSWindow {
         
     }
     
-    override func keyUp(event: NSEvent)
-    {
+    override func keyUp(with event: NSEvent) {
         //connector.didPressButton(Int32(event.keyCode), state: 1)
-        connector.movePOVWithValue(-2)
+        connector.movePOV(withValue: -2)
         keydown = false
     }
     
-    override func flagsChanged(event: NSEvent) {
-        switch event.modifierFlags.intersect(.DeviceIndependentModifierFlagsMask) {
-        case NSEventModifierFlags.ShiftKeyMask :
+    override func flagsChanged(with event: NSEvent) {
+        switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
+        case NSEvent.ModifierFlags.shift:
             NSLog("Shift key pressed")
             shiftPressed = true
-        case NSEventModifierFlags.ControlKeyMask:
+        case NSEvent.ModifierFlags.control:
             NSLog("Control Pressed..")
-        case NSEventModifierFlags.AlternateKeyMask :
+        case NSEvent.ModifierFlags.option:
             NSLog("Option pressend...")
-        case NSEventModifierFlags.CommandKeyMask:
+        case NSEvent.ModifierFlags.command:
             NSLog("Command key pressed..")
         default:
             NSLog("No modifier keys pressed")

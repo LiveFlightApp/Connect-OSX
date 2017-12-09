@@ -25,15 +25,15 @@ class KeyboardCommandsView: NSViewController, NSTableViewDataSource, NSTableView
     }
     
     //set values
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> Any? {
         
-        return getDataArray().objectAtIndex(row).objectForKey(tableColumn!.identifier)
+        return getDataArray()[row].object(forKey: tableColumn!.identifier)
         
     }
     
     
     
-    func getDataArray () -> NSArray{
+    func getDataArray() -> [NSDictionary] {
         let dataArray:[NSDictionary] =
             [
                 ["Command": "Pitch Up", "Key": "Down Arrow"],
@@ -71,7 +71,7 @@ class KeyboardCommandsView: NSViewController, NSTableViewDataSource, NSTableView
                 ["Command": "ATC Commands", "Key":"Numbers [1-0]"]
             ];
 
-        return dataArray;
+        return dataArray
     }
     
 }
