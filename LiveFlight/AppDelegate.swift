@@ -171,7 +171,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func openJoystickGuide(sender: AnyObject) {
         
-        let forumURL = "http://help.liveflightapp.com/"
+        let forumURL = "https://help.liveflightapp.com/hc/en-us/sections/115000759493-LiveFlight-Connect"
         NSWorkspace.shared.open(URL(string: forumURL)!)
         
     }
