@@ -18,17 +18,14 @@ class KeyboardCommandsView: NSViewController, NSTableViewDataSource, NSTableView
         
     }
     
-    func numberOfRowsInTableView(aTableView: NSTableView) -> Int
-    {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         let numberOfRows:Int = getDataArray().count
         return numberOfRows
     }
     
     //set values
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> Any? {
-        
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         return getDataArray()[row].object(forKey: tableColumn!.identifier)
-        
     }
     
     

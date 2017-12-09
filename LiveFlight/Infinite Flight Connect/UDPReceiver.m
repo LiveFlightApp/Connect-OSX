@@ -99,6 +99,7 @@
                     NSString *ipToConnectTo;
                     
                     // Prioritise IPv4 if possible
+                    // Regex thanks to https://www.mkyong.com/regular-expressions/how-to-validate-ip-address-with-regular-expression/
                     NSString *regex = [NSString stringWithFormat:@"^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$"];
                     NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
                     NSArray *matches = [possibleAddresses filteredArrayUsingPredicate:filter];
