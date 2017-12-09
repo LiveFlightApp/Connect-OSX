@@ -23,7 +23,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(removeView(notification:)), name:NSNotification.Name(rawValue: "connectionStarted"), object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(presentUpdateView(notification:)), name:NSNotification.Name(rawValue: "updateAvailable"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(unsupportedInfiniteFlight(notification:)), name:NSNotification.Name(rawValue: "unsupportedVersion"), object: nil)
         
     }
     
@@ -58,7 +58,7 @@ class ViewController: NSViewController {
         // remove to stop duplicates
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "tcpError"), object: nil)
         
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
         
             if self.alertIsShown == false {
             
@@ -71,7 +71,7 @@ class ViewController: NSViewController {
                 
                 alert.beginSheetModal(for: self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
                     if returnCode == NSApplication.ModalResponse.alertFirstButtonReturn {
-                        DispatchQueue.main.sync {
+                        DispatchQueue.main.async {
                             
                             self.connectingView.isHidden = false
                             
@@ -96,7 +96,24 @@ class ViewController: NSViewController {
         
     }
 
-
+    @objc func unsupportedInfiniteFlight(notification: NSNotification) {
+        
+        DispatchQueue.main.async {
+            
+            let alert = NSAlert()
+            alert.messageText = "There was a problem"
+            alert.addButton(withTitle: "OK")
+            alert.informativeText = "The version of Infinite Flight you are trying to connect to is no longer supported. Please update Infinite Flight in the App Store or the Google Play Store to the latest version."
+            
+            alert.beginSheetModal(for: self.view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
+                if returnCode == NSApplication.ModalResponse.alertFirstButtonReturn {
+                    NSApplication.shared.terminate(self)
+                }
+            })
+            
+        }
+        
+    }
     
     @IBAction func openJoystickGuide(sender: AnyObject) {
         

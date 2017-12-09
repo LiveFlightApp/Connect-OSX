@@ -93,6 +93,12 @@
                 
                 if (connected != true) {
                     
+                    // Check to make sure the response from Infinite Flight is one we support
+                    if ([results objectForKey:@"Address"] != nil) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"unsupportedVersion" object:nil];
+                        return;
+                    }
+                    
                     NSLog(@"Can connect to one of these: %@", [results valueForKey:@"Addresses"]);
                    
                     NSArray *possibleAddresses = [results mutableArrayValueForKey:@"Addresses"];
