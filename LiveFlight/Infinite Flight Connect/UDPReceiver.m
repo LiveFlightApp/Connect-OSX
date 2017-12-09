@@ -93,10 +93,30 @@
                 
                 if (connected != true) {
                     
-                    NSLog(@"Connecting to %@...", [results valueForKey:@"Address"]);
+                    NSLog(@"Can connect to one of these: %@", [results valueForKey:@"Addresses"]);
+                   
+                    NSArray *possibleAddresses = [results mutableArrayValueForKey:@"Addresses"];
+                    NSString *ipToConnectTo;
+                    
+                    // Prioritise IPv4 if possible
+                    NSString *regex = [NSString stringWithFormat:@"^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$"];
+                    NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+                    NSArray *matches = [possibleAddresses filteredArrayUsingPredicate:filter];
+                    
+                    NSLog(@"IPv4 priority chooses one of these: %@", matches);
+                    
+                    if (matches.count) {
+                        ipToConnectTo = [matches firstObject];
+                    } else {
+                        if (possibleAddresses.count) {
+                            ipToConnectTo = [possibleAddresses firstObject];
+                        } else {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"tcpError" object:nil];
+                        }
+                    }
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        [self connectIF:[results valueForKey:@"Address"]];
+                        [self connectIF:ipToConnectTo];
                     });
                     
                     connected = true;

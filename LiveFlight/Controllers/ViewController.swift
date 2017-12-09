@@ -43,7 +43,11 @@ class ViewController: NSViewController {
         DispatchQueue.main.sync {
             
             self.connectingView.isHidden = true
-            self.ipLabel.stringValue = "Infinite Flight is at \(notification.userInfo!["ip"] as! String!)" // this is passed in notification
+            if let ip = notification.userInfo!["ip"] as? String {
+                self.ipLabel.stringValue = "Infinite Flight is at \(ip)" // this is passed in notification
+            } else {
+                self.ipLabel.stringValue = "Infinite Flight is connected, yet the connection seems unreliable"
+            }
             
         }
         
